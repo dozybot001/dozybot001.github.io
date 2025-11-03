@@ -112,7 +112,7 @@ Github 提供了 Github Pages 功能，可以免费建立 Github 网页，这里
 ### 建立连接
 网站编辑，创作博客等等操作都是在我们自己的电脑上进行的，要把这些改动上传到 Github ，然后 Github 生成在线网站，别人就可以访问了。我们再次在 Github 中建立一个新仓库用于管理我们上传过去的代码。然后打开 Webstorm 链接这个仓库， Git -> Manage Remotes：
 ![](https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510172026678.png)
-第一次连接时可能不会出现 Git 选项，而是显示 VCS 。最终来到这个这个页面：
+第一次连接时可能不会出现 Git 选项，而是显示 VCS ，我们将这个项目 Share to Github 。最终来到这个这个页面：
 ![](https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510172133421.png)
 点击左上角加号新建链接：
 ```bash
