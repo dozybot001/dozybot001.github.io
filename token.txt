@@ -1,0 +1,11 @@
+Gitee:
+3baadc840bcb4de1b429add59477ee8c
+
+Github:
+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
+
+OAuth APP：
+Client ID: Ov23liaRSjcF59RLX09N
+Client secrets: da73606dbe16ecea7580e3d2576013e7b923803c
+
+PW@ssh661322

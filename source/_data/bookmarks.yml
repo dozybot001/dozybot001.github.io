@@ -1,0 +1,27 @@
+#- category:
+#  icon:
+#  items:
+#    - name:
+#      link:
+#      description:
+#      image:
+
+- category: AI Tools
+  icon: fa-tools # 工具分类的图标
+  items:
+    - name: ChatGPT
+      link: https://chat.openai.com # 书签链接地址
+      description: From OpenAI
+      image: https://chat.openai.com/favicon.ico # 网站图标地址
+    - name: Claude
+      link: https://www.anthropic.com/
+      description: Form Anthropic
+      image: https://www.anthropic.com/favicon.ico
+
+- category: Coding
+  icon: code
+  items:
+    - name: Markdown
+      link: https://markdown.com.cn
+      description: Markdown教程
+      image: https://markdown.com.cn/favicon.ico
