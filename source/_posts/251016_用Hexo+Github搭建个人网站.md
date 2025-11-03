@@ -108,7 +108,7 @@ https://cdn.jsdelivr.net/gh/Github账号名/仓库名
 拉到最下面，会有报错代码，有比如 409，411，423 等等，Google 一下报错原因就很容易解决。
 ### 在线网站
 Github 提供了 Github Pages 功能，可以免费建立 Github 网页，这里可以直接看官方教程：[Quickstart for GitHub Pages](https://docs.github.com/en/pages/quickstart) 。
-以及创建一个 SSH Key ，如果你之前并没有使用过 Git ：[Generating a new SSH key and adding it to the ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)。
+以及创建一个 SSH Key ，如果你之前并没有使用过 Git ：[Generating a new SSH key and adding it to the ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)。创建 SSH 密钥，会同时创建公钥和私钥，复制公钥放在 GitHub 上，本地储存私钥，期间会提示你创建私钥访问密码，不建议创建，因为创建后每次部署都要输一遍密码，直接不输入内容按两次 Enter 即可。
 ### 建立连接
 网站编辑，创作博客等等操作都是在我们自己的电脑上进行的，要把这些改动上传到 Github ，然后 Github 生成在线网站，别人就可以访问了。我们再次在 Github 中建立一个新仓库用于管理我们上传过去的代码。然后打开 Webstorm 链接这个仓库， Git -> Manage Remotes：
 ![](https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510172026678.png)
