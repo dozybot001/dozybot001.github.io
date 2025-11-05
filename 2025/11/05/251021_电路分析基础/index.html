@@ -1,0 +1,2997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="Deyang Zeng">
+    
+    <!-- Completely eliminate flash of wrong theme -->
+    <script>
+        (function() {
+            const THEME_KEY = "REDEFINE-THEME-STATUS";
+            const DARK = "dark", LIGHT = "light";
+            
+            // Get preferred theme
+            function getTheme() {
+                try {
+                    const saved = localStorage.getItem(THEME_KEY);
+                    if (saved) {
+                        const { isDark } = JSON.parse(saved);
+                        return isDark ? DARK : LIGHT;
+                    }
+                } catch (e) {}
+                
+                return matchMedia("(prefers-color-scheme: dark)").matches ? DARK : LIGHT;
+            }
+            
+            // Apply theme to document
+            function applyTheme(theme) {
+                const isDark = theme === DARK;
+                const root = document.documentElement;
+                
+                // Set data attribute for CSS variables
+                root.setAttribute("data-theme", theme);
+                
+                // Set classes for compatibility
+                root.classList.add(theme);
+                root.classList.remove(isDark ? LIGHT : DARK);
+                root.style.colorScheme = theme;
+            }
+            
+            // Initial application
+            const theme = getTheme();
+            applyTheme(theme);
+            
+            // Listen for system preference changes
+            matchMedia("(prefers-color-scheme: dark)").addEventListener("change", ({ matches }) => {
+                // Only update if using system preference (no localStorage entry)
+                if (!localStorage.getItem(THEME_KEY)) {
+                    applyTheme(matches ? DARK : LIGHT);
+                }
+            });
+            
+            // Set body classes once DOM is ready
+            if (document.readyState !== "loading") {
+                document.body.classList.add(theme + "-mode");
+            } else {
+                document.addEventListener("DOMContentLoaded", () => {
+                    document.body.classList.add(theme + "-mode");
+                    document.body.classList.remove((theme === DARK ? LIGHT : DARK) + "-mode");
+                });
+            }
+        })();
+    </script>
+    
+    <!-- Critical CSS to prevent flash -->
+    <style>
+        :root[data-theme="dark"] {
+            --background-color: #202124;
+            --background-color-transparent: rgba(32, 33, 36, 0.6);
+            --second-background-color: #2d2e32;
+            --third-background-color: #34353a;
+            --third-background-color-transparent: rgba(32, 33, 36, 0.6);
+            --primary-color: #0066CC;
+            --first-text-color: #ffffff;
+            --second-text-color: #eeeeee;
+            --third-text-color: #bebec6;
+            --fourth-text-color: #999999;
+            --default-text-color: #bebec6;
+            --invert-text-color: #373D3F;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --selection-color: #0066CC;
+            --shadow-color-1: rgba(255, 255, 255, 0.08);
+            --shadow-color-2: rgba(255, 255, 255, 0.05);
+        }
+        
+        :root[data-theme="light"] {
+            --background-color: #fff;
+            --background-color-transparent: rgba(255, 255, 255, 0.6);
+            --second-background-color: #f8f8f8;
+            --third-background-color: #f2f2f2;
+            --third-background-color-transparent: rgba(241, 241, 241, 0.6);
+            --primary-color: #0066CC;
+            --first-text-color: #16171a;
+            --second-text-color: #2f3037;
+            --third-text-color: #5e5e5e;
+            --fourth-text-color: #eeeeee;
+            --default-text-color: #373D3F;
+            --invert-text-color: #bebec6;
+            --border-color: rgba(0, 0, 0, 0.08);
+            --selection-color: #0066CC;
+            --shadow-color-1: rgba(0, 0, 0, 0.08);
+            --shadow-color-2: rgba(0, 0, 0, 0.05);
+        }
+        
+        body {
+            background-color: var(--background-color);
+            color: var(--default-text-color);
+        }
+        
+        /* Apply body classes as soon as DOM is ready */
+        :root[data-theme="dark"] body {
+            background-color: var(--background-color);
+            color: var(--default-text-color);
+        }
+    </style>
+    
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/2025/11/05/251021_电路分析基础/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+    
+    
+        
+        <meta name="description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《电路分析基础》 2W 字笔记">
+<meta property="og:url" content="http://example.com/2025/11/05/251021_%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name">
+<meta property="og:description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/redefine-og.webp">
+<meta property="article:published_time" content="2025-11-05T14:28:45.319Z">
+<meta property="article:modified_time" content="2025-11-05T14:00:53.991Z">
+<meta property="article:author" content="Dozy">
+<meta property="article:tag" content="Circuit">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/redefine-og.webp">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/d.ico" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/d.ico">
+    <meta name="theme-color" content="#006000">
+    <link rel="shortcut icon" href="/images/d.ico">
+    <!--- Page Info-->
+    
+    <title>
+        
+            《电路分析基础》 2W 字笔记 | Dozy Memory
+        
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/css/build/tailwind.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+    
+    
+        
+<script src="/js/build/libs/anime.min.js"></script>
+
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"example.com","root":"/","language":"en"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":false,"auto":false,"list":[]},"code_block":{"copy":true,"style":"simple","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":true,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"all_rights_reserved"},"lazyload":true,"pangu_js":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#006000","secondary":null,"default_mode":"dark"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":true},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":true,"custom_message":"Dozy Memory | Blog on Tech & Life"},"side_tools":{"gear_rotation":true,"auto_expand":false},"open_graph":{"enable":true,"image":"/images/redefine-og.webp","description":"Hexo Theme Redefine, Redefine Your Hexo Journey."},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/light.png","dark":"/images/dark.png"},"title":"Dozy Memory | Blog on Tech & Life","subtitle":{"text":["Fragments of a Curious Mind","Aim to be a confident ROBOT ENGINEER"],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#ffffff","dark":"#e3e3e3"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"style":"default","links":{"github":"https://github.com","instagram":"https://www.instagram.com","zhihu":null,"twitter":null,"email":"derekzane13@gmail.com"},"qrs":{"weixin":"/images/qr_wechat.jpg"}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"11.4.1"}},"version":"2.8.5","navbar":{"auto_hide":true,"color":{"left":"#000000","right":"#000000","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"},"Bookmarks":{"path":"/bookmarks/","icon":"fa-solid fa-bookmark"}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":3,"tags_style":"blur","bookmarks_column":3},"home":{"sidebar":{"enable":true,"position":"right","first_item":"info","announcement":"Announcement text","show_on_mobile":true,"links":{"About":{"path":"/about","icon":"fa-regular fa-user"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"}}},"article_date_format":"YYYY-MM-DD","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2025/10/13 20:02:33"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+        
+<link rel="stylesheet" href="/fontawesome/duotone.min.css">
+
+    
+    
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+
+<body>
+	<div class="progress-bar-container">
+	
+	<span class="scroll-progress-bar"></span>
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    <h2 class="ml13">
+        Dozy Memory | Blog on Tech &amp; Life
+    </h2>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
+        // Split text into words
+        var words = textWrapper.textContent.trim().split(' ');
+
+        // Clear the existing content
+        textWrapper.innerHTML = '';
+
+        // Wrap each word and its letters in spans
+        words.forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.appendChild(wordSpan);
+            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
+        });
+
+        var animation = anime.timeline({ loop: true })
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [20, 0],
+                translateZ: 0,
+                opacity: [0, 1],
+                filter: ['blur(5px)', 'blur(0px)'],
+                easing: "easeOutExpo",
+                duration: 1200,
+                delay: (el, i) => 300 + 20 * i,
+            })
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [0, -20],
+                opacity: [1, 0],
+                filter: ['blur(0px)', 'blur(5px)'],
+                easing: "easeInExpo",
+                duration: 1000,
+                delay: (el, i) => 15 * i,
+                complete: function() {
+                    hidePreloader();
+                }
+            }, '-=700');
+
+
+        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
+
+        // If the theme status is not found in local storage, check the preferred color scheme
+        if (themeStatus === undefined || themeStatus === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeStatus = 'dark';
+            } else {
+                themeStatus = 'light';
+            }
+        }
+
+        // Now you can use the themeStatus variable in your code
+        if (themeStatus) {
+            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
+            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
+        } else {
+            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
+            document.documentElement.style.setProperty('--preloader-text-color', '#000');
+        }
+
+        window.addEventListener('load', function () {
+            setTimeout(hidePreloader, 5000); // Call hidePreloader after 5000 milliseconds if not already called by animation
+        });
+
+        function hidePreloader() {
+            var preloader = document.querySelector('.preloader');
+            preloader.style.opacity = '0';
+            setTimeout(function () {
+                preloader.style.display = 'none';
+            }, 200);
+        }
+    </script>
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+                <a class="logo-image h-8 w-8 sm:w-10 sm:h-10 mr-3" href="/">
+                    <img src="/images/d.png" class="w-full h-full rounded-xs">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                Dozy Memory
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/archives"
+                                        >
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    ARCHIVES
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/categories"
+                                        >
+                                    <i class="fa-regular fa-folder fa-fw"></i>
+                                    CATEGORIES
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/bookmarks/"
+                                        >
+                                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                                    BOOKMARKS
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/archives"
+                        >
+                            <span>
+                                ARCHIVES
+                            </span>
+                            
+                                <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/categories"
+                        >
+                            <span>
+                                CATEGORIES
+                            </span>
+                            
+                                <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/bookmarks/"
+                        >
+                            <span>
+                                BOOKMARKS
+                            </span>
+                            
+                                <i class="fa-solid fa-bookmark fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/about"
+                        >
+                            <span>About</span>
+                            <i class="fa-regular fa-user fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/tags"
+                        >
+                            <span>Tags</span>
+                            <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">18</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">3</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">11</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			
+			
+			<img src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510230118059.png" alt="《电路分析基础》 2W 字笔记" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75" />
+			
+			<div class="w-full flex items-center absolute bottom-0 justify-start">
+				<h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-semibold backdrop-blur-lg rounded-xl border border-border-color ">《电路分析基础》 2W 字笔记</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="/images/d.png">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">Deyang Zeng</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2025-11-05 22:28:45</span>
+        <span class="mobile">2025-11-05 22:28:45</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-11-05 22:53</span>
+            <span class="mobile">2025-11-05 22:53</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/Theory/">Theory</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Circuit/">Circuit</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><ol>
+<li>声明：个人原创笔记，无商业用途，仅作学习交流用，任何转载请注明本站出处<del>，这都是好几个月的心血啊</del>。</li>
+<li>内容：这篇笔记为<code>电路 / 电路原理 / 电路分析</code>学科的基础知识，包含了我对“电路”的全部理解。阅读并充分理解本文后，你将对“电路”有一个充分认识，之后再辅以一定的习题，足以让你在任何电路考试中取得相当不错的成绩。</li>
+<li>备注：本文中的大部分截图出自教材<code>《电路原理》，江辑光，清华大学出版社</code>。任何理论问题，欢迎添加我的社交媒体账号进行讨论。此外，这篇笔记的 Word 原版也可以联系我免费获取。</li>
+<li>警告：本文共约 2w 字，共 75 张图片，包含大量数学公式，阅读时间 1~2 小时，为了阅读时的沉浸式体验，正文中没有标题编号，请借助左侧导航栏标记阅读进度。</li>
+</ol>
+<h2 id="物理量与约束"><a href="#物理量与约束" class="headerlink" title="物理量与约束"></a>物理量与约束</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>所谓电路分析，简单来说即求解电路中的物理量，这个分析过程可以笼统地分为两个步骤：</p>
+<ol>
+<li>了解所求物理量并找出物理量间的约束关系；</li>
+<li>利用合适的方法求解物理量。</li>
+</ol>
+<p>本章则完成第一个步骤，后续章节本质上均为介绍求解方法。约束的来源可大致分为三类。第一类是元件约束，即电路元件决定的物理量关系；第二类是结构约束，即电路结构决定的物理量关系；第三类是其他约束，即题目提供给你的条件。</p>
+<h3 id="基本物理量"><a href="#基本物理量" class="headerlink" title="基本物理量"></a>基本物理量</h3><p>简单介绍电流、电压和功率的概念。</p>
+<ol>
+<li>电流 i，单位安培 A<br>$$i &#x3D; \frac{dq}{dt}$$<br>某平面单位时间通过的电荷量，具有流动方向。</li>
+<li>电压 u，单位伏特 V<br>$$u &#x3D; \psi - \psi_{0}$$<br>电势差，某点电压默认相对电势（压）零点，支路电压指支路两端电势差，方向为电势降低方向。<br>分析电路时常不知道 $u,i$ 方向，便需假设参考方向：<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510221657643.png"
+                     
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510221743616.png"
+                     
+                ><br>设为方便的方向即可，最后结果的符号体现了真实方向。<br>此外，电动势为电池参数，指非静电力导致的电势升高，方向为电源内部负极指向正极。电压是电压降、电动势是电压升。</li>
+<li>功率 p，单位瓦特 W<br>$$p &#x3D; ui$$<br>某一条支路 u、i 的参考方向一致时，称参考方向关联，即电流从电压正极流入、从电压负极流出。在关联参考方向下计算的功率为该支路的吸收功率，吸收功率与发出功率互为相反数，发出功率便是在非关联参考方向计算得出的功率。通常令支路的 u、i 方向关联而计算吸收功率，结果为正表示实际的确吸收功率，为负表示实际发出功率。</li>
+</ol>
+<h3 id="约束-I——元件约束"><a href="#约束-I——元件约束" class="headerlink" title="约束 I——元件约束"></a>约束 I——元件约束</h3><p>不同的元件对于其两端的电压和其流经的电流有不同的约束关系。电路元件可以分为线性元件和非线性元件。所谓线性，即满足：</p>
+<ol>
+<li>元件的某一个量变为 K 倍时，另一个量也变为 K 倍，此为齐次性；</li>
+<li>元件的某一个量的作用效果，等于将其拆分为多个量后作用效果的代数和，此为叠加性。</li>
+</ol>
+<p>只有线性元件才具有齐次性和叠加性，这里只分析线性元件和一个特殊的非线性元件——运算放大器，非线性元件在后面章节介绍。</p>
+<p>电路元件的连接方式有串联和并联，其对应图示如下：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510221743422.png"
+                     
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510221744650.png"
+                     
+                ></p>
+<p>电路图中元件均为从实际元件抽象出的单一特性理想模型，下面介绍各元件，写出其对所在支路的约束方程并补充额外性质。</p>
+<h4 id="电压源-U"><a href="#电压源-U" class="headerlink" title="电压源 U"></a>电压源 U</h4><p>$$U &#x3D; u_{S} &#x3D; u$$</p>
+<p>$U$ 指代电压源，$u_{S}$ 为电压值，$u$ 为支路电压。</p>
+<p>电压源串联电阻构成支路，称有伴电压源，可进行电源等效变换与其他支路合并。</p>
+<p>单独电压源构成支路时，称无伴电压源，支路电压全由电压源控制，与其并联网络对外无效，进行无伴电压源的转移（岔路分裂）可以将其变为有伴电压源。</p>
+<h4 id="电流源-I"><a href="#电流源-I" class="headerlink" title="电流源 I"></a>电流源 I</h4><p>$$I &#x3D; i_{S} &#x3D; i$$</p>
+<p>电流源并联电阻构成支路，称有伴电流源，可进行电源等效变换与其他支路合并。</p>
+<p>单独电流源构成支路时，称无伴电流源，支路电流全由电流源控制，与其串联网络对外无效，进行无伴电流源的转移（回路分裂）可以将其变为有伴电流源。</p>
+<p>这种转移思想能够快速处理无伴电流源，先随便找一条包含无伴电流源的回路，其回路上的电阻与电流源电流值的乘积，就是该无伴电流源对该条支路的电压贡献值，故在该电阻旁边串联乘积大小的电压源，两步并一步实现了无伴转移与电源等效。</p>
+<h4 id="受控源"><a href="#受控源" class="headerlink" title="受控源"></a>受控源</h4><p>输出量受其他量控制的电源。通常按独立源处理再联立控制方程。</p>
+<p>按类型可以分为压控电流源 VCCS、压控电压源 VCVS、流控电流源 CCCS 和流控电压源 CCVS。</p>
+<h4 id="电阻-R-与电导-G"><a href="#电阻-R-与电导-G" class="headerlink" title="电阻 R 与电导 G"></a>电阻 R 与电导 G</h4><p>$$\frac{u}{i} &#x3D; R$$</p>
+<p>$$\frac{i}{u} &#x3D; G$$</p>
+<p>分别从阻碍和导通两个角度表示消耗电能的能力。</p>
+<p>串联时 $R_{e} &#x3D; \sum R_{i}$，$\frac{1}{G_{e}} &#x3D; \sum_{}^{}\frac{1}{G_{i}}$，串联按电阻值分压。</p>
+<p>并联时 $\frac{1}{R_{e}} &#x3D; \sum_{}^{}\frac{1}{R_{i}}$，$G_{e} &#x3D; \sum G_{i}$，并联按电导值分流。</p>
+<h4 id="电容-C"><a href="#电容-C" class="headerlink" title="电容 C"></a>电容 C</h4><p>$$\frac{i}{\frac{du}{dt}} &#x3D; C$$</p>
+<p>表示存储电场的能力，电容特征量为电压。</p>
+<p>性质类似电导，串联 $\frac{1}{C_{e}} &#x3D; \sum_{}^{}\frac{1}{C_{i}}$，并联 $C_{e} &#x3D; \sum C_{i}$。电压串联按 $\frac{1}{C}$ 分压，并联按 $C$ 分流。</p>
+<p>储存电场能 $E_{e} &#x3D; \frac{1}{2}CU^{2}$，充满后对外断路。</p>
+<h4 id="电感-L"><a href="#电感-L" class="headerlink" title="电感 L"></a>电感 L</h4><p>$$\frac{u}{\frac{di}{dt}} &#x3D; L$$</p>
+<p>表示存储磁场的能力。电感特征量为电流。</p>
+<p>性质类似电阻，串联 $L_{e} &#x3D; \sum L_{i}$，并联 $\frac{1}{L_{e}} &#x3D; \sum_{}^{}\frac{1}{L_{i}}$。电感串联按 $L$ 分压，并联按 $\frac{1}{L}$ 分流。</p>
+<p>储存磁场能 $E_{m} &#x3D; \frac{1}{2}LI^{2}$，充满后对外短路。</p>
+<h4 id="互感-M"><a href="#互感-M" class="headerlink" title="互感 M"></a>互感 M</h4><p>特殊的电感。用来表示电感磁链在空间中的相互耦合造成的影响，增强或削弱。</p>
+<p>存在互感，需要先存在两个及以上的电感。耦合系数 $k &#x3D; \frac{M}{\sqrt{L_{1}L_{2}}}$，表示磁链耦合程度。两支路电流的流向能够造成对方支路电压增强或削弱的影响，标注增强的电流流向端子为同名端，即电流均从同名端流入能使磁场相互增强，对方支路电压增强。</p>
+<p>如果将互感的影响的考虑进电感值中，如电流从同名端流入时将 $L_{1},L_{2}$ 变成 $L_{1} + M,L_{2} + M$，称为互感的去耦等效。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510221744841.png"
+                     
+                ></p>
+<p>两种去耦等效，分别对应削弱和增强效果，直接令单股电流流过两个电感，均从同名端注入或均从同名端流出，则增强，在原电感值上均 $+ M$，再从连接点拉出一条支路，接入 $- M$。否则原电感值上均 $- M$，接入 $+ M$。</p>
+<h4 id="变压器-T"><a href="#变压器-T" class="headerlink" title="变压器 T"></a>变压器 T</h4><p>分析电路中的变压器，一般进行等效处理。有两种等效方法：去耦等效和去边等效。</p>
+<ol>
+<li>去耦等效：变压器可视地端相连，故用削弱的去耦等效</li>
+</ol>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510221744749.png"
+                     
+                ></p>
+<ol start="2">
+<li>去边等效：将副边转换到原边</li>
+</ol>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510221745069.png"
+                     
+                ></p>
+<ol start="3">
+<li>全耦合变压器</li>
+</ol>
+<p>全耦合变压器满足这些条件：$M &#x3D; \sqrt{L_{1}L_{2}}$，$\frac{U_{1}}{U_{2}} &#x3D; \sqrt{\frac{L_{1}}{L_{2}}} &#x3D; n$，$\frac{I_{1}}{I_{2}} &#x3D; - \frac{1}{n}$。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510221748968.png"
+                     
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510221748234.png"
+                     
+                ></p>
+<p>全耦合变压器直接进行引入约束求解物理量即可。对于非全耦合变压器，将漏电感分离出来，等效为全耦合。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510221749147.png"
+                     
+                ></p>
+<p>处理全耦合变压器，可以将原边等效到副边，或将副边等效到原边。当同名端同为上或者同为下时，等效电源方向不变，否则将电源反向。n 为原边比副边的匝数比，原边等效到副边，电源 $U_{1s} \rightarrow \frac{U_{1s}}{n},I_{1s} \rightarrow nI_{1s}$，阻抗 $Z_{1} \rightarrow \frac{Z_{1}}{n^{2}}$。</p>
+<h4 id="运算放大器"><a href="#运算放大器" class="headerlink" title="运算放大器"></a>运算放大器</h4><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510221750414.png"
+                     
+                ></p>
+<p>上述元件均为无源被动元件，而运放是一个特殊有源元件。两个输入端钮，a 称反相输入端，b 称同相输入端；一个输出端钮；两个电源端钮，通常省略不画，但要记住输出电压不超过电源电压。</p>
+<p>运放的静态特性：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510221750460.png"
+                     
+                ></p>
+<p>线性工作区表现为倍数极大的放大器，将两输入端的电压差 $u_{d}$ 放大为 $u_{o} &#x3D; Au_{d}$，但 $u_{o}$ 有上限，与运放电源电压和内部结构有关，超过上限后进入饱和区，维持最大和最小输出电压为 $U_{sat}, - U_{sat}$ 不变。</p>
+<p>电路中分析的绝大多数是理想运放，即放大倍数 $\infty$，输入电阻 $\infty$，输出电阻 $0$，表现为：</p>
+<ol>
+<li>虚断：外围电阻量级为 $k\Omega$ 时，输入端无电流；</li>
+<li>虚短：建立深度负反馈后，输入端等电位。</li>
+</ol>
+<p>依据此性质可以设计出多种运算电路：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510221751250.png"
+                     
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510221751602.png"
+                     
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510221751372.png"
+                     
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510221751465.png"
+                     
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510221752684.png"
+                     
+                ></p>
+<h3 id="约束-II——结构约束"><a href="#约束-II——结构约束" class="headerlink" title="约束 II——结构约束"></a>约束 II——结构约束</h3><p>结构约束即电路的连接方式决定的各支路量关系，以公式定理的形式表达，各种定理的普适程度有一定差异，原因在于其理论支撑不同。以下定理均可在线性电路中使用，只要稍加注意有一些定理具有更强的普适性。</p>
+<h4 id="唯一解电路适用"><a href="#唯一解电路适用" class="headerlink" title="唯一解电路适用"></a>唯一解电路适用</h4><p>替代定理 substitution principle：对于具有唯一解的电路，即所有线性电路和部分非线性电路，任意支路都可以用值为 u 的电压源或值为 i 电流源替代，u，i 为支路电压和支路电流。</p>
+<p>也就是说只要支路电压和支路电流一致，那么支路对外的表现是一致的，可以任意替换，而电流源的电压和电压源的电流均是未定量，可以是任何值，这取决于电源内阻。</p>
+<h4 id="集总参数电路适用"><a href="#集总参数电路适用" class="headerlink" title="集总参数电路适用"></a>集总参数电路适用</h4><ul>
+<li><p>基尔霍夫电流定律 KCL：对于节点，流入电流 &#x3D; 流出电流</p>
+</li>
+<li><p>基尔霍夫电压定律 KVL：对于回路，电压降 &#x3D; 电压升</p>
+</li>
+<li><p>特勒根定理 Tellegen’s Theorem：对于具有相同拓扑结构的电路 $N$ 和 $\widehat{N}$，有：</p>
+</li>
+</ul>
+
+$$\sum u_{k}{\widehat{i}}_{k} = 0$$
+$$\sum{\widehat{u}}_{k}i_{k} = 0$$
+
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510221752366.png"
+                     
+                ></p>
+
+特勒根定理通常用于不含源电阻网络的二端口问题，因为内部为纯电阻，其特勒根项一定相等， $\sum_{}^{}{{\overline{u}}_{k}i_{k}} = \sum_{}^{}{{\overline{i}}_{k}Ri_{k}} = \sum_{}^{}{{\overline{i}}_{k}u_{k}}$ 所以二端口外部的特勒根项相等。题目会提供两种情形，当一种情形中出现短路电流或开路电压时，即端口电压为 0 或端口电流为 0，这意味着对应端口的另一情形可以无需电流量或无需电压量就可以列特勒根表求解。当端口存在两个情形下都不变的电阻元件时，可以果断将其纳入封装网络中。
+
+
+<ul>
+<li>对偶原理：互相对偶的电路 $N$ 和 $\overline{N}$，若命题 $S$ 对 $N$ 成立，则 $S$ 的对偶表述 $\overline{S}$ 对 $\overline{N}$ 成立。（浏览一遍即可）</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510221753868.png"
+                     
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510221753423.png"
+                     
+                ></p>
+<p>一般考察如何绘制对偶电路：在 $N$ 的网孔中打点，再于 $N$ 以外区域打一点，以穿过元件的连线将所有节点相连，整理重画并将元件用对偶元件替代，即得 $\overline{N}$。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510221753439.png"
+                     
+                ></p>
+<h4 id="线性电路适用"><a href="#线性电路适用" class="headerlink" title="线性电路适用"></a>线性电路适用</h4><ul>
+<li>戴维南定理 Thevenin’s Theorem：线性一端口网络对外可以等效为串电阻 $R_{i}$ 的 $U_{o}$ 电压源，$R_{i}$ 为独立源置零后端口等效电阻，$U_{o}$ 为端口开路电压。</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510221754919.png"
+                     
+                ></p>
+<ul>
+<li>诺顿定理 Norton’s Theorem：线性一端口网络对外等效为并电导 $G_{i}$ 的 $I_{s}$ 电流源，$G_{i}$ 为独立源置零后端口等效电导，$I_{s}$ 为端口开路电压。</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510221754520.png"
+                     
+                ></p>
+<p>诺顿定理就是戴维南定理的对偶定理，也是后文电源等效变换的理论基础，开路电压等于等效电阻与短路电流的乘积：</p>
+<p>$$U_{o} &#x3D; R_{i}I_{s}$$</p>
+<ul>
+<li>叠加 superposition theorem：各独立源，共同作用的响应 $&#x3D; \sum$ 单独作用的响应。</li>
+</ul>
+<p>独立源可以是广义的，即可以包括受控电源，后续再利用控制关系代换即可。</p>
+<ul>
+<li>互易 reciprocal theorem：对于线性电阻二端口网络，1 端口激励得到 2 端口的响应，则在 2 端口输入该激励能在 1 端口得到同样的响应。</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510221754011.png"
+                     
+                ></p>
+<p>互易定理并非只能用于线性电阻网络，对于含源电阻网络可以先通过叠加分离所含电源后再互易。</p>
+<h3 id="电路的分类"><a href="#电路的分类" class="headerlink" title="电路的分类"></a>电路的分类</h3><p>对于不同的电路，有不同的分析方法，这些特殊化的分析方法能够大大降低解题难度。在分析各种电路前，有必要先对电路进行分类。</p>
+<p>集总参数条件：电路尺寸远小于工作频率下的波长 $\lambda &#x3D; \frac{c}{f}$。满足集总参数条件的电路称为集总参数电路，否则称为分布参数电路，除传输线以外的电路默认符合集总参数条件。在集总参数电路中，依据元件线性性分类，全为线性元件的电路为线性电路，存在非线性元件的电路为非线性电路。我们所分析的绝大多数电路为线性电路。线性电路，又可以依据是否含有储能元件分类，不含有电容和电感元件的电路称为静态电路，含有电容或电感的电路称为动态电路。动态电路之动态，体现在储能元件的能量无法突变，所以发生电路结构改变时一定会出现动态过程，所以在分析动态电路时既要分析动态过程，还要分析稳态过程。动态电路中，如果电源是时变的周期函数，如正弦函数，这种情况在工程中很常见，其动态和稳态过程也需要求解。综上，后续的章节由易到难，将大致按照：</p>
+<ol>
+<li>静态电路；</li>
+<li>直流动态电路；</li>
+<li>正弦动态电路；</li>
+<li>非线性电路；</li>
+<li>分布参数电路</li>
+</ol>
+<p>的顺序逐个分析。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510221755075.png"
+                     
+                ></p>
+<h2 id="静态电路"><a href="#静态电路" class="headerlink" title="静态电路"></a>静态电路</h2><h3 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h3><p>静态电路也可称为线性电阻电路，除电源外均由电阻的串并联组成，分析在于化简，化简在于等效。</p>
+<p>简单电路只需要善用 KCL、KVL 和 VAR 即可。分析电阻网络的等效电阻，简单网络可以直接看出，复杂网络则对空间想象能力提出要求，一种稍程序化的方法是将网络按串并联拆分后再计算，将明显并联的电阻记下后，在原电路中开路，将明显串联的电阻记下后，在原电路中短路，如此反复计入所有电阻然后计算。对于更复杂的电路，这里介绍四种等效模型和三种系统分析方法。</p>
+<h3 id="等效模型"><a href="#等效模型" class="headerlink" title="等效模型"></a>等效模型</h3><h4 id="电源等效变换"><a href="#电源等效变换" class="headerlink" title="电源等效变换"></a>电源等效变换</h4><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510222136667.png"
+                     
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510222136697.png"
+                     
+                ></p>
+<p>上述结构在满足</p>
+<p>$$<br>u_{S} &#x3D; R_{i}i_{S}<br>$$</p>
+<p>$$<br>R_{i}G_{i} &#x3D; 1<br>$$</p>
+<p>的条件下对外等效。易看出这是对偶电路，也对应戴维南定理和诺顿定理。</p>
+<h4 id="电阻-mathbf-Y-mathbf-Delta-变换"><a href="#电阻-mathbf-Y-mathbf-Delta-变换" class="headerlink" title="电阻 $\mathbf{Y}$-$\mathbf{\Delta}$ 变换"></a>电阻 $\mathbf{Y}$-$\mathbf{\Delta}$ 变换</h4><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510222136259.png"
+                     
+                ></p>
+<p>满足：</p>
+<p>$$<br>R_{i} &#x3D; \frac{R_{ij}R_{ik}}{R_{ij} + R_{ik} + R_{jk}}<br>$$</p>
+<p>$$<br>R_{ij} &#x3D; R_{i} + R_{j} + \frac{R_{i}R_{j}}{R_{k}}<br>$$</p>
+<p>这种变换可以改变难以处理的电路结构，在无计可施时使用。</p>
+<h4 id="惠斯通电桥"><a href="#惠斯通电桥" class="headerlink" title="惠斯通电桥"></a>惠斯通电桥</h4><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510222136757.png"
+                     
+                ></p>
+<p>此结构称电桥，当 $4 \cdot 6 &#x3D; 3 \cdot 8$，即桥臂电阻 “ 交叉相乘 “ 结果相等时，两条支路分压相同故中点没有压差，cd 电压差为 0，称电桥平衡，cd 接任何电路对 ab 端口等效电路无影响，一般令其短路或开路。</p>
+<p>当 “ 输入端分出两个支路、输出端由两个支路汇合、支路间有电路相连 “ 可快速判断为电桥，判电桥平衡是一种便捷的电路化简方法。</p>
+<h4 id="最大功率匹配电路"><a href="#最大功率匹配电路" class="headerlink" title="最大功率匹配电路"></a>最大功率匹配电路</h4><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510222137759.png"
+                     
+                ></p>
+<p>串电阻电压源接负载电阻，当 $R_{f} &#x3D; R_{i}$ 时负载电阻获得最大功率：</p>
+<p>$$<br>P_{\max} &#x3D; \frac{U_{o}^{2}}{4R_{i}} &#x3D; \frac{1}{4}I_{S}^{2}R_{i}<br>$$</p>
+<p>$U_{o},I_{S}$ 分别为开路电压和短路电流，最大功率为总功率的一半。</p>
+<h3 id="分析方法"><a href="#分析方法" class="headerlink" title="分析方法"></a>分析方法</h3><p>简单分析方法，可以称为绕圈法，是一种电压表示法，首先标出想要求电压的正负极，电流从正极出发寻找外电路的路径绕一圈回到负极，计算路径上的电压降，经过电阻则电阻乘电流取正号，从正极进入电压源则取正号，从负极进入电压源则取负号，不要经过未知端电压的电流源。本质上是将该电压视为电压源提供电压升，则外路径的电压降就等于该电压。</p>
+<p>更复杂的电路要求更系统化的方法，有三种通用分析法：支路电流法、回路电流法和节点电压法，其中节点法最常用，计算机分析程序也大多采用节点法。</p>
+<h4 id="支路电流法"><a href="#支路电流法" class="headerlink" title="支路电流法"></a>支路电流法</h4><p>电路有 b 条支路，每条支路设一个支路电流，共 b 个未知量。n 个节点能够列 $n - 1$ 个 KCL 方程，b 条支路能够列 $b - n + 1$ 个 KVL 方程，共 b 个方程联立求解。这种方法简便直观，在处理某些简单电路时相较下面两种方法更高效。</p>
+<h4 id="回路电流法"><a href="#回路电流法" class="headerlink" title="回路电流法"></a>回路电流法</h4><p>以 $l &#x3D; b - n + 1$ 个回路电流为变量。对 $l$ 个回路列 KVL 方程：对回路 k，仅 $i_{k}$ 经过的电阻 R 与 $i_{k}$ 相乘，加上与网孔 m 共同经过的电阻 $R’$ 与 $(i_{k} \pm i_{m})$ 的乘积，等于网孔 k 电压源提供的电压升。共电阻上的回路电流同向时取加号，反向则取减号。整理后写成矩阵形式：</p>
+
+$$
+\begin{bmatrix}
+R_{11} & R_{12} \\
+R_{21} & R_{22}
+\end{bmatrix}\begin{bmatrix}
+i_{1} \\
+i_{2}
+\end{bmatrix} = \begin{bmatrix}
+u_{1} \\
+u_{2}
+\end{bmatrix}
+$$
+
+
+<p>$R_{kk}$ 为 $k$ 网孔的自电阻，即该回路电流所经过的所有电阻之和。$R_{km}$ 为 k，m 回路共同经过的电阻，此电阻上回路电流同向取正，反向取负。$U_{k}$ 为 k 回路电压源的电压升。在取所有回路为基本回路，也称网孔，且回路电流方向一致时，其共电阻一定为负。</p>
+<p>求出所有回路电流后，支路电流等于该支路经过的所有回路电流之和，回路电流与支路电流同向取正，反向取负。</p>
+<h4 id="节点电压法"><a href="#节点电压法" class="headerlink" title="节点电压法"></a>节点电压法</h4><p>选定参考节点并设为地后，以 $n - 1$ 个节点电压为变量。对每一节点列 $KCL$ 方程：对 k 节点，仅 $u_{k}$ 相连的电导 G 与 $u_{k}$ 相乘，加上与 m 节点共同相连的电导 $G’$ 与 $(u_{k} - u_{m})$ 的乘积，等于本节点相连电流源提供的注入电流。这里一定相减，是由于所有节点电压都是相对同一参考点高出的值。整理后写成矩阵形式：</p>
+
+$$
+\begin{bmatrix}
+G_{11} & G_{12} \\
+G_{21} & G_{22}
+\end{bmatrix}\begin{bmatrix}
+U_{1} \\
+U_{2}
+\end{bmatrix} = \begin{bmatrix}
+I_{1} \\
+I_{2}
+\end{bmatrix}
+$$
+
+
+<p>$G_{kk}$ 为 $k$ 节点的自电导（节点相连的所有电导之和），$G_{km}$ 为 k，m 节点共同相连的电导，系数为负，$I_{k}$ 为 $k$ 节点相连电流源提供的注入电流。</p>
+<p>求出所有节点电压后，支路电流的求解逆用绕圈法即可。</p>
+<p>若右侧的电源类型不满足描述，如回路法处理电流源、节点法处理电压源时，则用电源等效变换转化类型。也可以采用广义网孔电流法和广义节点电压法：</p>
+<ol>
+<li><p>广义回路电流法：设计回路使得所有电流源均只有一个回路电流经过，该回路电流即等于电流源电流。</p>
+</li>
+<li><p>广义节点电压法：令电压源负极为参考节点，则电压源正极节点的节点电压就为电压源电压，将被无伴电压源相连的两个节点圈起来作为广义节点。该节点的节点电压方程本质上即所圈节点的节点电压方程相加，抵消规避了广义节点中无伴电压源支路的电流。</p>
+</li>
+</ol>
+<h2 id="图论"><a href="#图论" class="headerlink" title="图论"></a>图论</h2><h3 id="概述-2"><a href="#概述-2" class="headerlink" title="概述"></a>概述</h3><ul>
+<li>图：节点、支路的集合。</li>
+<li>有向图：支路有方向的图。</li>
+<li>连通图：任意两点有支路连接的图。</li>
+<li>树：连接所有节点、无回路、支路数最少的子图。其支路称树支，数目固定为节点数 n 减一，其它支路称连支。n 点全通图有 $n^{n - 2}$ 个不同树。</li>
+<li>回路：不重复经过节点、支路的闭合路径。1 基本回路 &#x3D;n 树支 +1 连支。当支路集合不构成回路时，其支路电压构成一组独立变量。当支路集合构成树支集时，支路电压独立完备，即得到求解全部电压量所需最少条件。基本回路为网孔，非基本回路为广义网孔，统称为回路。</li>
+<li>割集：把图切成两半需要切断的最少支路集合。1 基本割集 &#x3D;1 树支 +n 连支。当支路集合不构成割集时，其支路电流构成一组独立变量。当支路集合构成连支集时，支路电流独立完备，即得到求解全部电流量所需最少条件。割集实质上是广义节点。</li>
+</ul>
+<h3 id="关联矩阵-A"><a href="#关联矩阵-A" class="headerlink" title="关联矩阵 A"></a>关联矩阵 A</h3><p>表示图中节点、支路关系的矩阵：</p>
+
+$$a_{ij} = {
+   \begin{cases}
+   1 & \text{ if } 支路流出节点 \\
+   -1 & \text{ if } 支路流入节点 \\
+   0 & \text{ if } 无关
+   \end{cases}
+}
+$$
+
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510222226094.png"
+                     
+                ></p>
+<p>写法：按列写，支路 j 从 n 点到 m 点，n 行标 1，m 行标-1。A 全写出来不满秩，去掉最后一行，称降阶关联矩阵。由 <strong>A</strong> 表示的 KCL、KVL 方程为：</p>
+
+$$\mathbf{Ai} = \mathbf{0}$$
+$$\mathbf{A}^{\mathbf{T}}\mathbf{u}_{\mathbf{n}} = \mathbf{u}$$
+
+
+<p><strong>A</strong> 的特点，每列 1 和-1 各有一个，和为 0，降阶 A 则会出现和非 0 的列。执 <strong>A</strong> 画图，先看是否降阶，确定总节点数 n，在草稿上描出 n 点并标号；再看列，1 到-1，a 点到 b 点；画出所有支路后整理美化。</p>
+<h3 id="回路矩阵-B"><a href="#回路矩阵-B" class="headerlink" title="回路矩阵 B"></a>回路矩阵 B</h3><p>表示回路、支路关系的矩阵：</p>
+
+$$b_{ij} ={
+   \begin{cases}
+   1 & \text{ if } 支路与回路同向 \\
+   -1 & \text{ if } 支路与回路反向 \\
+   0 & \text{ if } 无关
+   \end{cases}
+}
+$$
+
+
+<p>基本回路 &#x3D;n 树支 +1 连支，回路方向选为连支方向。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510222226108.png"
+                     
+                ></p>
+<p>写法：先写连支的单位矩阵，然后沿连支方向转一圈，同向树支标 1，反向树支标-1。由 <strong>B</strong> 表示的 KCL、KVL 方程为：</p>
+
+$$\mathbf{Bu} = \mathbf{0}$$
+$$\mathbf{B}^{\mathbf{T}}\mathbf{i}_{\mathbf{l}} = \mathbf{i}$$
+
+
+<p>因为 $\mathbf{B}^{\mathbf{T}}$ 中包含 $\mathbf{E}$，对应连支，所以知道连支电流后即可求全部电流。$\mathbf{i}_{\mathbf{l}}$ 为回路电流，由于一个基本回路只包含一条连支，故 $\mathbf{i}_{\mathbf{l}}$ 也表示连支电流。</p>
+<p><strong>B</strong> 的特点，存在若干只有一个元素 1 的列，这些列组合起来成为连支单位阵，支路数减去连支数即为树支数，树支数又为节点数减一，故可确定节点数。执 <strong>B</strong> 绘图，采用 “ 画圈法 “，按行画，一行对应一个圈，二元素画叶形，三元素画三角形，四元素画方形，按照正负确定方向是否冲突，第一条线的方向随意指定，同为 1 则同向，否则反向，每画一圈标出支路标号，依次往下一行画。画出所有支路后绘制完成，然后整理美化。</p>
+<h3 id="割集矩阵-Q"><a href="#割集矩阵-Q" class="headerlink" title="割集矩阵 Q"></a>割集矩阵 Q</h3><p>表示回路、支路关系的矩阵：</p>
+
+$$q_{ij} ={
+   \begin{cases}
+   1 & \text{ if } 连支与割集同向 \\
+   -1 & \text{ if } 连支与割集反向 \\
+   0 & \text{ if } 无关
+   \end{cases}
+}
+$$
+
+
+<p>基本割集 &#x3D;1 树支 +n 连支，割集方向选为树支方向</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510222227217.png"
+                     
+                ></p>
+<p>写法：先写树支的单位矩阵，一条树支带若干连支割图围成圈，与树支同向（注入或流出）的连支标 1，反向的连支标-1。由 <strong>Q</strong> 表示的 KCL、KVL 方程为：</p>
+
+$$\mathbf{Qi} = \mathbf{0}$$
+$$\mathbf{Q}^{\mathbf{T}}\mathbf{u}_{\mathbf{n}} = \mathbf{u}$$
+
+
+<p>因为 $\mathbf{Q}^{\mathbf{T}}$ 中包含 $\mathbf{E}$，对应树支，所以知道树支电压后即可求全部电流。可以发现其与 <strong>A</strong> 的相关表达式相同，因为一个割集实质上就是一个广义节点。</p>
+<p><strong>Q</strong> 的特点，存在若干只有一个元素 1 的列，这些列组合起来成为树支单位阵，树支数为节点数减一，可确定节点数。执 <strong>Q</strong> 绘图，采用 “ 凑 <strong>0</strong> 法 “+” 画圈法 “，一个支路列为一个列向量，能够线性组合（即可以将某列元素变号）不同列向量为 <strong>0</strong> 时，对应支路即组成一个回路。二支路画叶形，三支路画三角，四支路画方形，线性组合时是否变号确定方向是否冲突，第一条线的方向随意指定。画出所有支路后绘制完成，然后整理美化。</p>
+<p>特别地，有：</p>
+
+$$\mathbf{B}_{\mathbf{t}} = - \mathbf{Q}_{\mathbf{l}}^{\mathbf{T}}$$
+
+
+<p>这个性质用于 <strong>B</strong>、<strong>Q</strong> 互化。找到 B 中连支单位阵，圈出 <strong>B</strong> 中树支阵，在下面 <strong>Q</strong> 中的对应树支位置填上树支单位阵，然后将 <strong>B</strong> 中树支阵转置加负号，填入 <strong>Q</strong> 剩下位置中。</p>
+<h3 id="支路模型"><a href="#支路模型" class="headerlink" title="支路模型"></a>支路模型</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510222227058.png"
+                     
+                ></p>
+
+
+如图支路模型规定正方向（支路电流和支路电压关联，电压源提供电压升，电流源提供同向电流），应用于所有支路，有：
+
+$$\mathbf{U} + \mathbf{U}_{\mathbf{S}} = \mathbf{Z}\left( \mathbf{I} + \mathbf{I}_{\mathbf{S}} \right)$$
+
+或者：
+
+$$\mathbf{I} + \mathbf{I}_{\mathbf{S}} = \mathbf{Y}\left( \mathbf{U} + \mathbf{U}_{\mathbf{S}} \right)$$
+
+
+
+<p>其中 <strong>Z</strong> 为支路阻抗对角阵 ,<br><strong>Y</strong> 为支路导纳对角阵；$\mathbf{U,I,}\mathbf{U}_{\mathbf{S}}\mathbf{,}\mathbf{I}_{\mathbf{S}}$ 为列向量，方向与模型不一致加负号。</p>
+<p>此外还有两种特殊情况：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510222227238.png"
+                     
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510222228032.png"
+                     
+                ></p>
+<p>压控电流源 VCCS：<strong>Y</strong> 的 k 行 j 列写上 $g_{kj}$，k 支电流取自 j 支电压，方向相反加负号。VCCS 取与电流源反向为正向，原因在于 $g_{kj}$ 写在 <strong>Y</strong> 中，将其视为分流的电导，与注入电流的电流源正方向相反。VCCS 用节点法或割集法处理更方便。</p>
+<p>流控电压源 CCVS：<strong>Z</strong> 的 k 行 j 列写上 $r_{kj}$，k 支电压取自 j 支电流，方向相反加负号。CCVS 取与电压源反向为正向，原因在于 $r_{kj}$ 写在 <strong>Z</strong> 中，将其视为降压的电阻，与升压的电压源正方向相反。CCVS 用回路法处理更方便。</p>
+<p>互感：<strong>Z</strong> 的 $k$ 行 $j$ 列、$j$ 行 $k$ 列写上 $j\omega M_{jk}( &#x3D; j\omega M_{kj})$，方向不一致加负号。两支路电流都从同名端进或出为一致。或者直接去耦等效（存疑？）。<strong>Y</strong> 需要 <strong>Z</strong> 求逆。互感本质为流控电压源，用回路法处理更方便。</p>
+<h3 id="节点法（A）"><a href="#节点法（A）" class="headerlink" title="节点法（A）"></a>节点法（A）</h3>
+
+联立：（不必写出，直接写下面的节点电压方程即可）
+
+$$\mathbf{AI} = \mathbf{0}$$
+
+$$\mathbf{A}^{\mathbf{T}}\mathbf{U}_{\mathbf{n}} = \mathbf{U}$$
+
+$$\mathbf{I} + \mathbf{I}_{\mathbf{S}} = \mathbf{Y}\left( \mathbf{U} + \mathbf{U}_{\mathbf{S}} \right)$$
+
+得到节点电压方程：
+
+$$\mathbf{AY}\mathbf{A}^{\mathbf{T}}\mathbf{U}_{\mathbf{n}} = \mathbf{A}\mathbf{I}_{\mathbf{S}} - \mathbf{AY}\mathbf{U}_{\mathbf{S}}$$
+
+$$\mathbf{Y}_{\mathbf{n}}\mathbf{U}_{\mathbf{n}} = \mathbf{I}_{\mathbf{n}}$$
+
+记 $\mathbf{Y}_{\mathbf{n}}\mathbf{= AY}\mathbf{A}^{\mathbf{T}}$，称节点导纳矩阵。记 $\mathbf{I}_{\mathbf{n}}\mathbf{= A}\mathbf{I}_{\mathbf{S}}\mathbf{- AY}\mathbf{U}_{\mathbf{S}}$，称等效节点电流源向量，即与节点相连电源提供的等效流入电流。对于普通情形（不含受控源、互感），$\mathbf{Y}_{\mathbf{n}}$ 对称，$a_{ii}$ 为与 $i$ 点相连支路导纳之和，$a_{ij}$ 为 $ij$ 两点共连的支路导纳的相反数。
+
+
+
+<h3 id="回路法（B）"><a href="#回路法（B）" class="headerlink" title="回路法（B）"></a>回路法（B）</h3>
+
+联立：（不必写出，直接写下面的回路电流方程即可）
+
+$$\mathbf{BU} = \mathbf{0}$$
+
+$$\mathbf{B}^{\mathbf{T}}\mathbf{I}_{\mathbf{l}} = \mathbf{I}$$
+
+$$\mathbf{U} + \mathbf{U}_{\mathbf{S}} = \mathbf{Z}\left( \mathbf{I} + \mathbf{I}_{\mathbf{S}} \right)$$
+
+得到回路电流方程：
+
+$$\mathbf{BZ}\mathbf{B}^{\mathbf{T}}\mathbf{I}_{\mathbf{l}} = \mathbf{B}\mathbf{U}_{\mathbf{S}} - \mathbf{BZ}\mathbf{I}_{\mathbf{S}}$$
+
+$$\mathbf{Z}_{\mathbf{l}}\mathbf{I}_{\mathbf{l}} = \mathbf{U}_{\mathbf{l}}$$
+
+记 $\mathbf{Z}_{\mathbf{l}}\mathbf{= BZ}\mathbf{B}^{\mathbf{T}}$，称回路阻抗矩阵。记 $\mathbf{U}_{\mathbf{l}}\mathbf{= B}\mathbf{U}_{\mathbf{S}}\mathbf{- BZ}\mathbf{I}_{\mathbf{S}}$，称等效回路电压源向量，即与回路相串电源提供的等效电压升。对于普通情形（不含受控源、互感），$\mathbf{Z}_{\mathbf{l}}$ 对称，$a_{ii}$ 为与 $i$ 回路相串支路阻抗之和，$a_{ij}$ 为 $ij$ 两回路共串的支路阻抗，在该支路上两回路同向为正，反向为负。
+
+
+
+<h3 id="割集法（Q）"><a href="#割集法（Q）" class="headerlink" title="割集法（Q）"></a>割集法（Q）</h3>
+
+联立：（不必写出，直接写下面的节点电压方程即可）
+
+$$\mathbf{QI} = \mathbf{0}$$
+
+$$\mathbf{U} = \mathbf{Q}^{\mathbf{T}}\mathbf{U}_{\mathbf{n}}$$
+
+$$\mathbf{I} + \mathbf{I}_{\mathbf{S}} = \mathbf{Y}\left( \mathbf{U} + \mathbf{U}_{\mathbf{S}} \right)$$
+
+得到节点电压方程：
+
+$$\mathbf{QY}\mathbf{Q}^{\mathbf{T}}\mathbf{U}_{\mathbf{n}} = \mathbf{Q}\mathbf{I}_{\mathbf{S}} - \mathbf{QY}\mathbf{U}_{\mathbf{S}}$$
+
+$$\mathbf{Y}_{\mathbf{c}}\mathbf{U}_{\mathbf{n}} = \mathbf{I}_{\mathbf{c}}$$
+
+记 $\mathbf{Y}_{\mathbf{c}}\mathbf{= QY}\mathbf{Q}^{\mathbf{T}}$，称割集导纳矩阵。记 $\mathbf{I}_{\mathbf{c}}\mathbf{= Q}\mathbf{I}_{\mathbf{S}}\mathbf{- QY}\mathbf{U}_{\mathbf{S}}$，称等效割集电流源向量，即与割集相交电源提供的等效流入电流。对于普通情形（不含受控源、互感），$\mathbf{Y}_{\mathbf{n}}$ 对称，$a_{ii}$ 为与 $i$ 割集相交支路导纳之和，$a_{ij}$ 为 $ij$ 割集共交的支路导纳，在该支路上两割集同向为正，反向为负。
+
+
+
+<h2 id="直流动态电路"><a href="#直流动态电路" class="headerlink" title="直流动态电路"></a>直流动态电路</h2><h3 id="概述-3"><a href="#概述-3" class="headerlink" title="概述"></a>概述</h3><h4 id="动态、稳态与状态"><a href="#动态、稳态与状态" class="headerlink" title="动态、稳态与状态"></a>动态、稳态与状态</h4><p>动态电路，即包含电容、电感元件的电路，直流动态即表明电源激励是直流电源。直流电源的接入或移除造成了电路结构的改变，理想电阻、电导元件的状态变化是瞬时的，给$r$加上电压$u$立刻就能得到$\frac{u}{r}$的电流，称这种没有动态过程的元件为静态元件。而电感、电容作为储能元件，在有限激励下，能量无法突变的性质决定了其状态变化、能量变化时存在过渡过程，即存在 “电惯性”。</p>
+<p>从一个稳态，经过一个动态过程，到达另一个稳态。动态和稳态时，电容和电感所扮演的角色不同。在稳态时，电容元件充满电或充分放电，均视为开路，电感元件充满磁或充分放磁，均视为短路；而在动态过程中，电源量变化率越大，电容元件就越接近短路，造成的阻碍越小，电感元件越接近断路，造成的阻碍越大。在直流动态电路中，稳态电路的求解很简单，通常聚焦于动态过程。</p>
+<p>状态量，即表征动态元件状态的量，通常指电感电流$i_{L}$和电容电压$u_{C}$，也可以研究磁链$\psi$和电荷$q$。” 状态 “ 可简单理解为储能状态，也可理解为确定电路动态过程所需的最少条件，因为只有动态元件能造成动态过程。</p>
+<h4 id="换路与跃变"><a href="#换路与跃变" class="headerlink" title="换路与跃变"></a>换路与跃变</h4><p>换路，即元件参数或电路结构的突然改变。这种改变有可能造成电路中某些物理量的突变，可以依据换路定则来计算这种突变。</p>
+<p>换路定则：</p>
+$$C\frac{du_{C}}{dt} = i_{C} \rightarrow u_{C}\left( 0^{+} \right) = \frac{1}{C}\int_{0^{-}}^{0^{+}}{i_{C}dt} + u_{C}\left( 0^{-} \right)$$
+
+$$L\frac{di_{L}}{dt} = u_{L} \rightarrow i_{L}\left( 0^{+} \right) = \frac{1}{L}\int_{0^{-}}^{0^{+}}{u_{L}dt} + i_{L}\left( 0^{-} \right)$$
+
+<p>由此得出三条推论：</p>
+<ol>
+<li>在有限大激励下，换路前后$i_{L},u_{C}$不发生突变：</li>
+</ol>
+$$u_{C}\left( 0^{+} \right) = u_{C}\left( 0^{-} \right)$$
+
+$$i_{L}\left( 0^{+} \right) = i_{L}\left( 0^{-} \right)$$
+
+<p>利用换路前的稳态值或$0^{-}$时刻的动态值，得到换路后的状态量初值。</p>
+<ol start="2">
+<li><p>在无限大激励下，换路前后$i_{L},u_{C}$可能发生突变，存在以下三种情况：</p>
+<ol>
+<li><p>当电压源直接与一个电容并联时电容电压会被强制改变，当电流源直接与电感串联时电感电流也会被强制改变。</p>
+</li>
+<li><p>当电源存在冲激函数时，发生冲激即视为一次换路，此时可理解为变化率无穷大，电容视为短路，电感视为开路，重画电路图确定电容电流和电感电压中的冲激分量，而后利用换路定则确定换路后的状态量初值。</p>
+</li>
+<li><p>当出现纯电容回路和纯电感割集（割集理解为广义节点），不同电压的电容相并、不同电流的电感相串时，电荷和磁链将在瞬间重新分配，导致状态量突变，依据换路前后电荷守恒、磁链守恒：</p>
+</li>
+</ol>
+$${C_{1}u}_{C_{1}}\left( 0^{-} \right) + C_{2}u_{C_{2}}\left( 0^{-} \right) = {C_{1}u}_{C_{1}}\left( 0^{+} \right) + C_{2}u_{C_{2}}\left( 0^{+} \right)$$
+
+$${L_{1}i}_{L_{1}}\left( 0^{-} \right) + L_{2}i_{L_{2}}\left( 0^{-} \right) = {L_{1}i}_{L_{1}}\left( 0^{+} \right) + L_{2}i_{L_{2}}\left( 0^{+} \right)$$
+
+<p>计算得到换路后的状态量初值。</p>
+</li>
+</ol>
+<p>判断是否出现纯电容回路和纯电感割集，或者难以判断状态量是否突变时，可以先假设状态量不发生突变，将电容变为电压源，电感变为电流源，画出$0^{+}$时刻电路，观察是否有违背 KCL、KVL 的地方，比如 3V 电压源和 5V 电压源并联，比如 2A 电流源与 13A 电流源串联，有则矛盾，假设不成立，依据状态量发生突变重新计算初值。</p>
+<p>发现出现电感或电容的串并联时，可以将其等效为一个电感或电容，通过换路定则确定总电压或总电流，而后内部各个电感或电容的物理量则根据串联分压、并联分流确定。</p>
+<h4 id="奇异函数"><a href="#奇异函数" class="headerlink" title="奇异函数"></a>奇异函数</h4><p>此外，这里还介绍两个奇异函数，阶跃函数和冲激函数，奇异函数可以视为一种记号，用于描述换路以及换路造成的突变的记号。</p>
+<ol>
+<li>单位阶跃函数</li>
+</ol>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510222259351.png"
+                     
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510222259066.png"
+                     
+                ></p>
+<p>阶跃函数描述在$t_{0}$时刻换路加上直流激励，奇异函数在全时间域都有定义。在得到换路后某一物理量的表达式，或者需要对表达式进行微分操作时，都需要补全时间域，仅仅写出换路后的表达式是错误的，因为指数函数的定义域可是 R，这一点非常重要。</p>
+<ol start="2">
+<li>单位冲激函数</li>
+</ol>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510222300341.png"
+                     
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510222300793.png"
+                     
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510222303520.png"
+                     
+                ></p>
+<p>冲激函数是阶跃函数的导函数，其在$t_{0}$时刻为无穷大激励，故 “ 换路定则 “ 不再成立，需用基本公式求初值。对于遭受冲激电流的电容、遭受冲激电压的电感有：</p>
+$$u_{C}\left( t_{0^{+}} \right) = \frac{1}{C}\int_{t_{0^{-}}}^{t_{0^{+}}}{\delta_{i}(t - t_{0})}dt = \frac{1}{C}$$
+
+$$i_{L}\left( t_{0^{+}} \right) = \frac{1}{L}\int_{t_{0^{-}}}^{t_{0^{+}}}{\delta_{u}(t - t_{0})}dt = \frac{1}{L}$$
+
+$\delta(t)$是一个偶函数，而冲激函数的导数，称冲击偶函数，是一个奇函数。
+
+<h4 id="响应的叠加性"><a href="#响应的叠加性" class="headerlink" title="响应的叠加性"></a>响应的叠加性</h4><ul>
+<li><p>零状态响应：电路初始无储能，换路加上激励后的响应。</p>
+</li>
+<li><p>零输入响应：电路初始有储能，换路去掉激励后的响应。</p>
+</li>
+<li><p>全响应：上两个响应的叠加，零状态响应是外加激励带来的动态过程，零输入响应是内部储能带来的动态过程，当既有外部激励和内部储能时的动态过程是两者的叠加（线性电路的叠加性），称为全响应。</p>
+</li>
+</ul>
+<h3 id="一阶电路"><a href="#一阶电路" class="headerlink" title="一阶电路"></a>一阶电路</h3><p>能用一阶 ODE 描述动态过程的电路称为一阶电路。一阶动态过程，可以理解为状态量的变化率始终与当前值与终值的差距成正比，这种变化过程常见于温度变化，阻力与速度成正比的减速运动等 ,” 成正比 “ 的这个比例，决定了变化的快慢。其 ODE 为：</p>
+$$\frac{dx}{dt} = \frac{1}{\tau}(X - x)$$
+
+$X$为$x$的终值。$\tau$为时间常数，是电路特征，一个李雅普诺夫稳定的动态过程要求$\tau > 0$，电路中不出现负电阻和受控电源时一定是李氏稳定的，有 R 说明会耗能，无 R 则最多出现等幅振荡。容易解得：
+
+$$x = X + Ce^{- \frac{t}{\tau}}$$
+
+<p>其中 C 依据初值求得。所有李氏稳定的一阶动态过程都是以指数衰减的形式进行，认为 t 达到$3\tau\sim 5\tau$时过渡结束，$\tau$越大变化越慢，$\tau$越小变化越快。</p>
+<p>只有一个储能元件，且该储能元件没有被电源约束强制无效（如电压源并电容，电流源并电感）的电路一定是一阶电路，具有多个储能元件的电路也可能是一阶电路，例如并联在同一电压源上或同一根短路导线上的两个单动态元件电路，或者串联在同一电流源上或串联在短路导线上的两个单动态元件电路，虽然有多个储能元件，但是由于电源约束的强制性，可以将两个电路拆开来分别作为一阶电路求解。储能元件的零输入响应放电过程体现了电路的时间常数，电容电路的时间常数$\tau_{C} = RC$，电感电路的时间常数$\tau_{L} = \frac{L}{R}$，其中$R$为放电回路的等效电阻，也即储能元件两端的等效电阻。</p>
+<p>依据初值、终值和时间常数快速写出一阶动态响应的方法，也称为三要素法。对于一个一阶电路，首先由换路定则得到状态量初值，然后令电容开路、电感短路求得状态量终值，最后令独立源置零，求储能元件放电回路的等效电阻，也就是求时间常数。</p>
+$$f(t) = f(\infty) + \left( f\left( 0^{+} \right) - f(\infty) \right)e^{- \frac{t}{\tau}}$$
+
+<p>写出状态量，用 “ 变化衰减 “ 的思想快速写出，即终值加上一个衰减的变化量，终值与衰减量的系数之和等于初值。比如$u_{C}$初值 3V，终值 5V，时间常数为 1s，5V 需要减去 2V 才等于 3V，那么$u_{C} = 5 - 2e^{- t}(V)$。一阶电路中的任意变化量均可以用三要素法写出，因为状态指的是整个电路的状态。</p>
+<h3 id="二阶电路"><a href="#二阶电路" class="headerlink" title="二阶电路"></a>二阶电路</h3><p>能用二阶 ODE 描述动态过程的电路称为二阶电路。通常具有两个储能元件的电路是二阶电路，当然并不全是，比如上节中的双一阶电路。电路阶数，本质上即电路中独立储能元件的个数，所谓独立，即每个储能元件的特征量都无法仅利用其它元件特征量和激励的线性组合表示出来，而必须用到非特征量，也就是储能元件特征量的导数。换言之，状态方程中状态量前的系数矩阵的秩即电路阶数，可以在学习完状态变量法后快速判断出来。</p>
+<p>所有二阶系统在描述动态过程时均能得到这样一个二阶常系数 ODE：</p>
+$$\frac{d^{2}x}{dt^{2}} + p\frac{dx}{dt} + qx = f(t)$$
+
+<p>二阶 ODE 的解包含两个部分，称为通解和特解，通解为该方程对应的二阶齐次常系数 ODE 的解，即把$f(t)$令为 0，通解具有两个任意常数，依靠状态量和状态量一阶导数的初值确定。而特解即一个满足原 ODE 的解，只需要找到一个符合解，依据叠加理论通解与特解的和即为该 ODE 的解。</p>
+<p>先求通解$x^{0}$，令$f(t) = 0$，特征方程为：</p>
+$$\lambda^{2} + p\lambda + q = 0$$
+
+<p>特征根$\lambda = \frac{- b \pm \sqrt{b^{2} - 4ac}}{2a}$，李雅普诺夫稳定要求特征根均在复平面的左半平面，即根的实部一定$\leq 0$，实部为 0 的点属于临界稳定的平衡点，理论属于稳定点，但由于实际中的微小扰动，系统扰动后可能收敛也可能发散，故工程上认为不稳定。依据根的类型对号入座：</p>
+<ol>
+<li>互异实根$\lambda_{1} \neq \lambda_{2}$，过阻尼，无振荡直接衰减下来，通解：</li>
+</ol>
+$$x^{0} = Ae^{\lambda_{1}t} + Be^{\lambda_{2}t}\ $$
+
+<ol start="2">
+<li>相等实根$\lambda_{1} = \lambda_{2} = \lambda$，临界阻尼，图像类似过阻尼，通解：</li>
+</ol>
+$$x^{0} = Ae^{\lambda t} + Bte^{\lambda t}$$
+
+<ol start="3">
+<li>共轭复根$\lambda = \alpha \pm j\beta$，欠阻尼，振荡且幅值逐渐衰减，通解：</li>
+</ol>
+$$x^{0} = e^{\alpha t}\left( \ A\sin{\beta t} + B\cos{\beta t} \right)$$
+
+<ol start="4">
+<li>共轭虚根$\lambda = \pm j\beta$，无阻尼，等幅振荡，通解：</li>
+</ol>
+$$x^{0} = A\sin{\beta t} + B\cos{\beta t}$$
+
+<p>A、B 为任意常数，带入初值求解。</p>
+<p>再求特解$x^{*}$，有两种方法，待定系数法和微分算子法。后者更为简单快速但需要记住一些规则，分别介绍这两种方法：</p>
+$f(t)$主要具有两种形式，$e^{\alpha t}P_{n}(t)$和$e^{\alpha t}\lbrack P_{n}(t)sin\beta t + P_{m}(t)cos\beta t\rbrack$，$P_{n}(t)$表示 t 的 n 次多项式。待定系数法，对应上述两种形式，设特解为：
+
+$$x^{*} = t^{k}e^{\alpha t}Q_{n}(t)$$
+
+$$x^{*} = t^{k}e^{\alpha t}\lbrack Q_{l}(t)sin\beta t + R_{l}(t)cos\beta t\rbrack$$
+
+<p>k 为$\alpha$与特征根一致的个数，例如$\alpha$等于某个一重特征根，则 k 计 1，等于某个二重特征根则计 2，不等于任何特征根计 0，$Q_{n}(t)$表示 t 的 n 次待定多项式，$l$为 n、m 中最大值。将待定特解带入原 ODE，然后对应项相等得到待定系数。</p>
+<p>微分算子法，也叫 Heaviside 算子法，引入微分算子$D = \frac{d}{dt}$，$Dx$表示对 x 进行微分，$\frac{1}{D}x$表示对 x 进行积分，那么原 ODE 即可写成：</p>
+$$(D^{2} + pD + q)x = f(t)$$
+
+<p>得到特解：</p>
+$$x^{*} = \frac{1}{D^{2} + pD + q}f(t) = \frac{1}{F(D)}f(t)$$
+
+<p>逆算子运算的三个方法：</p>
+<ol>
+<li>位移性质，提出$e^{\alpha t}$，则$D + \alpha$：</li>
+</ol>
+$$\frac{1}{F(D)}e^{\alpha t}g(t) = e^{\alpha t}\frac{1}{F(D + \alpha)}g(t)$$
+
+<p>特别地，$\frac{1}{F(D)}e^{\alpha t}$&#x3D;$e^{\alpha t}\frac{1}{F(D + \alpha)}\left. \  \right|_{D = 0} = \frac{1}{F(\alpha)}e^{\alpha t}$</p>
+<ol start="2">
+<li>形式幂级数展开，将$\frac{1}{F(D)}$依据$\frac{1}{1 + x}$的麦克劳林级数展开到 n 次方，然后对$P_{n}(t)$进行微分运算：</li>
+</ol>
+$$\frac{1}{F(D)}P_{n}(t) = Q_{n}(D)P_{n}(t)$$
+
+<ol start="3">
+<li>代换 D 方，只换 D 方不换 D，D 换到分子上然后进行微分运算：</li>
+</ol>
+$$\frac{1}{F(D)}\sin(\beta t + \theta) = \frac{1}{F(D)\left. \  \right|_{D^{2} = (\beta i)^{2}}}\sin(\beta t + \theta) = \frac{1}{aD + b}\sin(\beta t + \theta) = \frac{aD - b}{\left( a^{2}D^{2} - b^{2} \right)\left. \  \right|_{D^{2} = (\beta i)^{2}}}\sin(\beta t + \theta) = \frac{1}{- a^{2}\beta^{2} - b^{2}}(aD - b)\sin(\beta t + \theta)$$
+
+<p>综上，得到二阶 ODE 的解：</p>
+$$x = x^{0} + x^{*}$$
+
+<h3 id="状态变量法"><a href="#状态变量法" class="headerlink" title="状态变量法"></a>状态变量法</h3><p>状态变量法，即将所有状态量写为一个变列向量$\mathbf{x}$，利用矩阵思想求解动态电路，是一种系统、高效的方法。</p>
+<p>状态方程：</p>
+$$\frac{dx}{dt} = ax + by + c$$
+
+$$\frac{dy}{dt} = dx + ey + f$$
+
+$x,y$均为状态量，一般只考虑非时变参数即不显含$t$，也称自治电路；只分析线性电路故函数为状态量的线性组合，常数项为电源激励。
+
+<p>写成矩阵形式：</p>
+$$\dot{\mathbf{x}} = \mathbf{Ax} + \mathbf{Bv}$$
+
+<p>求解电路变成了求解这个一阶$ODE$矩阵。运用状态变量法求解动态过程有两个步骤，即列写和求解。</p>
+<h4 id="列写状态方程"><a href="#列写状态方程" class="headerlink" title="列写状态方程"></a>列写状态方程</h4><p>列写状态方程有三种方法，直观法、叠加法、拓扑法。前两种方法适用简单电路，在解题中较为常用，直观法更简单易上手，优先推荐，叠加法则更加繁杂和程序化。注意，在列写前需要先确定独立的状态变量及其个数，非独立的状态变量视作以微分为约束关系的电源，其特征量用选定的独立状态量和源量表示，整理化简得到独立的状态方程组。</p>
+<ol>
+<li><p>直观法，首先确定好独立状态量和源量，重画电路并利用 KCL、KVL 将所有其他量用状态量和源量表示，不引入其他量的代号，注意此时也不要引入状态量的导数，然后写出动态元件的非特征量$i_{C},u_{L}$，这时才引入导数，再将 C、L 除到右边整理为矩阵形式。有时受控电源的控制量不是状态量，且其与状态量的关系难以直接得到时，仍需要联立控制量方程求解，求解出后无需重新画图，控制量也可以参与表示状态量的导数，最后代换掉即可。关于互感的处理，在进行状态量和源量代换其他量时无需考虑，在表示$u_{L}$时依据同名端进出，表示为$i_{L}$导数的线性组合，然后再联立得到单独非特征量。</p>
+</li>
+<li><p>叠加法，将电容变为电压源，电感变为电流源，计算每个电源独立作用时的状态量导数而后叠加构成状态方程。</p>
+<ol>
+<li>第一步，写出对应形式</li>
+</ol>
+$$\begin{bmatrix}
+   C\frac{du_{C}}{dt} \\
+   L\frac{di_{L}}{dt}
+   \end{bmatrix} = \begin{bmatrix}
+   a_{11} & a_{12} \\
+   a_{21} & a_{22}
+   \end{bmatrix}\begin{bmatrix}
+   u_{C} \\
+   i_{L}
+   \end{bmatrix} + \begin{bmatrix}
+   b_{11} & b_{12} \\
+   b_{21} & b_{22}
+   \end{bmatrix}\begin{bmatrix}
+   U_{S} \\
+   I_{S}
+   \end{bmatrix}$$
+
+<ol start="2">
+<li><p>第二步，将$u_{C}$单独作用时（其他源置零）产生的$C\frac{du_{C}}{dt}$（电容电流），$L\frac{di_{L}}{dt}$（电感电压）分别填入$a_{11},a_{21}$，依次分析完$i_{L}$、$U_{S}$、$I_{S}$单独作用时的$C\frac{du_{C}}{dt},L\frac{di_{L}}{dt}$；</p>
+</li>
+<li><p>第三步，将 C、L 除到右边即可。</p>
+</li>
+</ol>
+</li>
+<li><p>拓扑法，利用了电路拓扑结构，利于计算机求解（建议先学习第十章）。</p>
+<ol>
+<li>第一步，确定电路拓扑中的常态树，即包含所有电容而不包含任何电感的树。</li>
+<li>第二步，对每个基本割集列写 KCL 方程，对每个基本回路列写 KVL 方程。因为基本割集只包含一条树支，用 KCL 方程即表示了$i_{C}$，基本回路只包含一条连支，用 KVL 方程即表示了$u_{L}$。</li>
+</ol>
+$$\mathbf{i}_{\mathbf{t}} = \mathbf{B}_{\mathbf{t}}^{\mathbf{T}}\mathbf{i}_{\mathbf{l}}$$
+
+$$\mathbf{u}_{\mathbf{l}} = \mathbf{Q}_{\mathbf{l}}^{\mathbf{T}}\mathbf{u}_{\mathbf{t}}$$
+<ol start="3">
+<li>第三步，在上述方程中选择所需的状态方程，利用剩余方程与 VAR 消去状态方程中的非状态量即可。</li>
+</ol>
+</li>
+</ol>
+<h4 id="求解状态方程"><a href="#求解状态方程" class="headerlink" title="求解状态方程"></a>求解状态方程</h4><p>状态方程有两种求解方法，时域求解和频域求解，后者更为简单易用。</p>
+<ol>
+<li>时域求解，任意阶 ODE 均可升维降阶为一阶 ODE 矩阵，状态方程本身即为一阶 ODE 矩阵，这里分析给出初值的一阶矩阵 ODE：</li>
+</ol>
+$$\dot{\mathbf{x}} = \mathbf{Ax} + \mathbf{Bv}$$
+
+$$\mathbf{x}(0) = \mathbf{\xi}$$
+
+<p>由常数变易法，可得解：</p>
+$$\mathbf{x}(t) = e^{\mathbf{A}t}\left( \mathbf{\xi} + \int_{0}^{t}{e^{- \mathbf{A}\tau}\mathbf{Bv}}d\tau \right)$$
+
+<p>拆开得两项，前一项对应零输入响应，后一项对应零状态响应（与卷积形式一致）。其中$e^{\mathbf{A}t}$为矩阵指数（仍是一个矩阵），假设$\mathbf{A}$可相似对角化（即有阶数个线性无关的特征向量），则：</p>
+$$\mathbf{P}^{- 1}\mathbf{AP} = \mathbf{\Lambda}$$
+
+$$\mathbf{A} = \mathbf{P}\mathbf{\Lambda}\mathbf{P}^{- 1}$$
+
+<p>其中$\mathbf{P}$为特征列向量组成的满秩方阵，$\mathbf{\Lambda}$为对应特征值对角阵。将$e^{\mathbf{A}t}$在 0 点泰勒展开：</p>
+$$e^{\mathbf{A}t} = \lim_{n \rightarrow \infty}{\sum_{i = 0}^{n}{\frac{1}{i!}\mathbf{A}^{i}t^{i}}} = \mathbf{P}\left( \lim_{n \rightarrow \infty}{\sum_{i = 0}^{n}{\frac{1}{i!}\mathbf{\Lambda}^{i}t^{i}}} \right)\mathbf{P}^{- 1}\mathbf{=}\mathbf{P}{\begin{bmatrix}
+e^{\lambda_{1}t} & \cdots & 0 \\
+ \vdots & \ddots & \vdots \\
+0 & \cdots & e^{\lambda_{n}t}
+\end{bmatrix}\mathbf{P}}^{- 1}$$
+
+<p>即可写出$e^{\mathbf{A}t}$矩阵，带入通解中便得到了电路的解。</p>
+<ol start="2">
+<li>频域求解，将所给式子进行$Laplace$变换：</li>
+</ol>
+$$\left\{ \begin{array}{r}
+\dot{\mathbf{x}} = \mathbf{Ax} + \mathbf{Bv} \\
+\mathbf{x}\left( 0^{-} \right) = \mathbf{\xi}
+\end{array} \right.\  \rightarrow s\mathbf{X}(s) - \mathbf{x}(0^{-}) = \mathbf{AX}(s) + \mathbf{BV}(s)$$
+
+<p>即：</p>
+$$\mathbf{X}(s) = \left( s\mathbf{E} - \mathbf{A} \right)^{- 1}\left( \mathbf{x}\mathbf{(}0^{-}\mathbf{)} + \mathbf{BV}(s) \right)$$
+
+<p>有两种处理方法，第一是继续代入算下去，化简后用$Laplace$反变换求出结果；第二是就此打住，对比方程解的形式可以得到：</p>
+$$e^{\mathbf{A}t} = \mathcal{L}^{- 1}\left\lbrack \left( s\mathbf{E} - \mathbf{A} \right)^{- 1} \right\rbrack$$
+
+<p>再代入时域中的通解。</p>
+<p>求出$\mathbf{x}$后，通过输出方程求出其他量，输出方程：</p>
+$$\mathbf{y} = \mathbf{Cx} + \mathbf{Dv}$$
+
+<h2 id="正弦动态电路"><a href="#正弦动态电路" class="headerlink" title="正弦动态电路"></a>正弦动态电路</h2><h3 id="概述-4"><a href="#概述-4" class="headerlink" title="概述"></a>概述</h3><p>正弦动态电路，顾名思义，即电源激励为正弦电源，且含有电容、电感动态元件的电路。正弦动态电路的求解与直流动态单路有一定的相似之处，看似激励更加复杂，那么动态过程的求解会更加复杂，实则不然，通过巧妙方法可以将动态电路转化为 “ 静态电路 “。</p>
+<p>这里补充介绍关于周期函数$f(x) = f(x + T)$的两个描述参数。</p>
+<ol>
+<li>有效值：</li>
+</ol>
+$$f(t)_{rms} = \sqrt{\frac{1}{T}\int_{0}^{T}{f(t)^{2}dt}}$$
+
+<ol start="2">
+<li>平均值：</li>
+</ol>
+$$f(t)_{avr} = \frac{1}{T}\int_{0}^{T}{\left| f(t) \right|dt}$$
+
+<h3 id="一阶电路-1"><a href="#一阶电路-1" class="headerlink" title="一阶电路"></a>一阶电路</h3><p>一阶正弦动态电路，用于求解一阶直流动态电路的三要素法依然适用：</p>
+$$f(t) = f(t)\left. \  \right|_{t = \infty} + \left( f(t)\left. \  \right|_{t = 0^{+}} - f(t)\left. \  \right|_{t = 0^{+}} \right)e^{- \frac{t}{\tau}}$$
+
+<p>不过此时，稳态时的$f(t)$不再是常数，如果激励为正弦函数，那么稳态时的状态量也是正弦函数，上式中$f(t)\left. \  \right|_{t = \infty}$为新稳态函数，$f(t)\left. \  \right|_{t = 0^{+}}$为旧稳态函数在$t = 0^{-}$时刻的值再经过换路得到的$t = 0^{+}$时刻的值，$f(t)\left. \  \right|_{t = 0^{+}}$为新稳态函数在$t = 0^{+}$时刻的值。正弦动态电路的一阶三要素法与直流动态电路在形式上有很大不同，但其核心思想是一致的，稳态加上衰减的变化量，这一变化量在$t = 0^{+}$时刻确定。</p>
+<h3 id="二阶电路——相量法"><a href="#二阶电路——相量法" class="headerlink" title="二阶电路——相量法"></a>二阶电路——相量法</h3><h4 id="相量法"><a href="#相量法" class="headerlink" title="相量法"></a>相量法</h4><p>对于二阶正弦动态电路，一种常用方法是相量法。相量法要求激励是正弦激励，将求解域扩展到复数域，使正弦动态电路变成直流静态电路，求解大大简化。相量域中所有参数变成相量，激励丢失频率信息：</p>
+$$e(t) = E_{m}\sin(\omega t + \varphi) = \sqrt{2}Esin(\omega t + \varphi) \rightarrow \dot{E} = \frac{E_{m}}{\sqrt{2}}\angle\varphi = E\angle\varphi$$
+
+<p>元件电阻化，此处暗含了频率信息，不同频率下动态元件阻值不一样：</p>
+$$R \rightarrow R,L \rightarrow j\omega L,C \rightarrow \frac{1}{j\omega C}$$
+
+<p>求解 “ 直流静态电路 “，然后将结果写回时域。</p>
+$j$为虚数单位，相量 " 电阻 " 称阻抗$Z = R + jX$，$X$称电抗（电感电抗$\omega L$称感抗，电容电抗$- \frac{1}{\omega C}$称容抗）；相量 " 电导 " 称导纳$Y = G + jB = \frac{1}{Z}$，$B$称电纳（电感电纳$- \frac{1}{\omega L}$称感纳，电容电纳$\omega C$称容纳）；阻抗角$\phi = \arctan\frac{X}{R}$。
+
+<p>复数域功率的计算有所不同，定义复功率：</p>
+$$\overline{S} = UI^{*} = P + jQ$$
+
+<p>实际上消耗电能的只有$R,G$，故$\overline{S}$中的实部：</p>
+$$P = UI\cos{< U,I >} = UI\cos\theta$$
+
+<p>称有功功率，是被消耗掉的功率。$Q = UI\sin\theta$称无功功率，用于建立电容、电感中的电场、磁场，是被暂时储存起来的功率。其中$U,I$相量夹角$\theta$的余弦$\cos\theta$称功率因数。此外还定义视在功率$S = UI$，此为实数。</p>
+<p>各相量在复平面的几何表示，称为相量图，相量图的平面关系包含了角度信息，相量长度是一个代数量，利用几何关系有时能快速解题。电压表和电流表的示值均为有效值，功率表的示值为有功功率，电路的功率默认为有功功率，即仅电阻消耗的功率，有关功率的条件尝试联系电阻上的电压、电流。</p>
+<h4 id="最大功率传输定理"><a href="#最大功率传输定理" class="headerlink" title="最大功率传输定理"></a>最大功率传输定理</h4><p>类似直流静态电路中的最大功率匹配电路，正弦动态电路中有两种匹配：</p>
+<ol>
+<li>共轭匹配：$Z_{L} = Z_{i}^{*} = R_{i} - jX_{i}$，负载获得最大功率；</li>
+<li>模匹配：$\left| Z_{L} \right| = \left| Z_{i} \right|$，负载获得在 “ 负载阻抗角不能变化 “ 约束下的最大功率，比共轭匹配功率小。</li>
+</ol>
+<h4 id="傅里叶变换"><a href="#傅里叶变换" class="headerlink" title="傅里叶变换"></a>傅里叶变换</h4><p>相量法如此好用，但其限制了激励为正弦函数，并不是所有周期激励均为正弦函数，可以采用傅里叶变换将所有周期函数都展开为正弦函数。</p>
+<p>对于满足迪利克雷收敛条件：</p>
+<ol>
+<li>周期内不连续点、极值点有限；</li>
+<li>$\int_{0}^{T}{|f(t)|dt}$存在。</li>
+</ol>
+<p>的非正弦周期性激励，其响应可傅里叶展开为一系列正弦波响应的叠加，称傅里叶级数：</p>
+$$f(t) = \overline{f(t)} + \sum_{n = 1}^{\infty}\left( a_{n}cosn\omega t + b_{n}sinn\omega t \right) = \overline{f(t)} + \sum_{n = 1}^{\infty}{c_{n}\sin(n\omega t + \theta_{n})}$$
+
+<p>其中$\overline{f(t)}$为$f(t)$一个周期内的积分平均值，也是傅里叶级数的直流分量：</p>
+$$\overline{f(t)} = \frac{1}{T}\int_{- l}^{l}{f(t)dt}$$
+
+$l$为半周期，利用不同频正弦量乘积周期积分为零的性质求得系数：
+
+$$a_{n} = \frac{1}{l}\int_{- l}^{l}{f(t)\cos{n\omega t}dt}$$
+
+$$b_{n} = \frac{1}{l}\int_{- l}^{l}{f(t)\sin{n\omega t}dt}$$
+
+$$c_{n} = \sqrt{a_{n}^{2} + b_{n}^{2}}$$
+
+$$\theta_{n} = \arctan\frac{a_{n}}{b_{n}}$$
+
+<p>若$f(t)$为奇函数则偶次项系数$a_{k} = 0$，若$f(t)$为偶函数则奇次项系数$b_{k} = 0$。</p>
+<p>若$f(t) = - f(t + \frac{T}{2})$，即波形移动半个周期后与原波形相反则$a_{2k} = b_{2k} = 0$，不含偶次谐波。这一性质有时需要上下移动波形以消除直流分量才能看出。</p>
+<p>这种求响应的方法也叫谐波分析法。计算其有效值可得：</p>
+$$f(t)_{rms} = \sqrt{\sum_{n = 0}^{\infty}f_{n - rms}^{2}}$$
+
+<p>周期性电压、电流的平均功率：（不同频不产生平均功率）</p>
+$$P = \sum_{n = 0}^{\infty}P_{n}$$
+
+<p>由欧拉方程还可以得到傅里叶级数的指数形式：</p>
+$$f(t) = \sum_{k = - \infty}^{+ \infty}{\dot{c_{k}}e^{j\omega_{0}t}\ }$$
+
+<p>其中$\omega_{0} = \frac{2\pi}{T},c_{k} = \frac{1}{T}\int_{- \frac{T}{2}}^{\frac{T}{2}}{f(t)e^{- jk\omega_{0}t}dt}$，再定义：</p>
+$$F\left( jk\omega_{0} \right) = c_{k}T = 2\pi\frac{c_{k}}{\omega_{0}} = \int_{- \frac{T}{2}}^{\frac{T}{2}}{f(t)e^{- jk\omega_{0}t}dt}$$
+
+<p>将其连续化（$T \rightarrow \infty$）后得到：</p>
+$$F(j\omega) = \int_{- \infty}^{\infty}{f(t)e^{- j\omega t}dt}\mathcal{= F}\left\lbrack f(t) \right\rbrack$$
+
+$$f(t) = \frac{1}{2\pi}\int_{- \infty}^{\infty}{F(j\omega)e^{j\omega t}d\omega} = \mathcal{F}^{- 1}\left\lbrack F(j\omega) \right\rbrack$$
+
+<p>此即函数的傅里叶变换，非正弦周期函数激励的相量化。</p>
+<h3 id="拉普拉斯变换"><a href="#拉普拉斯变换" class="headerlink" title="拉普拉斯变换"></a>拉普拉斯变换</h3><h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p>傅里叶变换 + 相量法已经能解决所有问题了吗？并没有，还记得迪利克雷收敛性定理的第二个条件吗？$\int_{0}^{T}{|f(t)|dt}$存在，显然并不是所有函数都满足这个条件，但是可以设计$\sigma$使得$f(t)e^{- \sigma t}$满足这个条件，这个函数的傅里叶变换即拉普拉斯变换，令$s = \sigma + j\omega$即有：</p>
+$$F(s) = \int_{0^{-}}^{\infty}{f(t)}e^{- st}dt\mathcal{= L}\left\lbrack f(t) \right\rbrack$$
+
+<p>这里令动态过程的起点为$0^{-}$，不考虑之前的情形。拉普拉斯反变换：</p>
+$$f(t) = \frac{1}{2\pi j}\int_{C - j\infty}^{C + j\infty}{F(s)e^{st}ds} = \mathcal{L}^{- 1}\left\lbrack F(s) \right\rbrack$$
+
+<p>这样便可依拉普拉斯变换和 “ 改进的相量法 “ 求解任何响应了，拉氏域中：</p>
+$$R \rightarrow R,L \rightarrow sL,C \rightarrow \frac{1}{sC}$$
+
+<p>还需要注意，对于初始状态不为 0 的储能元件，需要额外增加电源，电容增加$\frac{u\left( 0^{-} \right)}{s}$电压源串联，电感增加$\frac{i\left( 0^{-} \right)}{s}$电流源并联，方向不变。可以理解为将初值拆分出来变成阶跃电源。由此也可以看出拉式变换法，无需考虑换路后的初值，直接使用换路前的初值即可，换路过程包含在由原电路到运算电路的转换中。</p>
+<h4 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h4><p>这里给出拉普拉斯变换的性质以及推导出的常见函数拉氏变换公式，令$\mathcal{L}\left\lbrack f(t) \right\rbrack = F(s)$，有：</p>
+<ol>
+<li>线性：</li>
+</ol>
+$$\mathcal{L}\left\lbrack k_{1}f_{1}(t) + k_{2}f_{2}(t) \right\rbrack = k_{1}F_{1}(s) + k_{2}F_{2}(s)$$
+
+<ol start="2">
+<li>相似：a 为正常数</li>
+</ol>
+$$\mathcal{L}\left\lbrack f(at) \right\rbrack = \frac{1}{a}F\left( \frac{s}{a} \right)$$
+
+<ol start="3">
+<li>微分：</li>
+</ol>
+$$\mathcal{L}\left\lbrack \frac{df(t)}{dt} \right\rbrack = sF(s) - f(0^{-})$$
+
+$$\mathcal{L}\left\lbrack \frac{d^{n}f(t)}{dt^{n}} \right\rbrack = s^{n}F(s) - s^{n - 1\ }f\left( 0^{-} \right) - s^{n - 2}f'\left( 0^{-} \right) - \ldots - f^{(n - 1)}\left( 0^{-} \right)$$
+
+$$\mathcal{L}\left\lbrack - tf(t) \right\rbrack = \frac{dF(s)}{ds}$$
+
+$$\mathcal{L}\left\lbrack ( - t)^{n}f(t) \right\rbrack = \frac{d^{n}F(s)}{ds^{n}}$$
+
+<p>记忆：求导一次就乘上一个自变量，但符号、常数有所差别，逆变换乘负的自变量，正变换乘正的自变量。</p>
+<ol start="4">
+<li>积分：</li>
+</ol>
+$$\mathcal{L}\left\lbrack \int_{0^{-}}^{t}{f(\tau)d\tau} \right\rbrack = \frac{F(s)}{s}$$
+
+$$\mathcal{L}\left\lbrack \frac{f(t)}{t} \right\rbrack = \int_{s}^{\infty}{F(\delta)d\delta}$$
+
+<p>记忆：无论正、逆变换，积分一次就除以一个自变量。</p>
+<ol start="5">
+<li>位移：</li>
+</ol>
+$$\mathcal{L}\left\lbrack f(t - T)\varepsilon(t - T) \right\rbrack = e^{\text{-Ts}}F(s)$$
+
+$$\mathcal{L}\left\lbrack e^{- St}f(t) \right\rbrack = F(s + S)$$
+
+<p>记忆：出现$e^{Ax}$，正变换 A 乘-1，反变换 A 乘 +1。</p>
+<ol start="6">
+<li>极限：</li>
+</ol>
+$$\lim_{t \rightarrow 0^{+}}{f(t)} = \lim_{s \rightarrow \infty}{sF(s)}$$
+
+$$\lim_{t \rightarrow \infty}{f(t)} = \lim_{s \rightarrow 0}{sF(s)}$$
+
+<p>也称为初值定理和终值定理，终值定理公式在系统稳定时才成立，比如含有正弦激励时不一定适用。</p>
+<ol start="7">
+<li>卷积：时域中原函数的卷积运算，对应复频域中象函数的乘积运算。</li>
+</ol>
+<p>依据以上性质，我们能得到常见函数的拉普拉斯变换式，这里进行简单推导，首先能明确的是：</p>
+$$\mathcal{L}\left\lbrack \delta(t) \right\rbrack = \int_{0^{-}}^{\infty}{\delta(t)}e^{- st}dt = 1$$
+
+$\varepsilon(t)$是其积分，于是
+
+$$\mathcal{L}\left\lbrack \varepsilon(t) \right\rbrack = \frac{1}{s}$$
+
+<p>由于所有函数均只考虑$t = 0^{-} \rightarrow + \infty$，故默认都乘了$\varepsilon(t)$。</p>
+<p>根据位移：</p>
+$$\mathcal{L}\left\lbrack e^{- \alpha t} \right\rbrack = \frac{1}{s + \alpha}$$
+
+<p>常把$e^{- \alpha t}$视为作用因子，其作用就是将$s$变成$s + \alpha$。</p>
+<p>此外还有$n$次积分：</p>
+$$\mathcal{L}\left\lbrack t^{n} \right\rbrack = \frac{n!}{s^{n + 1}}$$
+
+<p>三角函数：</p>
+$$\mathcal{L}\left\lbrack \sin{\omega t} \right\rbrack = \frac{\omega}{s^{2} + \omega^{2}}$$
+
+$$\mathcal{L}\left\lbrack \cos{\omega t} \right\rbrack = \frac{s}{s^{2} + \omega^{2}}$$
+
+<p>在复频域求解完后，$F(s) = \frac{P(s)}{Q(s)}$，反变换公式难以计算，一种简单方法就是将$\frac{P(s)}{Q(s)}$进行有理函数展开。计算$Q(s)$的特征根：</p>
+<ol>
+<li>均为单实根，则展开为：</li>
+</ol>
+$$F(s) = \sum_{}^{}\frac{A_{k}}{s + a_{k}}$$
+
+<ol start="2">
+<li>存在多重实根（3 重为例），则展开为：</li>
+</ol>
+$$F(s) = F_{0}(s) + \frac{A_{1}}{s + a} + \frac{A_{2}}{(s + a)^{2}} + \frac{A_{3}}{(s + a)^{3}}$$
+
+<p>然后进行利用之前的公式进行反变换。</p>
+<ol start="3">
+<li>特别地，若存在共轭复根，即出现：</li>
+</ol>
+$$F(s) = F_{0}(s) + \frac{\dot{A}}{s + \alpha + j\beta} + \frac{{\dot{A}}^{*}}{s + \alpha - j\beta}$$
+
+$${\dot{A}}^{*} = F(s)(s + \alpha - j\beta)|_{s = - \alpha + j\beta} = |A|e^{j\theta}$$
+
+$\dot{A}$与${\dot{A}}^{*}$共轭，只要求一个即可。原共轭复数的位置变为$j2\beta$，其它地方代入$s = - \alpha + j\beta$。
+
+$$f(t) = f_{0}(t) + 2|A|e^{- \alpha t}\cos(\beta t + \theta)$$
+
+<h4 id="网络函数"><a href="#网络函数" class="headerlink" title="网络函数"></a>网络函数</h4><p>网络函数用于描述一个端口网络对输入的作用，定义网络函数：</p>
+$$H(s) = \frac{R(s)}{E(s)}$$
+
+<p>为响应函数与激励函数之比，其与激励无关，为网络本身的性质。对于一个一端口网络，以端口电流源作为激励，以端口电压作为输出，得到的网络函数称为驱动点阻抗，反之以电压源作为激励，电流作为输出，得到驱动点导纳。而对于二端口网络，以一个端口的电流或电压作为输入，以另一个端口的电流或电压作为输出，可以得到共计四种转移函数。</p>
+<p>网络函数$H(s)$的分母和分子均为关于 s 的多项式，其分母零点称为网络函数$H(s)$的极点，分子零点称为$H(s)$的零点。在$s = \sigma + j\omega$复平面上，零点用 o 标注，极点用 x 标注，得到$H(s)$的零、极点图。$H(s)$的极点与网络的稳定性直接相关，由李雅普诺夫稳定性原理，极点全部位于左半开平面，称其为渐进稳定网络；极点位于左半平面，虚轴上有共轭单阶极点，称其为稳定网络；虚轴上有共轭多阶极点，或有极点位于右半平面，称其为不稳定网络。</p>
+<p>卷积积分法是一种线性时不变系统的零状态响应求解方法，电路的任意激励均可视为无穷个强度不等的冲激函数的叠加，故对于线性电路依叠加定理可以得到任意激励下的零状态响应，也称卷积公式：</p>
+$$f(t) = h(t)*e(t) = \int_{0}^{t}{e(t - \tau)h(\tau)d\tau = \int_{0}^{t}{h(t - \tau)e(\tau)d\tau}}$$
+
+<p>其中$h(t)$为电路的单位冲激响应，$e(t)$为激励函数，由区间再现公式知$h,e$可交换。当激励以分段函数图像的形式给出时，采用第二个卷积式。先求出电路的单位冲激响应，再将其翻转，其最右边的起点的时间坐标为$t$，从开始时刻$t_{0}$向右移动，与激励重叠部分为积分区域，并依此确定$t$的分段。</p>
+<p>这是时域中的卷积积分法，在复频域中，由拉普拉斯变换的卷积性质可知，在拉式域下可以便捷地求解网络的零状态响应，只需要将激励和该网络的象函数相乘即可，激励给出表达式，便于直接求象函数，网络的象函数可以利用冲激响应得到，冲激函数的象函数为 1，于是冲激响应的象函数便是该网络的象函数，故任何一个网络的零状态响应，都等于激励函数与冲激响应的乘积。</p>
+<h3 id="频率响应"><a href="#频率响应" class="headerlink" title="频率响应"></a>频率响应</h3><p>傅里叶变换将非正弦周期函数分解为若干正弦函数之和，这些正弦函数的频率依次递增，在不同频率下，电感、电容的阻抗亦不同，并且在特定频率下会出现谐振现象，输入电抗消失了。依据谐振的电路结构特点和造成的后果，将其分为串联谐振和并联谐振两类。</p>
+<h4 id="串联谐振"><a href="#串联谐振" class="headerlink" title="串联谐振"></a>串联谐振</h4><ol>
+<li>串联谐振介绍</li>
+</ol>
+<p>以$RLC$串联电路为例：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510222345873.png"
+                     
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510222345913.png"
+                     
+                ></p>
+<p>阻抗$Z = R + j\left( \omega L - \frac{1}{\omega C} \right)$，当电抗为 0 即$\omega = \frac{1}{\sqrt{LC}}$时阻抗角为 0，串联分压$R$上分得电压$U$故又称 “ 电压谐振 “，由串联分压可得$L,C$上分得</p>
+$$\frac{\omega_{0}L}{R}U = \frac{1}{\omega_{0}RC}U = \frac{1}{R}\sqrt{\frac{L}{C}}U = \frac{\rho}{R}U = QU$$
+
+<p>的电压，其在$\dot{U}$相位垂直方向相互抵消。称$\rho = \sqrt{\frac{L}{C}}$为特性阻抗，$Q = \frac{1}{R}\sqrt{\frac{L}{C}} = \frac{\rho}{R}$为品质因数。</p>
+$L,C$上的电压为$QU$，这为信号放大留下了空间。储能之和$W = \frac{1}{2}CQ^{2}U^{2} = \frac{1}{2}LI^{2}$，能量在$L,C$间不断变换而其和恒定。此外还可发现$Q = 2\pi\frac{W}{RI^{2}T}$，即品质因数为$2\pi$乘储能与周期内耗能之比。
+
+<ol start="2">
+<li>串联谐振的频率特性</li>
+</ol>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510222346202.png"
+                     
+                ></p>
+<p>当外加电压有效值不变时，电流的频率特性：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510222346031.png"
+                     
+                ></p>
+<p>其中$\omega_{1},\omega_{2}$对应的$\frac{1}{\sqrt{2}}I_{0}$，电路吸收功率为谐振时的一半（无论消耗的还是存储的），称$\omega_{1},\omega_{2}$为半功率角频率，对应电抗值与电阻值相等，满足：</p>
+$$\omega L - \frac{1}{\omega C} = R$$
+
+<p>定义带宽$BW = \omega_{2} - \omega_{1} = \frac{R}{L} = \frac{\omega_{0}}{Q}$。</p>
+<p>将电流的频率特性的坐标化为无量纲的数，可以得到：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510222346076.png"
+                     
+                ></p>
+<p>可以看出品质因数越高的电路对频率为$\omega_{0}$附近电流的选择性越好。</p>
+<h4 id="并联谐振"><a href="#并联谐振" class="headerlink" title="并联谐振"></a>并联谐振</h4><ol>
+<li>并联谐振介绍</li>
+</ol>
+<p>以$RLC$并联电路为例</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510222347118.png"
+                     
+                ></p>
+<p>导纳$Y = \frac{1}{R} + j\left( \omega C - \frac{1}{\omega L} \right)$，令导纳为 0 得并联谐振角频率$\omega_{0} = \frac{1}{\sqrt{LC}}$，并联分流而$R$上分得电流$I_{R} = I$故又称 “ 电流谐振 “，电感电容上的电流幅值相同：</p>
+$$I_{L} = I_{C} = \omega_{0}RCI = \frac{R}{\omega_{0}L}I = \frac{R}{\sqrt{\frac{L}{C}}}I = \frac{R}{\rho}I = Q'I$$
+
+<p>其中并联谐振的特性阻抗$\rho = \sqrt{\frac{L}{C}}$，$Q' = \frac{R}{\rho}$（注意串联谐振中反过来），也依旧为$2\pi$乘储能与周期内耗能之比。</p>
+<ol start="2">
+<li>并联谐振的频率特性</li>
+</ol>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510222347134.png"
+                     
+                ></p>
+<p>当外加电流有效值不变时，电压的频率特性：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510222347925.png"
+                     
+                ></p>
+<p>同样地称$\omega_{1},\omega_{2}$为半功率角频率，对应电导值与电纳值相等，满足：</p>
+$$\omega C - \frac{1}{\omega L} = \frac{1}{R}$$
+
+<p>定义带宽$BW = \omega_{2} - \omega_{1} = \frac{1}{RC} = \frac{\omega_{0}}{Q}$。</p>
+<p>对于其他动态电路的分析，也都可以作出电抗的频率特性曲线$X(\omega)$，其中$X = \infty$时发生并联谐振，$X = 0$时发生串联谐振。</p>
+<h3 id="参数等效"><a href="#参数等效" class="headerlink" title="参数等效"></a>参数等效</h3><p>对于线性电路，常常要处理 “ 风格迥异 “ 的数值是一件麻烦事，可以采用参数等效使得数值变得简单易算，这种方法也叫 “ 归一化方法 “。对于原电路参数$R,L,C,\omega$，选定归一化因子$r_{n},\omega_{n}$，则有等效参数$R \rightarrow \frac{R}{r_{n}},L \rightarrow \frac{\omega_{n}L}{r_{n}},C \rightarrow \omega_{n}r_{n}C,\omega \rightarrow \frac{\omega}{\omega_{n}}$。采用归一化参数的电路与原电路本质是一样的。</p>
+<p>通常将因子$r_{n},\omega_{n}$选为原参数值$R,\omega$，即：</p>
+$$R \rightarrow 1$$
+
+$$L \rightarrow \frac{\omega L}{R}$$
+
+$$C \rightarrow \omega RC$$
+
+$$\omega \rightarrow 1$$
+
+<p>这种参数等效往往能使求解变得方便。</p>
+<h3 id="三相正弦动态电路"><a href="#三相正弦动态电路" class="headerlink" title="三相正弦动态电路"></a>三相正弦动态电路</h3><h4 id="求解电压、电流"><a href="#求解电压、电流" class="headerlink" title="求解电压、电流"></a>求解电压、电流</h4><p>电力系统电源多为三相，即相位互差$120^{o}$的三个电源，以逆时针$ABC$为正序。对于负载、电源均对称的对称三相电路，方法是全化为 Y 型联接再求解 A 相电路，B 相减 120 度，C 相加 120 度。</p>
+<p>Y 形连接中：</p>
+$$u_{l} = \sqrt{3}u_{p}\angle 30^{o}$$
+
+$$I_{l} = I_{p}$$
+
+$\Delta$形连接中：
+
+$$u_{l} = u_{p}$$
+
+$$I_{l} = \sqrt{3}I_{p}\angle{- 30}^{o}$$
+
+<p>电压 u 若需要变大，则乘根号 3 加 30 度，电流 i 若需要变大，则乘根号 3 减 30 度，需要变小则逆运算。</p>
+<p>对于电源对称负载不对称的不对称三相电路，若有中线，由$KCL$得中点电流：</p>
+$$I_{N} = I_{A} + I_{B} + I_{C}$$
+
+<p>若无中线，由节点法得中点位移电压：</p>
+$$U_{nN}\left( \frac{1}{Z_{A}} + \frac{1}{Z_{B}} + \frac{1}{Z_{C}} \right) = \frac{U_{A}}{Z_{A}} + \frac{U_{B}}{Z_{B}} + \frac{U_{C}}{Z_{C}}$$
+
+<h4 id="求解与测量功率"><a href="#求解与测量功率" class="headerlink" title="求解与测量功率"></a>求解与测量功率</h4><p>三相电路的功率：</p>
+$$P = \sqrt{3}\left| U_{l} \right||I_{l}|\cos\psi$$
+
+$$Q = \sqrt{3}\left| U_{l} \right||I_{l}|\sin\psi$$
+
+$\psi$为相乘两项的相角差，视在功率$S = \sqrt{P^{2} + Q^{2}}$，三相电路瞬时功率等于平均功率$P$为常数。
+
+<p>测功率的方法多种，功率表个数与电路是否对称以及线制有关：</p>
+<ol>
+<li>对称三相四线制，一表测 P：</li>
+</ol>
+$$P = 3U_{A} \cdot I_{A}$$
+
+<ol start="2">
+<li>对称三相三线制，一表测 Q：</li>
+</ol>
+$$Q = U_{AB} \cdot I_{C} = U_{BC} \cdot I_{A} = U_{CA} \cdot I_{B}$$
+
+<ol start="3">
+<li>通用三相四线制，三表测 P：</li>
+</ol>
+$$P = U_{A} \cdot I_{A} + U_{B} \cdot I_{B} + U_{C} \cdot I_{C}$$
+
+<ol start="4">
+<li>通用三相四线制，两表测 P、Q（共 A）</li>
+</ol>
+$$P = U_{BA} \cdot I_{B} + U_{CA} \cdot I_{C}$$
+
+$$Q = \sqrt{3}(U_{BA} \cdot I_{B} - U_{CA} \cdot I_{C})$$
+
+<p>记忆：两表法测有功，共 A 接法即 BAB+CAC，共 B 接法即 ABA+CBC，共 C 接法即 ACA+BCB。两表法测无功，先逆后顺，电压下标逆序—电压下标顺序，再乘根号 3。</p>
+<h2 id="非线性电路"><a href="#非线性电路" class="headerlink" title="非线性电路"></a>非线性电路</h2><h3 id="概述-5"><a href="#概述-5" class="headerlink" title="概述"></a>概述</h3><p>所有的元件，均有静态参数和动态参数：</p>
+$$R_{s} = \frac{u}{i},R_{d} = \frac{du}{di}$$
+
+$$C_{s} = \frac{q}{u},C_{d} = \frac{dq}{du}$$
+
+$$L_{s} = \frac{\psi}{i},L_{d} = \frac{d\Psi}{di}$$
+
+<p>线性元件，即动态参数恒等于静态参数，其特性曲线为一斜直线，而非线性元件不是，我们主要关注非线性元件的动态参数。</p>
+<p>非线性电路即含有非线性元件的电路，不一定有唯一解，当电路满足：</p>
+<ol>
+<li>电路中每一个电阻的伏安特性都严格递增；</li>
+<li>电压趋于$\pm \infty$时，电流趋于$\pm \infty$；</li>
+<li>不存在独立电压源支路和独立电流源割集。</li>
+</ol>
+<p>则此电路有唯一解。</p>
+<h3 id="非线性电路的求解"><a href="#非线性电路的求解" class="headerlink" title="非线性电路的求解"></a>非线性电路的求解</h3><p>非线性电路有多种求解方法，主要分为特殊方法和一般方法，特殊方法适用于一些特殊情况，同时也是工作中常见的情况。然后介绍两种数值解法，分别用于数值求解工作点 Q 和数值求解函数关系。</p>
+<h4 id="特殊方法"><a href="#特殊方法" class="headerlink" title="特殊方法"></a>特殊方法</h4><ol>
+<li><p>图解法：用于单非线性元件电路，即只有一个非线性元件的电路。非线性元件的伏安特性曲线与除此以外电路的伏安特性曲线的交点，作为电路的工作点 Q，非线性元件之外电路的伏安特性可以经过戴维南等效后得到，直接将开路电压点和短路电流点相连即可。实际上在考试中哪怕面对简单的二次曲线，如果没有准确的绘图工具，图解法基本不可能直接得到 Q 点坐标，更何谈其他更加复杂的函数，所以图解法的考试实用性不高，其意义在于使用下文的分段线性法时快速确定分段区域，减少计算量。</p>
+</li>
+<li><p>转换图解法：用于等效单非线性元件电路，即虽然有多个非线性元件，但可以通过等效画出非线性部分的伏安特性。比如两个非线性元件的串联，电流不变而电压叠加，伏安特性纵向叠加。比如两个非线性元件的并联，电压不变而电流叠加，伏安特性横向叠加。非线性元件串联线性元件再并联非线性元件时，可以将线性元件纳入非线性元件中，再与另一非线性元件横向叠加。非线性元件间互相作用而能够对外统一表现出某一非线性关系，称这一电路部分为非线性部分，有时非线性部分的非线性关系并不能轻易得到，此时需要用到函数关系的数值解法（前向欧拉法），将在后文介绍。最终将多非线性元件电路转换为单非线性元件电路再利用图解法求解，称其为转换图解法。</p>
+</li>
+</ol>
+<p>面对单非线性元件电路和等效单非线性元件电路，实际上最实用的方法依旧是朴实无华的分析法，利用非线性元件的外电路再次构造自变量与因变量的关系，然后两式联立求解即可。</p>
+<ol start="3">
+<li>小信号分析法：用于激励为大直流加小交流的电路。将激励拆分，大直流信号作用时，通过图解法或工作点的数值解法（牛顿法）确定电路的直流工作点 Q，小交流信号在工作点附近作用于电路，在其带来的非线性误差可以忽略的情况下，用 Q 点处的动态参数作为小信号作用下的静态参数求解 “ 线性电路 “，最终将两个响应相加得到最终的响应。注意，小信号分析法的原理并不是电路的叠加定理，叠加定理只适用于线性电路，且一个激励作用时其他激励需要置零，这里并没有将大直流激励置零，其只是忽略了小信号带来的足够小的电路参数变化误差，而在形式上与叠加定理具有巧合的相似。</li>
+</ol>
+<h4 id="一般方法"><a href="#一般方法" class="headerlink" title="一般方法"></a>一般方法</h4><ol>
+<li><p>联立法：构造非线性元件电压、电流与外电路的伏安关系，将其与非线性元件的伏安关系联立求解。</p>
+</li>
+<li><p>分段线性法：将非线性元件的伏安关系拆分成多段线性直线，通过假设检验确定非线性元件工作在何段区间。当非线性元件有多段或有多个时工作量较大。</p>
+</li>
+</ol>
+<h4 id="数值解法"><a href="#数值解法" class="headerlink" title="数值解法"></a>数值解法</h4><ol>
+<li>牛顿法：用于求解数值解，比如非线性电路工作点。给定普通方程：</li>
+</ol>
+$$f(x) = 0$$
+
+<p>给定初值$x_{0}$，迭代公式：</p>
+$$x_{k + 1} = x_{k} + \frac{f\left( x_{k} \right)}{f^{\text{ }'}\left( x_{k} \right)}$$
+
+<p>直到$|f\left( x_{k} \right)| < \varepsilon$，满足精度要求。</p>
+<ol start="2">
+<li>前向欧拉法：用于求解函数关系，比如非线性伏安关系。给定一阶微分方程：</li>
+</ol>
+$$\frac{dx}{dt} = f(x,t)$$
+
+<p>给定初值$x_{0}$、步长$h$，迭代公式：</p>
+$$x_{k + 1} = x_{k} + f\left( x_{k},t_{k} \right)h$$
+
+<p>步长$h$决定了精度，将计算出的$(x_{k},t_{k})$连接起来作为$f(x,t)$。</p>
+<h3 id="二阶自治电路的平衡点稳定性分析"><a href="#二阶自治电路的平衡点稳定性分析" class="headerlink" title="二阶自治电路的平衡点稳定性分析"></a>二阶自治电路的平衡点稳定性分析</h3><p>状态方程形如</p>
+$$\frac{dx}{dt} = f(x,y)$$
+
+$$\frac{dy}{dt} = g(x,y)$$
+
+<p>的电路称为二阶自治电路，即不显含自变量 t，也即参数均为非时变参数，采用相平面分析，相平面即 XOY 平面，一个$t$对应平面上一点$\left( x(t),y(t) \right)$，$t$连续变化描绘出一条轨线，不同的初值对应不同的轨线。</p>
+<p>先求奇点，也称平衡点：</p>
+$$0 = f(x,y)$$
+
+$$0 = g(x,y)$$
+
+<p>得到$\left( x_{e},y_{e} \right)$，再用状态方程两式相除，得到：</p>
+$$\frac{dx}{dy} = \frac{f(x,y)}{g(x,y)}$$
+
+<p>此即轨线方程，可以通过轨线与平衡点的关系判断平衡点的类型。相平面上的孤立的环称极限环，稳定极限环 “ 收敛 “，不稳定极限环 “ 发散 “，不抗扰动。</p>
+<h4 id="线性二阶自治电路平衡点稳定性"><a href="#线性二阶自治电路平衡点稳定性" class="headerlink" title="线性二阶自治电路平衡点稳定性"></a>线性二阶自治电路平衡点稳定性</h4><p>线性二阶自治电路的状态方程可以化成</p>
+$$\frac{d^{2}x}{dt^{2}} + p\frac{dx}{dt} + qx = 0$$
+
+<p>x 为某一个状态变量。其特征方程$\lambda^{2} + a\lambda + b = 0$，解出两个特征根$\lambda_{1},\lambda_{2}$，依据特征根类型对号入座：</p>
+<ol>
+<li>纯实数：同负（稳定节点），一正一负（鞍点，不稳定），同正（不稳定节点）；</li>
+<li>共轭复数：实部为负（稳定焦点），实部为正（不稳定焦点）；</li>
+<li>纯虚数（中心点，平衡）。</li>
+</ol>
+<p>与前文中二阶 ODE 解答相互对应，可以发现，实部为负说明了其幅值逐渐衰减，出现虚部说明其有振荡过程，有负实部的根都位于复平面的左半平面，认为其都是李雅普诺夫稳定的。一旦出现正实部，解答的幅度将发散，故不稳定。纯虚数则对应了等幅振荡，工程上认为不稳定的理论稳定点。</p>
+<h4 id="非线性二阶自治电路平衡点稳定性"><a href="#非线性二阶自治电路平衡点稳定性" class="headerlink" title="非线性二阶自治电路平衡点稳定性"></a>非线性二阶自治电路平衡点稳定性</h4><p>非线性电路在平衡点局部线性化后，再按照线性的方法处理。</p>
+<p>解出平衡点$\left( x_{e},y_{e} \right)$，将$f(x,y),g(x,y)$在该点一阶泰勒展开，得到：</p>
+$$\frac{dx}{dt} = f\left( x_{e},y_{e} \right) + \frac{\partial f}{\partial x}\left( x - x_{e} \right) + \frac{\partial f}{\partial y}\left( y - y_{e} \right)$$
+
+$$\frac{dy}{dt} = g\left( x_{e},y_{e} \right) + \frac{\partial g}{\partial x}\left( x - x_{e} \right) + \frac{\partial g}{\partial y}\left( y - y_{e} \right)$$
+
+<p>令$\xi = x - x_{e},\eta = y - y_{e}$，可记：</p>
+$$\frac{d\xi}{dt} = a\xi + b\eta$$
+
+$$\frac{d\eta}{dt} = c\xi + d\eta$$
+
+<p>再按线性处理即可。</p>
+<p>当实部为 0，即对应线性系统中的中心点时，不能通过此方法判断平衡点稳定性。</p>
+<h2 id="二端口"><a href="#二端口" class="headerlink" title="二端口"></a>二端口</h2><h3 id="概述-6"><a href="#概述-6" class="headerlink" title="概述"></a>概述</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510230000623.png"
+                     
+                ></p>
+<p>此为一端口，其必须满足端口条件：$i_{k} = i_{k}'$。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510230000806.png"
+                     
+                ></p>
+<p>此为二端口，由四个量表征，正方向如图。二端口是一种对电路的封装，即不考虑内部电路结构，直接研究输入、输出关系，在这四个量中，选择两个为输入量，两个为输出量，共 6 种组合。称输入、输出之间的传递矩阵为参数，若输入输出可互换，即考虑参数取逆，则只有 3 种组合：$u_{1}u_{2} \rightarrow i_{1}i_{2}$，$u_{2}i_{2} \rightarrow u_{1}i_{1}$，$i_{1}u_{2} \rightarrow u_{1}i_{2}$，这三种分别为 <strong>Y、T、H</strong> 参数，此外我们再考虑$\mathbf{Z =}\mathbf{Y}^{\mathbf{- 1}}$，即共学习四种参数。</p>
+$$\begin{bmatrix}
+Y_{1} \\
+Y_{2}
+\end{bmatrix} = \begin{bmatrix}
+A & B \\
+C & D
+\end{bmatrix}\begin{bmatrix}
+X_{1} \\
+X_{2}
+\end{bmatrix}$$
+
+<p>参数的基本求解方法，例如：</p>
+$$Y_{1} = AX_{1} + BX_{2}$$
+
+$$Y_{2} = CX_{1} + DX_{2}$$
+
+<p>令$X_{2} = 0$，得到：</p>
+$$A = \frac{Y_{1}}{X_{1}}$$
+
+$$C = \frac{Y_{2}}{X_{1}}$$
+
+<p>其它依此类推，推荐求解顺序为$ACDB$。</p>
+<h3 id="Y-参数、Z-参数"><a href="#Y-参数、Z-参数" class="headerlink" title="Y 参数、Z 参数"></a>Y 参数、Z 参数</h3><p><strong>Y</strong>、<strong>Z</strong> 参数是一对孪生参数，也可称其为导纳参数和阻抗参数，也互为逆矩阵，所以已知一个可以直接计算出另一个。</p>
+$$\begin{bmatrix}
+I_{1} \\
+I_{2}
+\end{bmatrix} = \mathbf{Y}\begin{bmatrix}
+U_{1} \\
+U_{2}
+\end{bmatrix}$$
+
+<p>计算：$Y_{ij} = \frac{I_{i}}{U_{j}}|U_{i} = 0$，导纳是电流除以电压，电流电压的选择与下标对应，另一个下标的分母置零。</p>
+<p>互易条件：$Y_{12} = Y_{21}$；对称：$Y_{12} = Y_{21},Y_{11} = Y_{22}$。互易即副对角线相等，对称再加一个主对角线相等。</p>
+$$\begin{bmatrix}
+U_{1} \\
+U_{2}
+\end{bmatrix} = \mathbf{Z}\begin{bmatrix}
+I_{1} \\
+I_{2}
+\end{bmatrix}$$
+
+<p>计算：$Z_{ij} = \frac{U_{i}}{I_{j}}|I_{i} = 0$，阻抗是电压除以电流，电流电压的选择与下标对应，另一个下标的分母置零。</p>
+<p>互易条件：$Z_{12} = Z_{21}$；对称条件：$Z_{12} = Z_{21},Z_{11} = Z_{22}$。同 <strong>Y</strong> 参数一样，互易副角等，对称再加主角等。二阶矩阵的逆矩阵口诀：主对换，负变号，最后再除行列式：</p>
+$$\mathbf{Z} = \mathbf{Y}^{\mathbf{- 1}} = \frac{1}{\left| \mathbf{Y} \right|}\begin{bmatrix}
+Y_{22} & - Y_{12} \\
+ - Y_{21} & Y_{11}
+\end{bmatrix}$$
+
+<p>Y 参数各元素原来在哪条线现在依旧在哪条线，所以 <strong>Y</strong>、<strong>Z</strong> 参数的互易、对称条件一定是一样的。</p>
+<p>从电路结构来看，多并联电路如$\Pi$型电路计算 <strong>Y</strong> 方便，多串联电路如 T 型电路计算 <strong>Z</strong> 方便。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510230001853.png"
+                     
+                ></p>
+<p>所谓方便，即不需要如上文所述地先将另一个量置零再求解，可以通过简单的 KCL、KVL、VAR 直接写出来。而在出现如下图所示的二端口连接时，选择合适参数更能大大降低计算量，二端口并联则有$\mathbf{Y =}\mathbf{Y}^{\mathbf{'}}\mathbf{+ Y''}$，二端口串联则有$\mathbf{Z =}\mathbf{Z}^{\mathbf{'}}\mathbf{+ Z''}$。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510230001916.png"
+                     
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510230002933.png"
+                     
+                ></p>
+<p>这里需要注意在二端口并联或串联后有可能出现端口条件被破坏的情况，比如：串联二端口外接两个电流源，并联二端口外接两个电压源。此时内部二端口不再构成二端口，无法使用参数相加。</p>
+<h3 id="T-参数"><a href="#T-参数" class="headerlink" title="T 参数"></a>T 参数</h3><p><strong>T</strong> 取传输义，直接表示一个经过一个端口后电压、电流的变化，而由于二端口的正方向规定中，$I_{2}$与$I_{1}$并不都朝向信号传输的方向，所以在输出量中将$I_{2}$反向变为$- I_{2}$，更符合传输含义，也便于 <strong>T</strong> 参数的级联。注意这里的方向是，2 号端口传向 1 号端口，用 2 号量乘参数得到 1 号量。</p>
+$$\begin{bmatrix}
+U_{1} \\
+I_{1}
+\end{bmatrix} = \mathbf{T}\begin{bmatrix}
+U_{2} \\
+ - I_{2}
+\end{bmatrix}$$
+
+<p><strong>T</strong> 参数用$U_{2}, - I_{2}$表示$U_{1},I_{1}$，而我们可以由 <strong>Y</strong>、<strong>Z</strong> 参数得到：</p>
+$$I_{2} = Y_{21}U_{1} + Y_{22}U_{2} \rightarrow U_{1} = - \frac{Y_{22}}{Y_{21}}U_{2} - \frac{1}{Y_{21}}\left. （ - I_{2} \right.）$$
+
+$$U_{2} = Z_{21}I_{1} + Z_{22}I_{2} \rightarrow I_{1} = \frac{1}{Z_{21}}U_{2} + \frac{Z_{22}}{Z_{21}}\left. （ - I_{2} \right.）$$
+
+<p>这里 <strong>Y</strong>、<strong>Z</strong> 参数方程的选择，比如第一行，需要用$U_{2}, - I_{2}$表示$U_{1}$，所以我们需要找到同时出现$U_{2}, - I_{2},U_{1}$的 <strong>Y</strong>、<strong>Z</strong> 参数方程，显然用 <strong>Y</strong> 参数的第二行即可。故：</p>
+$$\mathbf{T =}\begin{bmatrix}
+ - \frac{Y_{22}}{Y_{21}} & - \frac{1}{Y_{21}} \\
+\frac{1}{Z_{21}} & \frac{Z_{22}}{Z_{21}}
+\end{bmatrix}$$
+
+<p>互易条件：$\left| \mathbf{T} \right| = 1$；对称条件：$\left| \mathbf{T} \right| = 1,T_{11} = T_{22}$。行列式是矩阵的某种性质，在几何上表示线性变换后图形面积的相较于原面积的倍数，传输信号意味着前后信号幅度不变，故互易条件是行列式为 1。同 <strong>Y</strong>、<strong>Z</strong> 参数一样，这里的对称依旧要求主对角线相等，再加上这一条件。</p>
+<p>在出现如下图所示的二端口连接时，称为二端口级联，有$\mathbf{T =}\mathbf{T}^{\mathbf{'}}\mathbf{T''}$，注意这里是相乘，线性变换的叠加亦是相乘。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510230002796.png"
+                     
+                ></p>
+<h3 id="H-参数"><a href="#H-参数" class="headerlink" title="H 参数"></a>H 参数</h3>$$\begin{bmatrix}
+U_{1} \\
+I_{2}
+\end{bmatrix} = \mathbf{H}\begin{bmatrix}
+I_{1} \\
+U_{2}
+\end{bmatrix}$$
+
+<p>形式记忆口诀：用$I_{1},U_{2}$表示$U_{1},I_{2}$。</p>
+<p>这个古怪的参数能够在分析包含非线性元件如三极管的电路时获得方便。同样的，我们也可以用 <strong>Y</strong>、<strong>Z</strong> 参数得到：</p>
+$$I_{1} = Y_{11}U_{1} + Y_{12}U_{2} \rightarrow U_{1} = \frac{1}{Y_{11}}I_{1} - \frac{Y_{12}}{Y_{11}}U_{2}$$
+
+$$U_{2} = Z_{21}I_{1} + Z_{22}I_{2} \rightarrow I_{2} = - \frac{Z_{21}}{Z_{22}}I_{1} + \frac{1}{Z_{22}}U_{2}$$
+
+<p>故：</p>
+$$\mathbf{H =}\begin{bmatrix}
+\frac{1}{Y_{11}} & - \frac{Y_{12}}{Y_{11}} \\
+ - \frac{Z_{21}}{Z_{22}} & \frac{1}{Z_{22}}
+\end{bmatrix}$$
+
+<p>互易条件：$H_{12} = - H_{21}$；对称条件：$H_{12} = - H_{21},|H| = 1$。<strong>H</strong> 参数在形式上$\begin{bmatrix}
+U_{1} \\
+I_{2}
+\end{bmatrix} = \mathbf{H}\begin{bmatrix}
+I_{1} \\
+U_{2}
+\end{bmatrix}$可以发现， $\begin{bmatrix}
+I_{1} \\
+U_{2}
+\end{bmatrix}$到$\begin{bmatrix}
+U_{1} \\
+I_{2}
+\end{bmatrix}$就像进行了一次 “ 原点对称 “，<strong>H</strong> 就是 “ 原点 “，对应的记忆 <strong>H</strong> 参数互易条件，副对角线 “ 原点对称 “，下标对调加负号，即副对角线互为相反数。输入、输出依旧为 U、I，本质上也是一种 “ 传输 “，所以对称条件再加上行列式为 1。</p>
+<p>在出现如下图所示的二端口连接时，称为二端口混联，一端口是串联形式，另一端口是并联形式，此时有$\mathbf{H =}\mathbf{H}_{\mathbf{1}}\mathbf{+}\mathbf{H}_{\mathbf{2}}$。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510230002095.png"
+                     
+                ></p>
+<h3 id="反求二端口等效电路"><a href="#反求二端口等效电路" class="headerlink" title="反求二端口等效电路"></a>反求二端口等效电路</h3><p>如题，即在已知二端口参数的情况下，构建一个电路去满足这个参数，这一过程在 “ 电路综合 “ 中是重要的，通俗地说就是对于一个并不知道内部构造的黑箱产品，构建一个外特性与黑箱产品一致的电路，进而研究其结构特征和实现原理。这里只简单地研究 <strong>Y</strong>、<strong>Z</strong> 参数的等效电路。</p>
+<h4 id="Y-参数等效电路"><a href="#Y-参数等效电路" class="headerlink" title="Y 参数等效电路"></a>Y 参数等效电路</h4><p>前文说过，多并联电路如$\Pi$型电路计算 <strong>Y</strong> 参数方便，反过来，<strong>Y</strong> 参数用$\Pi$型电路等效也更为方便。普通 <strong>Y</strong> 参数，具有四个独立元素，通过等式变形可以得到两种等效电路，分别具有两个、一个受控源：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510230003041.png"
+                     
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510230003039.png"
+                     
+                ></p>
+<p>受控源数目的减少意味着参数表达上的复杂，直接求解图中电路的 <strong>Y</strong> 参数可以快速得到对应关系。</p>
+<p>当 <strong>Y</strong> 参数是互易的，即副对角线相等，添加约束意味着四个元素中只有三个独立元素，同时回想到纯电阻网络一定是互易的，所以互易 <strong>Y</strong> 参数可以由纯电阻网络等效：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510230003918.png"
+                     
+                ></p>
+<p>求解图中电路的 <strong>Y</strong> 参数可以快速得到对应关系，即：</p>
+$$I_{1} = Y_{a}U_{1} + Y_{b}\left( U_{1} - U_{2} \right) = \left( Y_{a} + Y_{b} \right)U_{1} + \left( - Y_{b} \right)U_{2}$$
+
+$$I_{2} = Y_{c}U_{2} + Y_{b}\left( U_{2} - U_{1} \right) = \left( - Y_{b} \right)U_{1} + \left( Y_{c} + Y_{b} \right)U_{2}$$
+
+$$Y_{a} = Y_{11} + Y_{12},Y_{b} = - Y_{12},Y_{c} = Y_{22} + Y_{21}$$
+
+<p>1 端口导纳等于第一行元素和，2 端口导纳等于第二行元素和，中间导纳等于副对角线相反数。</p>
+<p>当 <strong>Y</strong> 参数是对称的，则在互易条件上再加一个主对角线相等的约束，只有两个独立元素，结论与互易时的相同，不过此时$Y_{a} = Y_{c}$。</p>
+<h4 id="Z-参数等效电路"><a href="#Z-参数等效电路" class="headerlink" title="Z 参数等效电路"></a>Z 参数等效电路</h4><p><strong>Z</strong> 参数则用$T$型电路等效更为方便。普通 <strong>Y</strong> 参数的受控源等效电路：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510230004964.png"
+                     
+                ></p>
+<p>互易 <strong>Z</strong> 参数的纯电阻网络等效：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510230004994.png"
+                     
+                ></p>
+<p>求解图中电路的 <strong>Z</strong> 参数可以快速得到对应关系，即：</p>
+$$Z_{a} = Z_{11} - Z_{12},Z_{b} = Z_{12},Z_{c} = Z_{22} - Z_{21}$$
+
+<p>1 端口阻抗等于第一行元素之差，2 端口阻抗等于第二行元素之差，中间阻抗等于副对角线。这里为元素之差的原因在于中间阻抗上的电流是两端口电流之和，<strong>Y</strong> 参数互易等效时中间导纳上的电压是两端口电压之差。对称 <strong>Z</strong> 参数额外有$Z_{a} = Z_{c}$。</p>
+<p>电路中通常不会出现负电阻元件，所以 <strong>Y</strong> 参数的副对角线一定是负数，<strong>Z</strong> 参数的副对角线一定是正数。将两者的等效电路统一表述为：<strong>Y</strong> 参数等效$\Pi$型电路，<strong>Z</strong> 参数等效 T 型电路，中间值是副对角线绝对值，1 端口值是第一行元素绝对值之差，2 端口值是第二行元素绝对值之差。</p>
+<h3 id="有载对称二端口——特性阻抗和传播常数"><a href="#有载对称二端口——特性阻抗和传播常数" class="headerlink" title="有载对称二端口——特性阻抗和传播常数"></a>有载对称二端口——特性阻抗和传播常数</h3><p>输出端接负载的二端口称有载二端口，采用 <strong>T</strong> 参数分析，这里 1 端口为信号输入端口，2 端口为输出端口。</p>
+<p>在端口 2 接$Z_{L}$负载，联立：</p>
+$$\begin{bmatrix}
+U_{1} \\
+I_{1}
+\end{bmatrix} = \mathbf{T}\begin{bmatrix}
+U_{2} \\
+ - I_{2}
+\end{bmatrix}$$
+
+$$U_{2} = - Z_{L}I_{2}$$
+
+<p>可得输入阻抗$Z_{i}$：</p>
+$$Z_{i} = \frac{U_{1}}{I_{1}} = \frac{T_{11}Z_{L} + T_{12}}{T_{21}Z_{L} + T_{22}}$$
+
+<p>信号输入端也会有信号源内阻$Z_{S}$，也可以求得输出阻抗$Z_{o}$：</p>
+$$Z_{o} = \frac{T_{22}Z_{S} + T_{12}}{T_{21}Z_{S} + T_{11}}$$
+
+<p>令二端口对称，$T_{22} = T_{11}$，自然$Z_{i} = Z_{o}$。当输入阻抗等于负载阻抗，称这样的负载阻抗为特性阻抗$Z_{C}$，其满足：</p>
+$$Z_{C} = \frac{T_{11}Z_{C} + T_{12}}{T_{21}Z_{C} + T_{22}}$$
+
+<p>可以解得：</p>
+$$Z_{C} = \sqrt{\frac{T_{12}}{T_{21}}}$$
+
+<p>此外，还可依端口 2 开路和短路时的输入阻抗$Z_{i - o},Z_{i - s}$计算特性阻抗:</p>
+$$Z_{C} = \sqrt{Z_{i - o}Z_{i - s}}$$
+
+<p>在端口 2 接$Z_{C}$后，于是有传播常数：</p>
+$$\frac{U_{2}}{U_{1}} = \frac{- I_{2}}{I_{1}} = e^{\Gamma} = T_{11} + \sqrt{T_{12}T_{21}}$$
+
+<p>转为 <strong>Y</strong>、<strong>Z</strong> 参数表示则为：</p>
+$$\frac{U_{2}}{U_{1}} = - \frac{Y_{21}}{Y_{22} + Y_{L}}$$
+
+$$\frac{- I_{2}}{I_{1}} = \frac{Z_{21}}{Z_{22} + Y_{L}}$$
+
+<p>即对称二端口的两个独立元素，由特性阻抗和传播常数表征，我们进一步可以将$T$参数用$Z_{C}$和$e^{\Gamma}$表示为：</p>
+$$\begin{bmatrix}
+U_{1} \\
+I_{1}
+\end{bmatrix} = \begin{bmatrix}
+cosh\Gamma & - Z_{C}sinh\Gamma \\
+\frac{1}{Z_{C}}sinh\Gamma & - cosh\Gamma
+\end{bmatrix}\begin{bmatrix}
+U_{2} \\
+ - I_{2}
+\end{bmatrix}$$
+
+<p>当有$n$个对称网络级联时，$Z_{C}$不变，$\Gamma$变成$n\Gamma$。</p>
+<p>二端口网络的功率定义：</p>
+$$P = U_{1}I_{1} - U_{2}\left( - I_{2} \right) = U_{1}I_{1} + U_{2}I_{2}$$
+
+<p>这里是用输入端的输入功率减去经过二端口后的负载功率，便得到二端口 “ 私吞 “ 的功率，只是最后具有和的形式。</p>
+<h3 id="回转器与负阻抗变换器"><a href="#回转器与负阻抗变换器" class="headerlink" title="回转器与负阻抗变换器"></a>回转器与负阻抗变换器</h3><p>这是两个特殊的二端口元件，要能够认识并了解其作用。</p>
+<ol>
+<li>回转器</li>
+</ol>
+$$\begin{bmatrix}
+U_{1} \\
+U_{2}
+\end{bmatrix} = \begin{bmatrix}
+0 & - r \\
+r & 0
+\end{bmatrix}\begin{bmatrix}
+I_{1} \\
+I_{2}
+\end{bmatrix}$$
+
+<p>即 1 端口的电压由 2 端口的电流决定，2 端口的电压由 1 端口的电流决定，与 r 同向则取正，反向取负。</p>
+<p>端口 2 接$C$，在端口 1 看来为$L = r^{2}C$，即回转器加电容等于电感，其正负与回转电阻指向无关。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510230004254.png"
+                     
+                ></p>
+<ol start="2">
+<li>负阻抗变换器：NIC</li>
+</ol>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510230005444.png"
+                     
+                ></p>
+$$\begin{bmatrix}
+U_{1} \\
+I_{1}
+\end{bmatrix} = \begin{bmatrix}
+ - k & 0 \\
+0 & 1
+\end{bmatrix}\begin{bmatrix}
+U_{2} \\
+ - I_{2}
+\end{bmatrix}$$
+
+$$\begin{bmatrix}
+U_{1} \\
+I_{1}
+\end{bmatrix} = \begin{bmatrix}
+1 & 0 \\
+0 & - k
+\end{bmatrix}\begin{bmatrix}
+U_{2} \\
+ - I_{2}
+\end{bmatrix}$$
+
+<p>把 1 端口某一个输出量变为 2 端口对应输入量的-k 倍，代号的第一个字母是谁就变谁，另一个量不变。</p>
+<h3 id="一种快捷求参方法"><a href="#一种快捷求参方法" class="headerlink" title="一种快捷求参方法"></a>一种快捷求参方法</h3><p>记住两个基本二端口的 <strong>T</strong> 参数，然后利用 <strong>T</strong> 参数级联性质，快速写出二端口的各类参数。</p>
+<ol>
+<li>基本二端口的 <strong>T</strong> 参数</li>
+</ol>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510230005302.png"
+                     
+                ></p>
+$T = \begin{bmatrix}
+1 & Z \\
+0 & 1
+\end{bmatrix}$
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510230005110.png"
+                     
+                ></p>
+$T = \begin{bmatrix}
+1 & 0 \\
+\frac{1}{Z} & 1
+\end{bmatrix}$
+
+<ol start="2">
+<li>基本二端口的级联</li>
+</ol>
+$$T = \sum_{}^{}T_{i}$$
+
+<ol start="3">
+<li>由 <strong>T</strong> 参数求其他参数</li>
+</ol>
+$$\mathbf{Y} = \frac{1}{T_{12}}\begin{bmatrix}
+T_{22} & - \Delta_{T} \\
+ - 1 & T_{11}
+\end{bmatrix}$$
+
+$$\mathbf{Z} = \frac{1}{T_{21}}\begin{bmatrix}
+T_{11} & \Delta_{T} \\
+1 & T_{22}
+\end{bmatrix}$$
+
+$$\mathbf{H} = \frac{1}{T_{22}}\begin{bmatrix}
+T_{12} & - \Delta_{T} \\
+ - 1 & T_{21}
+\end{bmatrix}$$
+
+<p>记忆：形式上均为一个 <strong>T</strong> 元素的倒数乘上一个矩阵。</p>
+<ol>
+<li>系数分母：<strong>Y</strong>、<strong>Z</strong>、<strong>H</strong> 依次按顺时针取 <strong>T</strong> 参数除去$T_{11}$后剩下的三个数。</li>
+<li>矩阵构成：<strong>Z</strong> 和 <strong>T</strong> 是好哥们，矩阵内元素主对角线照抄，副对角线填$\Delta_{T}$和 1；<strong>Y</strong> 是 <strong>Z</strong> 求逆，” 主对换，副变号，还要除以行列式 “，这里只写矩阵，就不管行列式了；<strong>H</strong> 参数很叛逆，副对角线是 <strong>Z</strong> 参数再加负号，主对角线是 <strong>T</strong> 参数的副对角线。</li>
+</ol>
+<p>以上方法对于二端口与静态电路的综合提供了一个解题思路，而对于二端口与动态电路的综合，可以将所提供的参数化为 <strong>Z</strong>、<strong>Y</strong> 参数并画出对应的等效电路，然后再求解动态过程，此为法一。法二是直接利用二端口参数提供的关系式，消去不关心的量，利用数学方法求解，在实践中往往更高效简便。</p>
+<h2 id="分布参数电路"><a href="#分布参数电路" class="headerlink" title="分布参数电路"></a>分布参数电路</h2><h3 id="概述-7"><a href="#概述-7" class="headerlink" title="概述"></a>概述</h3><p>集总条件：电路尺寸远小于工作频率下的波长$\lambda = \frac{c}{f}$。当高频且大尺寸电路不满足此条件时，考虑传输线分布参数模型：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510230011700.png"
+                     
+                ></p>
+<p>字符表示单位长度参数，对于$u(x,t),i(x,t)$可得到如下方程：</p>
+$$u - \left( u + \frac{\partial u}{\partial x}dx \right) = R_{0}dxi + L_{0}dx\frac{\partial i}{\partial t}$$
+
+$$i - \left( i + \frac{\partial i}{\partial x}dx \right) = G_{0}dx\left( u + \frac{\partial u}{\partial x}dx \right) + C_{0}dx\frac{\partial(u + \frac{\partial u}{\partial x}dx)}{\partial t}$$
+
+<p>这里的形式不对称是 “$\Gamma$等效 “ 导致的，等效方式的差异为二阶量。</p>
+<p>将上式化简，略去二阶量：</p>
+$$- \frac{\partial u}{\partial x} = R_{0}i + L_{0}\frac{\partial i}{\partial t}$$
+
+$$- \frac{\partial i}{\partial x} = G_{0}i + C_{0}\frac{\partial u}{\partial t}$$
+
+<p>上式称 “ 电报方程 “。激励通常为正弦激励，采用相量法，并引入传播常数$\gamma$、和特性阻抗$Z_{C}$：</p>
+$$\gamma = \sqrt{Z_{0}Y_{0}} = \sqrt{\left( R_{0} + j\omega L_{0} \right)\left( G_{0} + j\omega C_{0} \right)} = \alpha + j\beta$$
+
+$$Z_{C} = \sqrt{\frac{Z_{0}}{Y_{0}}} = \sqrt{\frac{R_{0} + j\omega L_{0}}{G_{0} + j\omega C_{0}}} = \left| Z_{C} \right|e^{j\theta}$$
+
+<p>这里$\alpha$称衰减常数，$\beta$称相位常数。得到通解：</p>
+$$U = Ae^{- \gamma x} + Be^{\gamma x}$$
+
+$$I = \frac{A}{Z_{C}}e^{- \gamma x} - \frac{B}{Z_{C}}e^{\gamma x}$$
+
+<p>将相量写回时域量：</p>
+$$u = \sqrt{2}Ae^{- \alpha t}\sin\left( \omega t - \beta x + \psi_{1} \right) + \sqrt{2}Be^{\alpha t}\sin\left( \omega t + \beta x + \psi_{2} \right)$$
+
+$$i = \frac{\sqrt{2}A}{\left| Z_{C} \right|}e^{- \alpha t}\sin\left( \omega t - \beta x + \psi_{1} - \theta \right) - \frac{\sqrt{2}B}{\left| Z_{C} \right|}e^{\alpha t}\sin\left( \omega t + \beta x + \psi_{2} - \theta \right)$$
+
+<p>其中含$\omega t - \beta x$项的波形沿$x$正向传播，含$\omega t + \beta x$项的波形沿$x$负向传播，可记为：</p>
+$$u = u_{+} + u_{-}$$
+
+$$i = i_{+} - i_{-}$$
+
+$$\frac{u_{+}}{i_{+}} = \frac{u_{-}}{i_{-}} = Z_{C}$$
+
+<p>即有结论：传输线上的电压为前行波与反行波之和，电流为前行波与反行波之差，电压前（反）行波与电流前（反）行波之比等于特性阻抗。</p>
+<h3 id="行波"><a href="#行波" class="headerlink" title="行波"></a>行波</h3><p>详细计算过程可查阅教材或附件本章的旧版本，这里只给出结论。</p>
+<p>由始端电压$U_{1}$电流$I_{1}$，或终端电压$U_{2}$电流$I_{2}$，求解传输线上任意点的电压电流：</p>
+$$\begin{bmatrix}
+U(x) \\
+I(x)
+\end{bmatrix} = \begin{bmatrix}
+\cosh{\gamma x} & - Z_{C}\sinh{\gamma x} \\
+ - \frac{1}{Z_{C}}\sinh{\gamma x} & \cosh{\gamma x}
+\end{bmatrix}\begin{bmatrix}
+U_{1} \\
+I_{1}
+\end{bmatrix}$$
+
+$$\begin{bmatrix}
+U(x) \\
+I(x)
+\end{bmatrix} = \begin{bmatrix}
+\cosh{\gamma x} & Z_{C}\sinh{\gamma x} \\
+\frac{1}{Z_{C}}\sinh{\gamma x} & \cosh{\gamma x}
+\end{bmatrix}\begin{bmatrix}
+U_{2} \\
+I_{2}
+\end{bmatrix}$$
+
+<p>可以发现两个参数互为逆矩阵。两处 x 的含义不一样，用始端量时 x 表示传输线上一点与始端的距离，用终端量表示时 x 表示传输线上一点与终端的距离，一般采用终端量表达式。其中双曲函数为：</p>
+$$\cosh{\gamma x} = \frac{e^{\gamma x} + e^{- \gamma x}}{2}$$
+
+$$\sinh{\gamma x} = \frac{e^{\gamma x} - e^{- \gamma x}}{2}$$
+
+<p>补充*：双曲函数的性质可以直接用三角函数的性质套用，只需要在形式上，将双曲正弦的平方对应为正弦平方的相反数，其他不变。</p>
+$$\left( \sinh\alpha \cdot \sinh\beta \right) \rightarrow \left( - \sin\alpha \cdot \sin\beta \right)$$
+
+<p>注意只要形式上出现两个$\sin h$相乘就需要加负号。性质举例：</p>
+<ol>
+<li>单个$\sin h$不变号，直接对应三角函数：</li>
+</ol>
+$$\sinh\alpha\cosh\beta + \cosh\alpha\sinh\beta = \sin\alpha\cos\beta + \cos\alpha\sin\beta = \sin(\alpha + \beta) = \sinh{(\alpha + \beta)}$$
+
+<ol start="2">
+<li>出现形式上的$\sinh^{2}{(\ )}$则变号，无论角度是否相同：</li>
+</ol>
+$$\cosh\alpha\cosh\beta + \sinh\alpha\sinh\beta = \cos\alpha\cos\beta - \sin\alpha\sin\beta = \cos(\alpha + \beta) = \cosh{(\alpha + \beta)}$$
+
+$$\cosh^{2}{\theta -}\sinh^{2}\theta = \cos^{2}\theta + \sin^{2}\theta = 1$$
+
+<p>行波速度$v_{p} = \frac{\omega}{\beta}$。波长$\lambda = \frac{2\pi}{\beta}$。传播常数$\gamma$、特性阻抗$Z_{C}$与$\omega$的关系：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510230011090.png"
+                     
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510230012119.png"
+                     
+                ></p>
+<p>视传输线为二端口，其 <strong>T</strong> 参数方程：</p>
+$$\begin{bmatrix}
+U_{1} \\
+I_{1}
+\end{bmatrix} = \begin{bmatrix}
+\cosh{\gamma l} & Z_{C}\sinh{\gamma l} \\
+\frac{1}{Z_{C}}\sinh{\gamma l} & \cosh{\gamma l}
+\end{bmatrix}\begin{bmatrix}
+U_{2} \\
+I_{2}
+\end{bmatrix}$$
+
+<p>电流方向均为始端指向终端。$\left| \mathbf{T} \right| = \cosh^{2}{\gamma l -}\sinh^{2}{\gamma l} = 1$，$T_{11} = T_{22}$，故为对称网络。由二端口最后一节的快速求参法，得到：</p>
+$$\mathbf{Y} = \frac{1}{Z_{C}\sinh{\gamma l}}\begin{bmatrix}
+\cosh{\gamma l} & - 1 \\
+ - 1 & \cosh{\gamma l}
+\end{bmatrix}$$
+
+$$\mathbf{Z} = \frac{Z_{C}}{sinh\gamma l}\begin{bmatrix}
+\cosh{\gamma l} & 1 \\
+1 & \cosh{\gamma l}
+\end{bmatrix}$$
+
+$$\mathbf{H} = \frac{1}{cosh\gamma l}\begin{bmatrix}
+Z_{C}\sinh{\gamma l} & - 1 \\
+ - 1 & \frac{1}{Z_{C}}\sinh{\gamma l}
+\end{bmatrix}$$
+
+<p>故易得其 T 型和$\Pi$型等效电路。</p>
+<h3 id="反射与折射"><a href="#反射与折射" class="headerlink" title="反射与折射"></a>反射与折射</h3><p>阻抗$Z_{1}$传输线上前行波和反行波的终端量表达式：</p>
+$$U_{+} = \frac{U_{2} + Z_{1}I_{2}}{2}e^{\gamma x}$$
+
+$$U_{-} = \frac{U_{2} - Z_{1}I_{2}}{2}e^{- \gamma x}$$
+
+<p>视始端向终端的前行波为入射波，反行波为入射波达到终端后的反射波。若在终端续接特性阻抗为$Z_{2}$的传输线，该点特性阻抗均匀性遭到破坏，称为畸变点。计算反射、折射系数。</p>
+<p>反射系数 n：</p>
+$$n = \frac{U_{-}}{U_{+}} = \frac{Z_{2} - Z_{1}}{Z_{2} + Z_{1}}e^{- 2\gamma x}\left. \  \right|_{x = 0} = \frac{Z_{2} - Z_{1}}{Z_{2} + Z_{1}}$$
+
+<p>入射波$U_{+}$到达均匀性遭破坏的节点后，产生反射波$U_{-} = nU_{+}$，电压波叠加求和，电流波叠加求差，节点电压$U_{+} + U_{-} = (1 + n)U_{+}$，节点前后的电压一致。</p>
+<p>折射系数 p：</p>
+$$p = 1 + n = \frac{2Z_{2}}{Z_{2} + Z_{1}}$$
+
+<p>即有结论：阻抗$Z_{1}$线路上的入射波$U$，在畸变点发生反射、折射，本线路产生反射波$nU$，下一线路产生折射波$pU$。这一结论也适用于终端接负载$Z_{2}$的情况，只是这时无需考虑反射波了。</p>
+<p>若行波在传输线中发生多次反射，始端存在电源$U_{S}$，自畸变点而来的反射波到达始端后，电源维持$U_{S}$不变，故在始端产生第二次反射波，该反射波与第一次反射波互为相反数，相互抵消，以满足叠加后电压等于电源$U_{S}$。</p>
+<h3 id="无损传输线"><a href="#无损传输线" class="headerlink" title="无损传输线"></a>无损传输线</h3><p>电阻、电导会消耗电能，为提高效率，传输线会往无损发展，故研究$R_{0} = G_{0} = 0$的特殊情形。传输方程简化为：</p>
+$$\begin{bmatrix}
+U(x) \\
+I(x)
+\end{bmatrix} = \begin{bmatrix}
+\cos{\beta x} & {jZ}_{C}\sin{\beta x} \\
+j\frac{1}{Z_{C}}\sin{\beta x} & \cos{\beta x}
+\end{bmatrix}\begin{bmatrix}
+U_{2} \\
+I_{2}
+\end{bmatrix}$$
+
+<p>因为$\gamma = j\omega\sqrt{L_{0}C_{0}} = j\beta$，用到性质：$\sinh{j\beta x} = j\sin{\beta x}$，$\cosh{j\beta x} = \cos{\beta x}$。此外还有：$Z_{C} = \sqrt{\frac{L_{0}}{C_{0}}}$，$v = \frac{\omega}{\beta} = \frac{1}{\sqrt{L_{0}C_{0}}}$。</p>
+<h4 id="正弦激励"><a href="#正弦激励" class="headerlink" title="正弦激励"></a>正弦激励</h4><p>对于接正弦激励的无损传输线，存在驻波现象：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510230012959.png"
+                     
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510230012186.png"
+                     
+                ></p>
+<p>且终端接$Z_{2}$后，其不同位置的输入阻抗为：$(\beta = \frac{2\pi}{\lambda})$</p>
+$$Z_{i}(x) = \frac{U(x)}{I(x)} = Z_{1}\frac{Z_{2} + jZ_{1}\tan\frac{2\pi}{\lambda}x}{Z_{1} + jZ_{2}\tan\frac{2\pi}{\lambda}x\ }$$
+
+<p>终端短路即$Z_{2} = 0$，终端开路即$Z_{2} = \infty$，各点输入阻抗的沿线分布如下：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510230012803.png"
+                     
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510230013828.png"
+                     
+                ></p>
+<p>发现终端短路$x = \frac{(2n + 1)\lambda}{4}$，或者终端开路$x = \frac{n\lambda}{2}$，阻抗无穷可以作为绝缘 “ 元件 “。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510230013239.png"
+                     
+                ></p>
+<p>所谓匹配，使阻抗$Z_{2}$先接上一个阻抗$Z_{x}$的$\frac{\lambda}{4}$传输线后，再接入原传输线，对阻抗$Z_{1}$的原传输线而言，$Z_{x}$的$\frac{\lambda}{4}$传输线与阻抗$Z_{2}$的等效电阻为$Z_{1}$，故不会发生反射现象，计算得$Z_{x} = \sqrt{Z_{1}Z_{2}}$。</p>
+<h4 id="直流激励"><a href="#直流激励" class="headerlink" title="直流激励"></a>直流激励</h4><p>这是更为特殊的情形，$\omega = 0$，无法用相量法表示，此时：</p>
+$$u = A_{1} + A_{2}$$
+
+$$i = \frac{A_{1}}{Z_{C}} - \frac{A_{2}}{Z_{C}}$$
+
+<p>其中$A_{1},A_{2}$分别为前行波、反行波的幅值，我们不妨改写为：（$t = 0$时接入电源）</p>
+$$u = A_{1}\varepsilon(x - vt) + A_{2}\varepsilon(x + vt)$$
+
+$$i = \frac{A_{1}}{Z_{C}}\varepsilon(x - vt) - \frac{A_{2}}{Z_{C}}\varepsilon(x + vt)$$
+
+<p>波速$\gamma = 0$，$Z_{C} = \sqrt{\frac{L_{0}}{C_{0}}}$，$v = \frac{1}{\sqrt{L_{0}C_{0}}}$。$T$参数为$\begin{bmatrix}
+1 & 0 \\
+0 & 1
+\end{bmatrix}$，反射、折射系数始终为：</p>
+$$n = \frac{Z_{2} - Z_{1}}{Z_{2} + Z_{1}}$$
+
+$$p = \frac{2Z_{2}}{Z_{2} + Z_{1}}$$
+
+<p>与 x 无关，无需将畸变点定为$x = 0$。</p>
+<p>行波在有损传输线中的多次反射，在畸变点的反射系数为$n^{k}e^{- \gamma l(k - 1)}$，k 为反射次数，且电压为指数三角函数叠加，较为复杂。而在无损传输线中，反射、折射系数只与线路阻抗有关，故多次反射后的叠加电压为公比$n$的等比数列求和，可以采用折线法直观表示：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510230013860.png"
+                     
+                ></p>
+<p>分为多层还可以展示第二条线段的折射过程。任意点$x'$在任意时刻$t'$的电压，即在纵轴$x = x'$处画一条横线段，直到横坐标$t = t'$，将被穿过折线对应的电压叠加即可。电流则始终为对应电压除以特性阻抗，电流叠加求差。</p>
+
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> 《电路分析基础》 2W 字笔记</li>
+        <li><strong>Author:</strong> Deyang Zeng</li>
+        <li><strong>Created at
+                :</strong> 2025-11-05 22:28:45</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2025-11-05 22:00:53
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://hexo.io/2025/11/05/251021_电路分析基础/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                All Rights Reserved &#169; Deyang Zeng
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/Circuit/">#Circuit</a>&nbsp;
+			</li>
+			
+		</ul>
+		
+
+		
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/2025/11/05/251022_Nunjucks%20Error%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item truncate max-w-48">Nunjucks Error 解决办法</span>
+						<span class="post-nav-item">Prev posts</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/2025/11/05/251016_%E7%94%A8Hexo+Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item truncate max-w-48">用 Hexo + Github 搭建个人网站</span>
+						<span class="post-nav-item">Next posts</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
+    </div>
+    
+
+        
+            
+    <div id="gitalk-container"></div>
+    <script data-swup-reload-script
+            src="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js"></script>
+    <script data-swup-reload-script>
+
+        function loadGitalk() {
+            let __gitalk__pathname = decodeURI(location.pathname);
+            const __gitalk__pathnameLength = __gitalk__pathname.length;
+            const __gitalk__pathnameMaxLength = 50;
+            if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
+                __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
+            }
+
+            try {
+                Gitalk && new Gitalk({
+                    clientID: 'Ov23liaRSjcF59RLX09N',
+                    clientSecret: 'da73606dbe16ecea7580e3d2576013e7b923803c',
+                    repo: 'comment_gitalk',
+                    owner: 'dozybot001',
+                    admin: ['dozybot001'],
+                    id: __gitalk__pathname,
+                    language: 'en',
+                    proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+                }).render('gitalk-container');
+
+            } catch (e) {
+                window.Gitalk = null;
+            }
+        }
+
+        if ('true') {
+            const loadGitalkTimeout = setTimeout(() => {
+                loadGitalk();
+                clearTimeout(loadGitalkTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadGitalk);
+        }
+    </script>
+
+
+
+        
+    
+</div>
+
+		</div>
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">On this page</div>
+		<div class="page-title">《电路分析基础》 2W 字笔记</div>
+		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%A9%E7%90%86%E9%87%8F%E4%B8%8E%E7%BA%A6%E6%9D%9F"><span class="nav-number">1.</span> <span class="nav-text">物理量与约束</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%89%A9%E7%90%86%E9%87%8F"><span class="nav-number">1.2.</span> <span class="nav-text">基本物理量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%A6%E6%9D%9F-I%E2%80%94%E2%80%94%E5%85%83%E4%BB%B6%E7%BA%A6%E6%9D%9F"><span class="nav-number">1.3.</span> <span class="nav-text">约束 I——元件约束</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%A6%E6%9D%9F-II%E2%80%94%E2%80%94%E7%BB%93%E6%9E%84%E7%BA%A6%E6%9D%9F"><span class="nav-number">1.4.</span> <span class="nav-text">约束 II——结构约束</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%B5%E8%B7%AF%E7%9A%84%E5%88%86%E7%B1%BB"><span class="nav-number">1.5.</span> <span class="nav-text">电路的分类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E7%94%B5%E8%B7%AF"><span class="nav-number">2.</span> <span class="nav-text">静态电路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0-1"><span class="nav-number">2.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%89%E6%95%88%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.2.</span> <span class="nav-text">等效模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95"><span class="nav-number">2.3.</span> <span class="nav-text">分析方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E8%AE%BA"><span class="nav-number">3.</span> <span class="nav-text">图论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0-2"><span class="nav-number">3.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E8%81%94%E7%9F%A9%E9%98%B5-A"><span class="nav-number">3.2.</span> <span class="nav-text">关联矩阵 A</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E8%B7%AF%E7%9F%A9%E9%98%B5-B"><span class="nav-number">3.3.</span> <span class="nav-text">回路矩阵 B</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%B2%E9%9B%86%E7%9F%A9%E9%98%B5-Q"><span class="nav-number">3.4.</span> <span class="nav-text">割集矩阵 Q</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%94%AF%E8%B7%AF%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.5.</span> <span class="nav-text">支路模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8A%82%E7%82%B9%E6%B3%95%EF%BC%88A%EF%BC%89"><span class="nav-number">3.6.</span> <span class="nav-text">节点法（A）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E8%B7%AF%E6%B3%95%EF%BC%88B%EF%BC%89"><span class="nav-number">3.7.</span> <span class="nav-text">回路法（B）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%B2%E9%9B%86%E6%B3%95%EF%BC%88Q%EF%BC%89"><span class="nav-number">3.8.</span> <span class="nav-text">割集法（Q）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B4%E6%B5%81%E5%8A%A8%E6%80%81%E7%94%B5%E8%B7%AF"><span class="nav-number">4.</span> <span class="nav-text">直流动态电路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0-3"><span class="nav-number">4.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E9%98%B6%E7%94%B5%E8%B7%AF"><span class="nav-number">4.2.</span> <span class="nav-text">一阶电路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E9%98%B6%E7%94%B5%E8%B7%AF"><span class="nav-number">4.3.</span> <span class="nav-text">二阶电路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E5%8F%98%E9%87%8F%E6%B3%95"><span class="nav-number">4.4.</span> <span class="nav-text">状态变量法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%BC%A6%E5%8A%A8%E6%80%81%E7%94%B5%E8%B7%AF"><span class="nav-number">5.</span> <span class="nav-text">正弦动态电路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0-4"><span class="nav-number">5.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E9%98%B6%E7%94%B5%E8%B7%AF-1"><span class="nav-number">5.2.</span> <span class="nav-text">一阶电路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E9%98%B6%E7%94%B5%E8%B7%AF%E2%80%94%E2%80%94%E7%9B%B8%E9%87%8F%E6%B3%95"><span class="nav-number">5.3.</span> <span class="nav-text">二阶电路——相量法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2"><span class="nav-number">5.4.</span> <span class="nav-text">拉普拉斯变换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%91%E7%8E%87%E5%93%8D%E5%BA%94"><span class="nav-number">5.5.</span> <span class="nav-text">频率响应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E7%AD%89%E6%95%88"><span class="nav-number">5.6.</span> <span class="nav-text">参数等效</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E7%9B%B8%E6%AD%A3%E5%BC%A6%E5%8A%A8%E6%80%81%E7%94%B5%E8%B7%AF"><span class="nav-number">5.7.</span> <span class="nav-text">三相正弦动态电路</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%94%B5%E8%B7%AF"><span class="nav-number">6.</span> <span class="nav-text">非线性电路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0-5"><span class="nav-number">6.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%94%B5%E8%B7%AF%E7%9A%84%E6%B1%82%E8%A7%A3"><span class="nav-number">6.2.</span> <span class="nav-text">非线性电路的求解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E9%98%B6%E8%87%AA%E6%B2%BB%E7%94%B5%E8%B7%AF%E7%9A%84%E5%B9%B3%E8%A1%A1%E7%82%B9%E7%A8%B3%E5%AE%9A%E6%80%A7%E5%88%86%E6%9E%90"><span class="nav-number">6.3.</span> <span class="nav-text">二阶自治电路的平衡点稳定性分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E7%AB%AF%E5%8F%A3"><span class="nav-number">7.</span> <span class="nav-text">二端口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0-6"><span class="nav-number">7.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Y-%E5%8F%82%E6%95%B0%E3%80%81Z-%E5%8F%82%E6%95%B0"><span class="nav-number">7.2.</span> <span class="nav-text">Y 参数、Z 参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#T-%E5%8F%82%E6%95%B0"><span class="nav-number">7.3.</span> <span class="nav-text">T 参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#H-%E5%8F%82%E6%95%B0"><span class="nav-number">7.4.</span> <span class="nav-text">H 参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8D%E6%B1%82%E4%BA%8C%E7%AB%AF%E5%8F%A3%E7%AD%89%E6%95%88%E7%94%B5%E8%B7%AF"><span class="nav-number">7.5.</span> <span class="nav-text">反求二端口等效电路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E8%BD%BD%E5%AF%B9%E7%A7%B0%E4%BA%8C%E7%AB%AF%E5%8F%A3%E2%80%94%E2%80%94%E7%89%B9%E6%80%A7%E9%98%BB%E6%8A%97%E5%92%8C%E4%BC%A0%E6%92%AD%E5%B8%B8%E6%95%B0"><span class="nav-number">7.6.</span> <span class="nav-text">有载对称二端口——特性阻抗和传播常数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E8%BD%AC%E5%99%A8%E4%B8%8E%E8%B4%9F%E9%98%BB%E6%8A%97%E5%8F%98%E6%8D%A2%E5%99%A8"><span class="nav-number">7.7.</span> <span class="nav-text">回转器与负阻抗变换器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E7%A7%8D%E5%BF%AB%E6%8D%B7%E6%B1%82%E5%8F%82%E6%96%B9%E6%B3%95"><span class="nav-number">7.8.</span> <span class="nav-text">一种快捷求参方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%B8%83%E5%8F%82%E6%95%B0%E7%94%B5%E8%B7%AF"><span class="nav-number">8.</span> <span class="nav-text">分布参数电路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0-7"><span class="nav-number">8.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%8C%E6%B3%A2"><span class="nav-number">8.2.</span> <span class="nav-text">行波</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8D%E5%B0%84%E4%B8%8E%E6%8A%98%E5%B0%84"><span class="nav-number">8.3.</span> <span class="nav-text">反射与折射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A0%E6%8D%9F%E4%BC%A0%E8%BE%93%E7%BA%BF"><span class="nav-number">8.4.</span> <span class="nav-text">无损传输线</span></a></li></ol></li></ol>
+
+	</div>
+</div>
+	</div>
+	
+</div>
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+            <div class="customize-info my-1">歌未竟，东方白 | Songs unsung, a brand new dawn.</div>
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2025</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Deyang Zeng</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        11 posts in total
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.5</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
+</div>
+
+	
+	<div class="search-pop-overlay">
+	<div class="popup search-popup">
+		<div class="search-header">
+			<span class="search-input-field-pre">
+				<i class="fa-solid fa-keyboard"></i>
+			</span>
+			<div class="search-input-container">
+				<input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="Search..." spellcheck="false" type="search" class="search-input">
+			</div>
+			<span class="popup-btn-close">
+				<i class="fa-solid fa-times"></i>
+			</span>
+		</div>
+		<div id="search-result">
+			<div id="no-result">
+				<i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+</main>
+
+
+
+<script src="/js/build/libs/Swup.min.js"></script>
+
+<script src="/js/build/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/build/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+	
+<script src="/js/build/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/build/utils.js" type="module"></script>
+
+<script src="/js/build/main.js" type="module"></script>
+
+<script src="/js/build/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/build/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/build/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/build/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/build/tools/localSearch.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/runtime.js"></script>
+
+    
+<script src="/js/build/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/build/libs/Typed.min.js"></script>
+
+  
+<script src="/js/build/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+
+
+    
+<script src="/js/build/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/layouts/toc.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+<script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+<script src="/js/build/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+
+    
+<script src="/js/build/layouts/bookmarkNav.js" type="module"></script>
+
+
+	
+</body>
+
+</html>
