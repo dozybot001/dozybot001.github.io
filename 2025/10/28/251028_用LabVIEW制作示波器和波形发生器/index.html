@@ -140,7 +140,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/redefine-og.webp">
 <meta property="article:published_time" content="2025-10-27T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-11-09T14:39:27.662Z">
+<meta property="article:modified_time" content="2025-11-09T14:58:16.921Z">
 <meta property="article:author" content="Dozy">
 <meta property="article:tag" content="AWG">
 <meta property="article:tag" content="LabVIEW">
@@ -676,8 +676,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-11-09 22:39:27</span>
-            <span class="mobile">2025-11-09 22:39:27</span>
+            <span class="desktop">2025-11-09 22:58:16</span>
+            <span class="mobile">2025-11-09 22:58:16</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -755,9 +755,18 @@
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="内容简述"><a href="#内容简述" class="headerlink" title="内容简述"></a>内容简述</h3><p>这一篇博客，我们用 LabVIEW 搭建一个简单的示波器和波形发生器。掌握基本技能后你也能自己设计各种虚拟仪器。<br>系统版本：Windows 10 Workstation 22H2<br>软件版本：LabVIEW 2025 Q3 社区版 (32位)</p>
 <h3 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h3><p>2019 年 NI 推出可以非商用免费使用的LabVIEW 社区版，建议直接去 NI 官网注册账号后下载：<a href="">LabVIEW 下载链接</a>。</p>
 <hr>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="示波器"><a href="#示波器" class="headerlink" title="示波器"></a>示波器</h2><h3 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h3><p>我们要制作的示波器前面板长这样：<br>![]<br>所谓前面板，即仪器的外观面板，你想把仪器设计成什么样子，各种按键、旋钮的摆放，整体配色等等，都在这里修改。<br>程序面板：</p>
-<p>所谓程序面板，即仪器的逻辑实现面板，在这里进行图形化编程，实现各种功能。</p>
-<h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><p>我们打开 LabVIEW，点击创建VI。<br>前面板空白处单击右键，弹出控件选板，可以在里面选择不同风格的按键、旋钮，对应地，程序面板空白处单击右键，弹出函数选板。控件选板<br>在程序面板添加一个实体控件后，也会在前面板同步生成这个控件，</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="示波器"><a href="#示波器" class="headerlink" title="示波器"></a>示波器</h2><h3 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h3><p>我们要制作的示波器前面板长这样：<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202511092250429.png"
+                     
+                ><br>所谓前面板，即仪器的外观面板，你想把仪器设计成什么样子，各种按键、旋钮的摆放，整体配色等等，都在这里修改。<br>程序面板：<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202511092251306.png"
+                     
+                ><br>所谓程序面板，即仪器的逻辑实现面板，在这里进行图形化编程，实现各种功能。</p>
+<h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><p>我们打开 LabVIEW，点击创建VI, Virtual Instrument。<br>前面板空白处单击右键，弹出控件选板，可以在里面选择不同风格的按键、旋钮，对应地，程序面板空白处单击右键，弹出函数选板。控件选板<br>在程序面板添加一个实体控件后，也会在前面板同步生成这个控件，</p>
 <h2 id="波形发生器"><a href="#波形发生器" class="headerlink" title="波形发生器"></a>波形发生器</h2>
 		</div>
 
@@ -772,7 +781,7 @@
         
             <li>
                 <strong>Updated at
-                    :</strong> 2025-11-09 22:39:27
+                    :</strong> 2025-11-09 22:58:16
             </li>
         
         <li>
