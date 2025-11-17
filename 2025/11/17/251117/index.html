@@ -140,7 +140,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/redefine-og.webp">
 <meta property="article:published_time" content="2025-11-16T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-11-17T00:40:45.570Z">
+<meta property="article:modified_time" content="2025-11-17T22:18:41.835Z">
 <meta property="article:author" content="Dozy">
 <meta property="article:tag" content="AWG">
 <meta property="article:tag" content="LabVIEW">
@@ -627,7 +627,7 @@
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">11</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">12</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -676,8 +676,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-11-17 08:40:45</span>
-            <span class="mobile">2025-11-17 08:40:45</span>
+            <span class="desktop">2025-11-18 06:18:41</span>
+            <span class="mobile">2025-11-18 06:18:41</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -739,7 +739,7 @@
 
 
 		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-			<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>LabVIEW（Laboratory Virtual Instrument Engineering Workbench）是由美国国家仪器公司（National Instruments）开发的一款图形化编程平台，主要用于数据采集、仪器控制和工业自动化等领域。其核心特点是使用“数据流”编程模型，通过连接图标和连线的方式构建程序，而非传统的文本代码。</p>
+			<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>LabVIEW（Laboratory Virtual Instrument Engineering Workbench）是由美国国家仪器公司（National Instruments）开发的一款图形化编程平台，主要用于数据采集、仪器控制和工业自动化等领域。其核心特点是使用 “数据流” 编程模型，通过连接图标和连线的方式构建程序，而非传统的文本代码。</p>
 <h3 id="主要特点："><a href="#主要特点：" class="headerlink" title="主要特点："></a>主要特点：</h3><ol>
 <li>图形化编程：使用 G 语言，通过框图（Block Diagram）和前面板（Front Panel）设计程序，直观易学。</li>
 <li>硬件集成：支持与多种硬件设备（如 DAQ 卡、PXI、GPIB 等）无缝连接，便于实时数据采集和控制。</li>
@@ -753,8 +753,8 @@
 <li>学术实验与科研项目</li>
 </ul>
 <hr>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="内容简述"><a href="#内容简述" class="headerlink" title="内容简述"></a>内容简述</h3><p>这一篇博客，我们用 LabVIEW 搭建一个简单的示波器和波形发生器。掌握基本技能后你也能自己设计各种虚拟仪器。<br>系统版本：Windows 10 Workstation 22H2<br>软件版本：LabVIEW 2025 Q3 专业版 (64位)</p>
-<h3 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h3><p>2019 年 NI 推出可以非商用免费使用的LabVIEW 社区版，建议直接去 NI 官网注册账号后下载：<a class="link"   target="_blank" rel="noopener" href="https://www.ni.com/zh-cn/support/downloads/software-products/download.labview.html" >LabVIEW 下载链接<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>。<del>由于我的电脑上不知怎的出现了已经激活的全套专业版，所以就顺手拿来用了。</del></p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="内容简述"><a href="#内容简述" class="headerlink" title="内容简述"></a>内容简述</h3><p>这一篇博客，我们用 LabVIEW 搭建一个简单的示波器和波形发生器。掌握基本技能后你也能自己设计各种虚拟仪器。<br>系统版本：Windows 10 Workstation 22H2<br>软件版本：LabVIEW 2025 Q3 专业版 (64 位)</p>
+<h3 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h3><p>2019 年 NI 推出可以非商用免费使用的 LabVIEW 社区版，建议直接去 NI 官网注册账号后下载：<a class="link"   target="_blank" rel="noopener" href="https://www.ni.com/zh-cn/support/downloads/software-products/download.labview.html" >LabVIEW 下载链接<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>。<del>由于我的电脑上不知怎的出现了已经激活的全套专业版，所以就顺手拿来用了。</del></p>
 <hr>
 <h2 id="波形发生器"><a href="#波形发生器" class="headerlink" title="波形发生器"></a>波形发生器</h2><h3 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h3><p>我们要制作的波形发生器前面板如下：</p>
 <p><img  
@@ -771,7 +771,7 @@
                      
                 ></p>
 <p>所谓程序面板，即仪器的逻辑实现面板，在这里进行图形化编程，实现各种功能。</p>
-<h3 id="简单入门——电源键"><a href="#简单入门——电源键" class="headerlink" title="简单入门——电源键"></a>简单入门——电源键</h3><p>我们打开 LabVIEW，创建一个空白VI(Virtual Instrument)，</p>
+<h3 id="简单入门——电源键"><a href="#简单入门——电源键" class="headerlink" title="简单入门——电源键"></a>简单入门——电源键</h3><p>我们打开 LabVIEW，创建一个空白 VI(Virtual Instrument)，</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
@@ -792,21 +792,21 @@
                      data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/20251112080504.png"
                      
                 ></p>
-<p>我们将这个变量连接上While结构框的循环控制条件，</p>
+<p>我们将这个变量连接上 While 结构框的循环控制条件，</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/20251112080929.png"
                      
                 ></p>
-<p>就实现了这个按钮按下后，while循环框内的内容开始循环的效果，显然这可以当成仪器的电源键。</p>
+<p>就实现了这个按钮按下后，while 循环框内的内容开始循环的效果，显然这可以当成仪器的电源键。</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/20251112081223.png"
                      
                 ></p>
-<h3 id="从前面板开始"><a href="#从前面板开始" class="headerlink" title="从前面板开始"></a>从前面板开始</h3><p>创建一个虚拟仪器，我个人的习惯是从前面板开始，从产品定位以及最基本的功能出发，逐步扩展或优化功能。首先，一个波形发生器的最基本的功能是输出波形，所以要有输出波形的端口，虚拟仪器通过主机或者笔记本的端口输出。其次，我们可以将这个波形展示出来，那么就要一个屏幕。之后，我们可以选择不同的波形，再然后，选择波形的各种参数……假想自己是用户，如何更方便地操作仪器实现功能，逐步构建出前面板。然后将这些控件排列整齐，自己设计按钮、屏幕的大小、位置等等。我的波形发生器前面板：</p>
+<h3 id="从前面板开始"><a href="#从前面板开始" class="headerlink" title="从前面板开始"></a>从前面板开始</h3><p>创建一个虚拟仪器，我个人的习惯是从前面板开始，从产品定位以及最基本的功能出发，逐步扩展或优化功能。首先，一个波形发生器的最基本的功能是输出波形，所以要有输出波形的端口，虚拟仪器通过主机或者笔记本的端口输出。其次，我们可以将这个波形展示出来，那么就要一个屏幕。之后，我们可以选择不同的波形，再然后，选择波形的各种参数 …… 假想自己是用户，如何更方便地操作仪器实现功能，逐步构建出前面板。然后将这些控件排列整齐，自己设计按钮、屏幕的大小、位置等等。我的波形发生器前面板：</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
@@ -829,37 +829,37 @@
                      data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202511161004840.png"
                      
                 ></p>
-<p>也分别对应了这6个功能。</p>
-<h3 id="外围结构"><a href="#外围结构" class="headerlink" title="外围结构"></a>外围结构</h3><p>可以看到外围为两个结构框，一个开始按钮连接case structure包while loop，这两个函数均在structures类里，表明一旦点击开始按钮，case structure内的内容便执行，即进行while循环。</p>
+<p>也分别对应了这 6 个功能。</p>
+<h3 id="外围结构"><a href="#外围结构" class="headerlink" title="外围结构"></a>外围结构</h3><p>可以看到外围为两个结构框，一个开始按钮连接 case structure 包 while loop，这两个函数均在 structures 类里，表明一旦点击开始按钮，case structure 内的内容便执行，即进行 while 循环。</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202511161012743.png"
                      
                 ></p>
-<h3 id="内部功能"><a href="#内部功能" class="headerlink" title="内部功能"></a>内部功能</h3><p>我们在内部再添加一个case structure，右键点击方框顶部的selector label，可以添加case，</p>
+<h3 id="内部功能"><a href="#内部功能" class="headerlink" title="内部功能"></a>内部功能</h3><p>我们在内部再添加一个 case structure，右键点击方框顶部的 selector label，可以添加 case，</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202511161021775.png"
                      
                 ></p>
-<p>下方还有多个选项进行case管理，这样就做好了一个多选择case structure，可以连接上前面板中拉出来的菜单选择器对应的函数。</p>
+<p>下方还有多个选项进行 case 管理，这样就做好了一个多选择 case structure，可以连接上前面板中拉出来的菜单选择器对应的函数。</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202511161028589.png"
                      
                 ></p>
-<p>每一个case对应的方框中的信号流程都不同，需要依次连接，例如在我的波形发生器的程序面板中，主波形选择方框中不同case的方框放置了不同类型的仿真波形，以此实现波形选择的功能。</p>
+<p>每一个 case 对应的方框中的信号流程都不同，需要依次连接，例如在我的波形发生器的程序面板中，主波形选择方框中不同 case 的方框放置了不同类型的仿真波形，以此实现波形选择的功能。</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202511161031646.png"
                      
                 ></p>
-<p>LabVIEW的核心特点是“数据流”编程，可以看到，波形信号（蓝色线条）从主波形框中产生，再经过附加波形框，进入了<strong>波形图表</strong>和<strong>DAQ助手</strong>两个端口中，DAQ助手是与数据采集卡相关的函数组件，分别实现了波形显示与波形输出功能。</p>
-<p>图中左侧的橙色组件，为前面板的旋钮控件对应的函数，前面版旋钮选择数据后通过这个控件传入程序面板，这里将其接入了仿真信号中，设置仿真信号的参数。为了，显示这些信息，我们可以直接再拉出一条信号线接入测量组件中得到波形参数数据，这里我们可以通过创建Property Node中的value，</p>
+<p>LabVIEW 的核心特点是 “数据流” 编程，可以看到，波形信号（蓝色线条）从主波形框中产生，再经过附加波形框，进入了 ** 波形图表 ** 和 **DAQ 助手 ** 两个端口中，DAQ 助手是与数据采集卡相关的函数组件，分别实现了波形显示与波形输出功能。</p>
+<p>图中左侧的橙色组件，为前面板的旋钮控件对应的函数，前面版旋钮选择数据后通过这个控件传入程序面板，这里将其接入了仿真信号中，设置仿真信号的参数。为了，显示这些信息，我们可以直接再拉出一条信号线接入测量组件中得到波形参数数据，这里我们可以通过创建 Property Node 中的 value，</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
@@ -896,7 +896,7 @@
                      data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202511170539028.png"
                      
                 ></p>
-<p>值得注意的是，通过修改主屏坐标轴范围实现对主屏窗口的移动，这里也是采用Property Node实现，</p>
+<p>值得注意的是，通过修改主屏坐标轴范围实现对主屏窗口的移动，这里也是采用 Property Node 实现，</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
@@ -910,21 +910,21 @@
                      data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202511170819782.png"
                      
                 ></p>
-<p>那么右键单击程序面板中对应的函数组件，依照此路径就可以创建一个控制X轴最大值的Property Node：</p>
+<p>那么右键单击程序面板中对应的函数组件，依照此路径就可以创建一个控制 X 轴最大值的 Property Node：</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202511170820980.png"
                      
                 ></p>
-<p>这里的AS和RS分别代表Autoset和Reset，均是通过对四个前面板输入量的反向输入，实现对主屏窗口的操作：</p>
+<p>这里的 AS 和 RS 分别代表 Autoset 和 Reset，均是通过对四个前面板输入量的反向输入，实现对主屏窗口的操作：</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202511170830738.png"
                      
                 ></p>
-<p>拆开来看，其实利用LabVIEW创建一个虚拟仪器非常简单，软件本身就集成了很多非常强大的功能，只需要搭积木一样将其按照自己的想法组合起来即可。</p>
+<p>拆开来看，其实利用 LabVIEW 创建一个虚拟仪器非常简单，软件本身就集成了很多非常强大的功能，只需要搭积木一样将其按照自己的想法组合起来即可。</p>
 
 		</div>
 
@@ -939,7 +939,7 @@
         
             <li>
                 <strong>Updated at
-                    :</strong> 2025-11-17 08:40:45
+                    :</strong> 2025-11-18 06:18:41
             </li>
         
         <li>
@@ -983,6 +983,18 @@
 
 		
 		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/2025/11/18/251118/">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item truncate max-w-48">用.json文件手动维护纯前端网站</span>
+						<span class="post-nav-item">Prev posts</span>
+					</span>
+				</a>
+			</div>
 			
 			
 			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
@@ -1097,7 +1109,7 @@
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        11 posts in total
+                        12 posts in total
                     </span>
                     
                 </p>
