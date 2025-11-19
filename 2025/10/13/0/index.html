@@ -123,7 +123,7 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/2025/11/18/251118/"/>
+    <link rel="canonical" href="http://example.com/2025/10/13/0/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
@@ -133,16 +133,16 @@
         
         <meta name="description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用 .json 文件手动维护纯前端网站">
-<meta property="og:url" content="http://example.com/2025/11/18/251118/index.html">
+<meta property="og:title" content="Hello World">
+<meta property="og:url" content="http://example.com/2025/10/13/0/index.html">
 <meta property="og:site_name">
 <meta property="og:description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/redefine-og.webp">
-<meta property="article:published_time" content="2025-11-17T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-11-17T23:20:31.216Z">
+<meta property="article:published_time" content="2025-10-12T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-11-09T15:53:16.706Z">
 <meta property="article:author" content="Dozy">
-<meta property="article:tag" content="Website">
+<meta property="article:tag" content="Hexo">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/images/redefine-og.webp">
     
@@ -156,7 +156,7 @@
     
     <title>
         
-            用 .json 文件手动维护纯前端网站 | Dozy Memory
+            Hello World | Dozy Memory
         
     </title>
 
@@ -625,7 +625,7 @@
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">13</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">14</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -648,7 +648,7 @@
 		<div class="article-title relative w-full">
 			
 			<div class="w-full flex items-center pt-6 justify-start">
-				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">用 .json 文件手动维护纯前端网站</h1>
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">Hello World</h1>
 			</div>
 			
 		</div>
@@ -667,15 +667,15 @@
 					<div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2025-11-18</span>
-        <span class="mobile">2025-11-18</span>
+        <span class="desktop">2025-10-13</span>
+        <span class="mobile">2025-10-13</span>
         <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-11-18 07:20:31</span>
-            <span class="mobile">2025-11-18 07:20:31</span>
+            <span class="desktop">2025-11-09 23:53:16</span>
+            <span class="mobile">2025-11-09 23:53:16</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -703,7 +703,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/Website/">Website</a>&nbsp;
+                        <a href="/tags/Hexo/">Hexo</a>&nbsp;
                     </li>
                 
             </ul>
@@ -729,55 +729,19 @@
 
 
 		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-			<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>一次完整的修改流程包括：</p>
-<ol>
-<li>文字信息修改</li>
-<li>图片信息修改</li>
-</ol>
-<p>两个部分，如果只要修改文字或者只要修改图片，则进行对应步骤即可，这两部分相互独立。</p>
-<h2 id="文字信息修改"><a href="#文字信息修改" class="headerlink" title="文字信息修改"></a>文字信息修改</h2><p>利用 VSCode 建立本地服务器后，进入 manage 页面：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202511180617065.png"
-                     
-                ></p>
-<p>manage 页面加载时会调用<code>data/offer-data.json</code>和<code>data/team-data.json</code>作为原始数据。</p>
-<p>在卡片处可以进行编辑、删除和预览三个操作，如果要添加卡片，则点击顶部导航栏的添加新成员和添加 offer 按钮。</p>
-<p><strong>注意：如果删除卡片，需要删除对应的图片，或者只需要修改卡片的图片信息，请记住卡片的 ID 编号，因为图片均以 ID 编号命名</strong></p>
-<p>修改完文字信息后，所有的数据暂时保存在浏览器内存中，一旦刷新则会丢失修改数据。</p>
-<p>点击<strong>导出团队成员数据</strong>和<strong>导出 Offer 数据</strong>，如果只修改了团队成员的文字信息就只要导出团队成员数据即可。导出操作会下载一个 .json 文件到本地：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202511180644953.png"
-                     
-                ></p>
-<p>将这个文件放在服务器的<code>data</code>文件夹中，替换掉旧的文件，实现文字信息的修改：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202511180647241.png"
-                     
-                ></p>
-<p>这里由于我们是本地服务器，所以就在本地操作，之后上线需要将所有文件放在云服务器中，也是一样的修改方式，只是将文件上传到服务器中的<code>data</code>文件夹。</p>
-<p>修改完成后，再次进入或者刷新 manage 页面，就会显示修改后的信息。</p>
-<h2 id="图片信息修改"><a href="#图片信息修改" class="headerlink" title="图片信息修改"></a>图片信息修改</h2><p>如果在上一步中删除了新成员或 offer，可以进入<code>data/offer-image</code>和<code>date/team-avatar</code>文件夹，删除对应 ID 编号的图片，当然不删除也并无影响只是占用存储空间，ID 编号自创建文字信息起便是唯一的。</p>
-<p>如果在上一步中修改了新成员或 offer，需要进一步修改图片信息，则进入<code>data/offer-image</code>和<code>date/team-avatar</code>文件夹，新图片命名为<code>ID编号.png</code>，png 是图片的格式，将新图片放入对应文件夹替换旧图片。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202511180701360.png"
-                     
-                ></p>
-<p>如果要添加新图片，打开 manage 页面，新添加的成员或 offer 卡片，由于还没有添加图片，图片处不显示：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202511180712620.png"
-                     
-                ></p>
-<p>依据其对应的 ID 编号，将新图片命名为<code>ID编号.png</code>，放入对应文件夹中即可，此时再刷新 manage 页面就会显示图片。</p>
+			<p>Welcome to <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/" >Hexo<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>! This is your very first post. Check <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/" >documentation<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html" >troubleshooting<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a> or you can ask me on <a class="link"   target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues" >GitHub<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>More info: <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html" >Writing<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></div>
+
+<p>More info: <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/server.html" >Server<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure></div>
+
+<p>More info: <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html" >Generating<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></div>
+
+<p>More info: <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html" >Deployment<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
 
 		</div>
 
@@ -785,18 +749,18 @@
 		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
 			<div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> 用 .json 文件手动维护纯前端网站</li>
+        <li><strong>Title:</strong> Hello World</li>
         <li><strong>Author:</strong> Deyang Zeng</li>
         <li><strong>Created at
-                :</strong> 2025-11-18 00:00:00</li>
+                :</strong> 2025-10-13 00:00:00</li>
         
             <li>
                 <strong>Updated at
-                    :</strong> 2025-11-18 07:20:31
+                    :</strong> 2025-11-09 23:53:16
             </li>
         
         <li>
-            <strong>Link:</strong> https://hexo.io/2025/11/18/251118/
+            <strong>Link:</strong> https://hexo.io/2025/10/13/0/
         </li>
         <li>
             <strong>
@@ -818,7 +782,7 @@
 		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
 			
 			<li class="tag-item mx-0.5">
-				<a href="/tags/Website/">#Website</a>&nbsp;
+				<a href="/tags/Hexo/">#Hexo</a>&nbsp;
 			</li>
 			
 		</ul>
@@ -830,29 +794,17 @@
 		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
 			
 			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-				<a class="prev" rel="prev" href="/2025/11/19/251119/">
+				<a class="prev" rel="prev" href="/2025/10/15/1/">
 					<span class="left arrow-icon flex justify-center items-center">
 						<i class="fa-solid fa-chevron-left"></i>
 					</span>
 					<span class="title flex justify-center items-center">
-						<span class="post-nav-title-item truncate max-w-48">《高电压技术》 笔记</span>
+						<span class="post-nav-title-item truncate max-w-48">Hello Dozybot</span>
 						<span class="post-nav-item">Prev posts</span>
 					</span>
 				</a>
 			</div>
 			
-			
-			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-				<a class="next" rel="next" href="/2025/11/17/251117/">
-					<span class="title flex justify-center items-center">
-						<span class="post-nav-title-item truncate max-w-48">用 LabVIEW 制作示波器和波形发生器</span>
-						<span class="post-nav-item">Next posts</span>
-					</span>
-					<span class="right arrow-icon flex justify-center items-center">
-						<i class="fa-solid fa-chevron-right"></i>
-					</span>
-				</a>
-			</div>
 			
 		</div>
 		
@@ -924,8 +876,8 @@
 		<div class="post-toc-wrap">
 	<div class="post-toc">
 		<div class="toc-title">On this page</div>
-		<div class="page-title">用 .json 文件手动维护纯前端网站</div>
-		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E5%AD%97%E4%BF%A1%E6%81%AF%E4%BF%AE%E6%94%B9"><span class="nav-number">2.</span> <span class="nav-text">文字信息修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E7%89%87%E4%BF%A1%E6%81%AF%E4%BF%AE%E6%94%B9"><span class="nav-number">3.</span> <span class="nav-text">图片信息修改</span></a></li></ol>
+		<div class="page-title">Hello World</div>
+		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol>
 
 	</div>
 </div>
@@ -954,7 +906,7 @@
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        13 posts in total
+                        14 posts in total
                     </span>
                     
                 </p>

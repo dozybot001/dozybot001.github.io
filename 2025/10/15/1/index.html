@@ -123,7 +123,7 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/2025/10/22/251022/"/>
+    <link rel="canonical" href="http://example.com/2025/10/15/1/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
@@ -133,16 +133,16 @@
         
         <meta name="description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Nunjucks Error 解决办法">
-<meta property="og:url" content="http://example.com/2025/10/22/251022/index.html">
+<meta property="og:title" content="Hello Dozybot">
+<meta property="og:url" content="http://example.com/2025/10/15/1/index.html">
 <meta property="og:site_name">
 <meta property="og:description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/redefine-og.webp">
-<meta property="article:published_time" content="2025-10-21T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-11-09T14:45:47.608Z">
+<meta property="article:published_time" content="2025-10-14T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-11-09T14:37:55.022Z">
 <meta property="article:author" content="Dozy">
-<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Start">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/images/redefine-og.webp">
     
@@ -156,7 +156,7 @@
     
     <title>
         
-            Nunjucks Error 解决办法 | Dozy Memory
+            Hello Dozybot | Dozy Memory
         
     </title>
 
@@ -625,7 +625,7 @@
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">13</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">14</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -648,7 +648,7 @@
 		<div class="article-title relative w-full">
 			
 			<div class="w-full flex items-center pt-6 justify-start">
-				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">Nunjucks Error 解决办法</h1>
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">Hello Dozybot</h1>
 			</div>
 			
 		</div>
@@ -667,15 +667,15 @@
 					<div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2025-10-22</span>
-        <span class="mobile">2025-10-22</span>
+        <span class="desktop">2025-10-15</span>
+        <span class="mobile">2025-10-15</span>
         <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-11-09 22:45:47</span>
-            <span class="mobile">2025-11-09 22:45:47</span>
+            <span class="desktop">2025-11-09 22:37:55</span>
+            <span class="mobile">2025-11-09 22:37:55</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -689,7 +689,7 @@
                     
                         
                         <li>
-                            <a href="/categories/Software/">Software</a>&nbsp;
+                            <a href="/categories/Journal/">Journal</a>&nbsp;
                         </li>
                     
                     
@@ -703,7 +703,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/Hexo/">Hexo</a>&nbsp;
+                        <a href="/tags/Start/">Start</a>&nbsp;
                     </li>
                 
             </ul>
@@ -729,73 +729,35 @@
 
 
 		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-			<p>写博客时遇见如下错误：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510221832878.png"
-                     
-                ></p>
-<p>Nunjucks Error 是一个常见错误。</p>
-<ul>
-<li>原因：Hexo 调用 Nunjucks 渲染文章，而文章中的<code>{ something }</code>会被 Nunjucks 识别为某种指令而报错</li>
-<li>解决办法：把被报错的内容用：</li>
-</ul>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;% raw %&#125;</span><br><span class="line"></span><br><span class="line">&#123;something&#125;</span><br><span class="line"></span><br><span class="line">&#123;% endraw %&#125;</span><br></pre></td></tr></table></figure></div>
-<p>包起来。</p>
-<ul>
-<li>注意：被包住的内容中，Markdown 标识符无法识别，例如标识无序编号的<code>-</code>会直接显示出来，并不产生小圆点，图片格式也会失效，如：</li>
-</ul>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510221841385.png"
-                     
-                ></p>
-<p>所以只要包住造成报错的公式内容即可：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510221842491.png"
-                     
-                ></p>
-<p>同时这个方法还可以解决矩阵或多行公式渲染后挤成一行的问题，例如：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510222209499.png"
-                     
-                ></p>
-<p>把矩阵包起来：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://cdn.jsdelivr.net/gh/dozybot001/blogimage/202510222210612.png"
-                     
-                ></p>
-<p>原因是换行符没有被正确识别，当然也可以用转义字符达成一样的效果。</p>
-<p>所以，为了彻底杜绝这类渲染错误以及排版错误，建议再每次输入公式时都在前后分别加上 </p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;%raw%&#125;</span><br></pre></td></tr></table></figure></div>
-<p>和 </p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;%endraw%&#125;</span><br></pre></td></tr></table></figure></div>
+			<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这是我的第一篇 Blog。断断续续花了三天时间，终于搭建起了这个毛坯房。其实建立个人网站的初衷很简单，只是偶然遇见一位同去南洋理工大学留学的湖南老乡，分享了他的博客网站，觉得 “好酷”，所以这个网站就诞生了。其实现在想来，记录自己的成长与人生本就是我一直在做的事，只不过把记录的形式从一堆躺在云盘里的文件，变成了一篇篇 Blog，多了一个整合输出的环节，相对获得了形式上的优势。于我而言，记录是一种对抗虚无的方式，记忆靠不住，所以总想着留下点什么东西。</p>
+<h2 id="内容划分"><a href="#内容划分" class="headerlink" title="内容划分"></a>内容划分</h2><p>关于博客内容，主要分为四个部分：</p>
+<ol>
+<li>理论学习 &#x2F; Theory：过去以及未来的理论课程笔记；</li>
+<li>软件相关 &#x2F; Software：软件编程相关的学习记录；</li>
+<li>硬件相关 &#x2F; Hardware：硬件设计相关的学习记录；</li>
+<li>开源项目 &#x2F; Project：自己发起或者复刻的开源项目。</li>
+<li>随笔日记 &#x2F; Journal: 生活记录等其他的内容</li>
+</ol>
+<p>这四个作为文章的分类 Categories，未来会有更多的内容发布到这个网站上，可能会增加其他的分类。每篇文章依据标签 Tags 进行更细致地分类，比如<code>Hexo</code>、<code>Python</code>、<code>PCB Design</code>等等。</p>
+
 		</div>
 
 		
 		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
 			<div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> Nunjucks Error 解决办法</li>
+        <li><strong>Title:</strong> Hello Dozybot</li>
         <li><strong>Author:</strong> Deyang Zeng</li>
         <li><strong>Created at
-                :</strong> 2025-10-22 00:00:00</li>
+                :</strong> 2025-10-15 00:00:00</li>
         
             <li>
                 <strong>Updated at
-                    :</strong> 2025-11-09 22:45:47
+                    :</strong> 2025-11-09 22:37:55
             </li>
         
         <li>
-            <strong>Link:</strong> https://hexo.io/2025/10/22/251022/
+            <strong>Link:</strong> https://hexo.io/2025/10/15/1/
         </li>
         <li>
             <strong>
@@ -817,7 +779,7 @@
 		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
 			
 			<li class="tag-item mx-0.5">
-				<a href="/tags/Hexo/">#Hexo</a>&nbsp;
+				<a href="/tags/Start/">#Start</a>&nbsp;
 			</li>
 			
 		</ul>
@@ -829,12 +791,12 @@
 		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
 			
 			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-				<a class="prev" rel="prev" href="/2025/10/25/251025/">
+				<a class="prev" rel="prev" href="/2025/10/16/2/">
 					<span class="left arrow-icon flex justify-center items-center">
 						<i class="fa-solid fa-chevron-left"></i>
 					</span>
 					<span class="title flex justify-center items-center">
-						<span class="post-nav-title-item truncate max-w-48">与 AI 高效对话</span>
+						<span class="post-nav-title-item truncate max-w-48">用 Hexo + Github 搭建个人网站</span>
 						<span class="post-nav-item">Prev posts</span>
 					</span>
 				</a>
@@ -842,9 +804,9 @@
 			
 			
 			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-				<a class="next" rel="next" href="/2025/10/21/251021/">
+				<a class="next" rel="next" href="/2025/10/13/0/">
 					<span class="title flex justify-center items-center">
-						<span class="post-nav-title-item truncate max-w-48">《电路分析基础》 2W 字笔记</span>
+						<span class="post-nav-title-item truncate max-w-48">Hello World</span>
 						<span class="post-nav-item">Next posts</span>
 					</span>
 					<span class="right arrow-icon flex justify-center items-center">
@@ -923,8 +885,8 @@
 		<div class="post-toc-wrap">
 	<div class="post-toc">
 		<div class="toc-title">On this page</div>
-		<div class="page-title">Nunjucks Error 解决办法</div>
-		
+		<div class="page-title">Hello Dozybot</div>
+		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AE%B9%E5%88%92%E5%88%86"><span class="nav-number">2.</span> <span class="nav-text">内容划分</span></a></li></ol>
 
 	</div>
 </div>
@@ -953,7 +915,7 @@
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        13 posts in total
+                        14 posts in total
                     </span>
                     
                 </p>
