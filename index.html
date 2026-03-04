@@ -847,7 +847,7 @@ mjx-container[display="true"] + br {
 
         <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">40</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">43</div>
         <div class="label text-third-text-color text-sm">Tags</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
@@ -855,7 +855,7 @@ mjx-container[display="true"] + br {
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">27</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">28</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -1040,6 +1040,95 @@ LSI（线性 + 移位不变）系统：系统完全由它对“单位冲激”�
                 
                 <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
                     <h3 class="home-article-title">
+                        <a href="/2026/03/04/2026-03-04-EE6222-3-%E7%82%B9%E5%A4%84%E7%90%86%E4%B8%8E%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/">
+                            EE6222 3 点处理与图像增强
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            什么是图像增强（Image Enhancement）图像增强的目标是：
+让图像变得更适合人观察，或者更适合后续处理。
+它不一定恢复“真实图像”，而是：
+
+提高对比度
+突出细节
+抑制噪声
+强化边缘
+改善视觉效果
+
+所以要注意：
+图像增强不等于图像复原（Restoration）。
+
+增强：更关注“看起来更清楚”“更容易分析”
+复原：更关注“恢复原始真实图像”
+
+图像增强的主要分类按这章提纲，通常...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Wed Mar 04 2026 00:00:00 GMT+0800">
+                
+                    2026-03-04
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/Theory/">Theory</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/EE6222/">EE6222</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/Image-Enhancement/">Image Enhancement</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2026/03/04/2026-03-04-EE6222-3-%E7%82%B9%E5%A4%84%E7%90%86%E4%B8%8E%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/">Read more<span class="seo-reader-text">EE6222 3 点处理与图像增强</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
                         <a href="/2026/03/04/2026-03-04-EE6222-1-%E5%9B%BE%E5%83%8F%E5%9F%BA%E7%A1%80%E4%B8%8E%E4%BA%BA%E7%9C%BC%E6%84%9F%E7%9F%A5/">
                             EE6222 1 图像基础与人眼感知
                         </a>
@@ -1130,31 +1219,25 @@ Image...
                 
                 <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
                     <h3 class="home-article-title">
-                        <a href="/2026/03/04/2026-03-04-EE6222-3-%E7%82%B9%E5%A4%84%E7%90%86%E4%B8%8E%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/">
-                            EE6222 3 点处理与图像增强
+                        <a href="/2026/03/04/2026-03-04-EE6222-6-MAP%E5%86%B3%E7%AD%96%E4%B8%8E%E5%88%86%E7%B1%BB%E5%99%A8/">
+                            EE6222 6 MAP决策与分类器
                         </a>
                     </h3>
 
                     <div class="home-article-content markdown-body">
                         
                             
-                            什么是图像增强（Image Enhancement）图像增强的目标是：
-让图像变得更适合人观察，或者更适合后续处理。
-它不一定恢复“真实图像”，而是：
+                            MAP Decision and Classifiers 的核心是：如何在不确定的信息下，做“最合理”的分类决定。
+从直觉到数学：决策理论是怎么来的直觉上的分类过程假设你要判断一个样本 (x) 属于哪一类：
 
-提高对比度
-突出细节
-抑制噪声
-强化边缘
-改善视觉效果
+是“垃圾邮件”还是“正常邮件”
+是“猫”还是“狗”
+是“类别 (\omega_1)” 还是 “类别 (\omega_2)”
 
-所以要注意：
-图像增强不等于图像复原（Restoration）。
+人类直觉会这样做：
 
-增强：更关注“看起来更清楚”“更容易分析”
-复原：更关注“恢复原始真实图像”
-
-图像增强的主要分类按这章提纲，通常...
+先看特征：样本 (x) 有哪些表现
+...
                         
                     </div>
 
@@ -1196,7 +1279,12 @@ Image...
                     
                         <li>
                             | 
-                            <a href="/tags/Image-Enhancement/">Image Enhancement</a>&nbsp;
+                            <a href="/tags/MAP/">MAP</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/Classifier/">Classifier</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -1204,7 +1292,7 @@ Image...
         
     </div>
 
-    <a href="/2026/03/04/2026-03-04-EE6222-3-%E7%82%B9%E5%A4%84%E7%90%86%E4%B8%8E%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/">Read more<span class="seo-reader-text">EE6222 3 点处理与图像增强</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2026/03/04/2026-03-04-EE6222-6-MAP%E5%86%B3%E7%AD%96%E4%B8%8E%E5%88%86%E7%B1%BB%E5%99%A8/">Read more<span class="seo-reader-text">EE6222 6 MAP决策与分类器</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
                 </div>
@@ -1623,79 +1711,6 @@ PicGo
                 </div>
             </li>
         
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/2025/11/25/2025-11-25-power-electronics-fundamentals/">
-                            《电力电子技术基础》 学习笔记
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            
-                            前言个人自制学习资料，无商业用途。参考资料《电力电子技术》（王勇，高教出版社，2020）。
-绪论什么是电力电子
-1974年Newell定义：电力电子是由电力学、电子学及控制学组成的交叉学科
-美国电力电子学会定义：电力电子是有效使用电力半导体器件、应用电路和设计理论以及分析开发工具，实现对电能的高效变换和控制的技术。
-按照电能输入输出的变换形式，可以分为：
-AC-DC：rectifier，整流...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Tue Nov 25 2025 00:00:00 GMT+0800">
-                
-                    2025-11-25
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/Theory/">Theory</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/Power-Electronics/">Power Electronics</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2025/11/25/2025-11-25-power-electronics-fundamentals/">Read more<span class="seo-reader-text">《电力电子技术基础》 学习笔记</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
     </ul>
 
     <div class="home-paginator px-7 py-5">
@@ -1723,7 +1738,7 @@ AC-DC：rectifier，整流...
 </div>
                 <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">40</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">43</div>
         <div class="label text-third-text-color text-sm">Tags</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
@@ -1731,7 +1746,7 @@ AC-DC：rectifier，整流...
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">27</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">28</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -1812,7 +1827,7 @@ AC-DC：rectifier，整流...
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        27 posts in total
+                        28 posts in total
                     </span>
                     
                 </p>
