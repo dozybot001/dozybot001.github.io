@@ -140,7 +140,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/redefine-og.webp">
 <meta property="article:published_time" content="2026-03-03T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-03-04T13:35:31.068Z">
+<meta property="article:modified_time" content="2026-03-04T13:45:37.075Z">
 <meta property="article:author" content="Dozy">
 <meta property="article:tag" content="EE6222">
 <meta property="article:tag" content="Human Perception">
@@ -788,8 +788,8 @@ mjx-container[display="true"] + br {
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2026-03-04 21:35:31</span>
-            <span class="mobile">2026-03-04 21:35:31</span>
+            <span class="desktop">2026-03-04 21:45:37</span>
+            <span class="mobile">2026-03-04 21:45:37</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -864,11 +864,11 @@ mjx-container[display="true"] + br {
 <li>怎么对图像做增强、分析和应用</li>
 </ol>
 <hr>
-<h2 id="1-Image-Formation"><a href="#1-Image-Formation" class="headerlink" title="1. Image Formation"></a>1. Image Formation</h2><h3 id="1-1-图像形成的本质"><a href="#1-1-图像形成的本质" class="headerlink" title="1.1 图像形成的本质"></a>1.1 图像形成的本质</h3><p>图像的形成，本质上是：</p>
+<h2 id="Image-Formation"><a href="#Image-Formation" class="headerlink" title="Image Formation"></a>Image Formation</h2><h3 id="图像形成的本质"><a href="#图像形成的本质" class="headerlink" title="图像形成的本质"></a>图像形成的本质</h3><p>图像的形成，本质上是：</p>
 <p><strong>光源发出光 → 光照到物体 → 物体反射/透射光 → 传感器（眼睛/相机）接收光 → 形成图像</strong></p>
 <p>所以图像并不是“物体本身”，而是<strong>光与物体相互作用后的结果</strong>。</p>
 <hr>
-<h3 id="1-2-成像的三个关键因素"><a href="#1-2-成像的三个关键因素" class="headerlink" title="1.2 成像的三个关键因素"></a>1.2 成像的三个关键因素</h3><p>通常可以把成像分成三个组成部分：</p>
+<h3 id="成像的三个关键因素"><a href="#成像的三个关键因素" class="headerlink" title="成像的三个关键因素"></a>成像的三个关键因素</h3><p>通常可以把成像分成三个组成部分：</p>
 <h4 id="（1）Illumination：照明"><a href="#（1）Illumination：照明" class="headerlink" title="（1）Illumination：照明"></a>（1）Illumination：照明</h4><p>就是光源提供的光，比如太阳光、灯光、手电筒。</p>
 <ul>
 <li>光源强，图像整体更亮</li>
@@ -894,7 +894,7 @@ mjx-container[display="true"] + br {
 </ul>
 <p>传感器把接收到的连续光信号，转成可处理的电信号或数字信号。</p>
 <hr>
-<h3 id="1-3-常用成像模型"><a href="#1-3-常用成像模型" class="headerlink" title="1.3 常用成像模型"></a>1.3 常用成像模型</h3><p>数字图像处理中，经常把图像灰度表示成：</p>
+<h3 id="常用成像模型"><a href="#常用成像模型" class="headerlink" title="常用成像模型"></a>常用成像模型</h3><p>数字图像处理中，经常把图像灰度表示成：</p>
 <p><strong>f(x, y) = i(x, y) · r(x, y)</strong></p>
 <p>其中：</p>
 <ul>
@@ -914,14 +914,14 @@ mjx-container[display="true"] + br {
 </ul>
 <p>所以图像亮度是这两者共同作用的结果。</p>
 <hr>
-<h3 id="1-4-成像中的连续与离散"><a href="#1-4-成像中的连续与离散" class="headerlink" title="1.4 成像中的连续与离散"></a>1.4 成像中的连续与离散</h3><p>现实世界中的光是<strong>连续的</strong>，但计算机不能直接处理连续量，所以要经历：</p>
+<h3 id="成像中的连续与离散"><a href="#成像中的连续与离散" class="headerlink" title="成像中的连续与离散"></a>成像中的连续与离散</h3><p>现实世界中的光是<strong>连续的</strong>，但计算机不能直接处理连续量，所以要经历：</p>
 <ol>
 <li>空间采样（sampling）</li>
 <li>灰度量化（quantization）</li>
 </ol>
 <p>这会在后面的“Digital Image Representation”详细讲。</p>
 <hr>
-<h3 id="1-5-这一部分常考点"><a href="#1-5-这一部分常考点" class="headerlink" title="1.5 这一部分常考点"></a>1.5 这一部分常考点</h3><p>你要会回答这些：</p>
+<h3 id="这一部分常考点"><a href="#这一部分常考点" class="headerlink" title="这一部分常考点"></a>这一部分常考点</h3><p>你要会回答这些：</p>
 <ul>
 <li>图像形成的基本过程是什么？</li>
 <li>图像亮度受哪些因素影响？</li>
@@ -929,9 +929,9 @@ mjx-container[display="true"] + br {
 <li>为什么物体会显示不同颜色？</li>
 </ul>
 <hr>
-<h2 id="2-Human-Perception-of-Image-and-Color-Image"><a href="#2-Human-Perception-of-Image-and-Color-Image" class="headerlink" title="2. Human Perception of Image and Color Image"></a>2. Human Perception of Image and Color Image</h2><p>这一部分是“为什么人能看见图像，尤其是颜色”。</p>
+<h2 id="Human-Perception-of-Image-and-Color-Image"><a href="#Human-Perception-of-Image-and-Color-Image" class="headerlink" title="Human Perception of Image and Color Image"></a>Human Perception of Image and Color Image</h2><p>这一部分是“为什么人能看见图像，尤其是颜色”。</p>
 <hr>
-<h3 id="2-1-人眼的基本结构（考试常识级）"><a href="#2-1-人眼的基本结构（考试常识级）" class="headerlink" title="2.1 人眼的基本结构（考试常识级）"></a>2.1 人眼的基本结构（考试常识级）</h3><p>和图像处理关系最密切的是：</p>
+<h3 id="人眼的基本结构（考试常识级）"><a href="#人眼的基本结构（考试常识级）" class="headerlink" title="人眼的基本结构（考试常识级）"></a>人眼的基本结构（考试常识级）</h3><p>和图像处理关系最密切的是：</p>
 <ul>
 <li><strong>Cornea / Lens（角膜/晶状体）</strong>：聚焦光线</li>
 <li><strong>Retina（视网膜）</strong>：接收光刺激</li>
@@ -943,7 +943,7 @@ mjx-container[display="true"] + br {
 <li><strong>Cones（视锥细胞）</strong></li>
 </ul>
 <hr>
-<h3 id="2-2-Rods-和-Cones-的区别"><a href="#2-2-Rods-和-Cones-的区别" class="headerlink" title="2.2 Rods 和 Cones 的区别"></a>2.2 Rods 和 Cones 的区别</h3><h4 id="Rods（视杆细胞）"><a href="#Rods（视杆细胞）" class="headerlink" title="Rods（视杆细胞）"></a>Rods（视杆细胞）</h4><ul>
+<h3 id="Rods-和-Cones-的区别"><a href="#Rods-和-Cones-的区别" class="headerlink" title="Rods 和 Cones 的区别"></a>Rods 和 Cones 的区别</h3><h4 id="Rods（视杆细胞）"><a href="#Rods（视杆细胞）" class="headerlink" title="Rods（视杆细胞）"></a>Rods（视杆细胞）</h4><ul>
 <li>对弱光敏感</li>
 <li>主要负责夜间视觉</li>
 <li>不擅长分辨颜色</li>
@@ -959,7 +959,7 @@ mjx-container[display="true"] + br {
 </ul>
 <p>所以白天看颜色清楚，主要靠视锥细胞。</p>
 <hr>
-<h3 id="2-3-为什么人能看见颜色"><a href="#2-3-为什么人能看见颜色" class="headerlink" title="2.3 为什么人能看见颜色"></a>2.3 为什么人能看见颜色</h3><p>因为人眼通常有三类视锥细胞，分别对不同波段更敏感，大致对应：</p>
+<h3 id="为什么人能看见颜色"><a href="#为什么人能看见颜色" class="headerlink" title="为什么人能看见颜色"></a>为什么人能看见颜色</h3><p>因为人眼通常有三类视锥细胞，分别对不同波段更敏感，大致对应：</p>
 <ul>
 <li>红（R）</li>
 <li>绿（G）</li>
@@ -967,7 +967,7 @@ mjx-container[display="true"] + br {
 </ul>
 <p>这就是为什么数字图像常用 <strong>RGB</strong> 表示颜色：它模仿了人眼的三色感知机制。</p>
 <hr>
-<h3 id="2-4-可见光范围"><a href="#2-4-可见光范围" class="headerlink" title="2.4 可见光范围"></a>2.4 可见光范围</h3><p>人眼能感知的电磁波叫<strong>可见光</strong>，大约波长范围是：</p>
+<h3 id="可见光范围"><a href="#可见光范围" class="headerlink" title="可见光范围"></a>可见光范围</h3><p>人眼能感知的电磁波叫<strong>可见光</strong>，大约波长范围是：</p>
 <p><strong>400nm ~ 700nm</strong></p>
 <ul>
 <li>波长短一些：偏蓝紫</li>
@@ -980,7 +980,7 @@ mjx-container[display="true"] + br {
 </ul>
 <p>人眼一般看不见，但机器可以感知。</p>
 <hr>
-<h3 id="2-5-Brightness-Contrast-Adaptation"><a href="#2-5-Brightness-Contrast-Adaptation" class="headerlink" title="2.5 Brightness, Contrast, Adaptation"></a>2.5 Brightness, Contrast, Adaptation</h3><p>这几个词特别常见。</p>
+<h3 id="Brightness-Contrast-Adaptation"><a href="#Brightness-Contrast-Adaptation" class="headerlink" title="Brightness, Contrast, Adaptation"></a>Brightness, Contrast, Adaptation</h3><p>这几个词特别常见。</p>
 <h4 id="Brightness（亮度）"><a href="#Brightness（亮度）" class="headerlink" title="Brightness（亮度）"></a>Brightness（亮度）</h4><p>表示图像整体有多亮。</p>
 <ul>
 <li>平均灰度高 → 图像偏亮</li>
@@ -1002,7 +1002,7 @@ mjx-container[display="true"] + br {
 <p>这说明<strong>人眼感知不是线性的、固定的</strong>，而是动态调整的。</p>
 <p>这也是为什么图像处理有时要做增强：让图像更符合人眼观察习惯。</p>
 <hr>
-<h3 id="2-6-Color-Image-的基本原理"><a href="#2-6-Color-Image-的基本原理" class="headerlink" title="2.6 Color Image 的基本原理"></a>2.6 Color Image 的基本原理</h3><p>彩色图像的本质是：</p>
+<h3 id="Color-Image-的基本原理"><a href="#Color-Image-的基本原理" class="headerlink" title="Color Image 的基本原理"></a>Color Image 的基本原理</h3><p>彩色图像的本质是：</p>
 <p><strong>每个像素不再只有一个亮度值，而是多个颜色通道值。</strong></p>
 <p>最常见的是 RGB 三通道：</p>
 <ul>
@@ -1012,7 +1012,7 @@ mjx-container[display="true"] + br {
 </ul>
 <p>比如一个像素 <code>(255, 0, 0)</code> 表示纯红色。</p>
 <hr>
-<h3 id="2-7-加色模型与减色模型"><a href="#2-7-加色模型与减色模型" class="headerlink" title="2.7 加色模型与减色模型"></a>2.7 加色模型与减色模型</h3><h4 id="RGB-是加色模型（Additive-Color-Model）"><a href="#RGB-是加色模型（Additive-Color-Model）" class="headerlink" title="RGB 是加色模型（Additive Color Model）"></a>RGB 是加色模型（Additive Color Model）</h4><p>适用于显示设备，如：</p>
+<h3 id="加色模型与减色模型"><a href="#加色模型与减色模型" class="headerlink" title="加色模型与减色模型"></a>加色模型与减色模型</h3><h4 id="RGB-是加色模型（Additive-Color-Model）"><a href="#RGB-是加色模型（Additive-Color-Model）" class="headerlink" title="RGB 是加色模型（Additive Color Model）"></a>RGB 是加色模型（Additive Color Model）</h4><p>适用于显示设备，如：</p>
 <ul>
 <li>手机屏幕</li>
 <li>电脑显示器</li>
@@ -1033,7 +1033,7 @@ mjx-container[display="true"] + br {
 </ul>
 <p>就够了。</p>
 <hr>
-<h3 id="2-8-这一部分常考点"><a href="#2-8-这一部分常考点" class="headerlink" title="2.8 这一部分常考点"></a>2.8 这一部分常考点</h3><ul>
+<h3 id="这一部分常考点-1"><a href="#这一部分常考点-1" class="headerlink" title="这一部分常考点"></a>这一部分常考点</h3><ul>
 <li>人眼两种主要感光细胞是什么？作用分别是什么？</li>
 <li>为什么 RGB 可以表示颜色？</li>
 <li>亮度与对比度的区别是什么？</li>
@@ -1041,9 +1041,9 @@ mjx-container[display="true"] + br {
 <li>为什么人眼在不同亮度环境下感知不同？</li>
 </ul>
 <hr>
-<h2 id="3-Digital-Image-Representation"><a href="#3-Digital-Image-Representation" class="headerlink" title="3. Digital Image Representation"></a>3. Digital Image Representation</h2><p>这部分最重要。它讲的是：<strong>计算机如何表示图像。</strong></p>
+<h2 id="Digital-Image-Representation"><a href="#Digital-Image-Representation" class="headerlink" title="Digital Image Representation"></a>Digital Image Representation</h2><p>这部分最重要。它讲的是：<strong>计算机如何表示图像。</strong></p>
 <hr>
-<h3 id="3-1-数字图像是什么"><a href="#3-1-数字图像是什么" class="headerlink" title="3.1 数字图像是什么"></a>3.1 数字图像是什么</h3><p>数字图像就是一个二维离散函数：</p>
+<h3 id="数字图像是什么"><a href="#数字图像是什么" class="headerlink" title="数字图像是什么"></a>数字图像是什么</h3><p>数字图像就是一个二维离散函数：</p>
 <p><strong>f(x, y)</strong></p>
 <p>其中：</p>
 <ul>
@@ -1053,7 +1053,7 @@ mjx-container[display="true"] + br {
 <p>简单说：</p>
 <p><strong>图像 = 一个由很多小格子（像素）组成的矩阵</strong></p>
 <hr>
-<h3 id="3-2-Pixel（像素）"><a href="#3-2-Pixel（像素）" class="headerlink" title="3.2 Pixel（像素）"></a>3.2 Pixel（像素）</h3><p>像素是数字图像的最小单位。</p>
+<h3 id="Pixel（像素）"><a href="#Pixel（像素）" class="headerlink" title="Pixel（像素）"></a>Pixel（像素）</h3><p>像素是数字图像的最小单位。</p>
 <p>每个像素记录一个数值：</p>
 <ul>
 <li>灰度图：一个值</li>
@@ -1061,7 +1061,7 @@ mjx-container[display="true"] + br {
 </ul>
 <p>例如一个 4×4 图像，就可以看成一个 4 行 4 列的矩阵。</p>
 <hr>
-<h3 id="3-3-Sampling（采样）"><a href="#3-3-Sampling（采样）" class="headerlink" title="3.3 Sampling（采样）"></a>3.3 Sampling（采样）</h3><p>采样是把连续空间离散化。</p>
+<h3 id="Sampling（采样）"><a href="#Sampling（采样）" class="headerlink" title="Sampling（采样）"></a>Sampling（采样）</h3><p>采样是把连续空间离散化。</p>
 <p>也就是：把真实场景切成很多小格子。</p>
 <h4 id="采样决定什么？"><a href="#采样决定什么？" class="headerlink" title="采样决定什么？"></a>采样决定什么？</h4><p><strong>采样决定空间分辨率（spatial resolution）</strong></p>
 <ul>
@@ -1073,7 +1073,7 @@ mjx-container[display="true"] + br {
 <li>1920×1080 比 640×480 细节更多</li>
 </ul>
 <hr>
-<h3 id="3-4-Quantization（量化）"><a href="#3-4-Quantization（量化）" class="headerlink" title="3.4 Quantization（量化）"></a>3.4 Quantization（量化）</h3><p>量化是把连续亮度值离散化。</p>
+<h3 id="Quantization（量化）"><a href="#Quantization（量化）" class="headerlink" title="Quantization（量化）"></a>Quantization（量化）</h3><p>量化是把连续亮度值离散化。</p>
 <p>现实亮度是连续的，但计算机只能记录有限级别。</p>
 <p>例如灰度图常用 8-bit：</p>
 <ul>
@@ -1092,7 +1092,7 @@ mjx-container[display="true"] + br {
 <li>量化级数越少，容易出现“色带”或层次断裂</li>
 </ul>
 <hr>
-<h3 id="3-5-Spatial-Resolution-vs-Gray-level-Resolution"><a href="#3-5-Spatial-Resolution-vs-Gray-level-Resolution" class="headerlink" title="3.5 Spatial Resolution vs Gray-level Resolution"></a>3.5 Spatial Resolution vs Gray-level Resolution</h3><p>这是最容易混淆的点。</p>
+<h3 id="Spatial-Resolution-vs-Gray-level-Resolution"><a href="#Spatial-Resolution-vs-Gray-level-Resolution" class="headerlink" title="Spatial Resolution vs Gray-level Resolution"></a>Spatial Resolution vs Gray-level Resolution</h3><p>这是最容易混淆的点。</p>
 <h4 id="空间分辨率（Spatial-Resolution）"><a href="#空间分辨率（Spatial-Resolution）" class="headerlink" title="空间分辨率（Spatial Resolution）"></a>空间分辨率（Spatial Resolution）</h4><p>描述图像中<strong>有多少像素</strong>，即细节的空间精细程度。</p>
 <ul>
 <li>高空间分辨率：边缘更清晰、细节更多</li>
@@ -1489,7 +1489,7 @@ mjx-container[display="true"] + br {
         
             <li>
                 <strong>Updated at
-                    :</strong> 2026-03-04 21:35:31
+                    :</strong> 2026-03-04 21:45:37
             </li>
         
         <li>
@@ -1560,7 +1560,7 @@ mjx-container[display="true"] + br {
 	<div class="post-toc">
 		<div class="toc-title">On this page</div>
 		<div class="page-title">EE6222 1 图像基础与人眼感知</div>
-		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%99%E4%B8%80%E7%AB%A0%E5%9C%A8%E5%AD%A6%E4%BB%80%E4%B9%88"><span class="nav-number">1.</span> <span class="nav-text">这一章在学什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Image-Formation"><span class="nav-number">2.</span> <span class="nav-text">1. Image Formation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E5%9B%BE%E5%83%8F%E5%BD%A2%E6%88%90%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="nav-number">2.1.</span> <span class="nav-text">1.1 图像形成的本质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E6%88%90%E5%83%8F%E7%9A%84%E4%B8%89%E4%B8%AA%E5%85%B3%E9%94%AE%E5%9B%A0%E7%B4%A0"><span class="nav-number">2.2.</span> <span class="nav-text">1.2 成像的三个关键因素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-%E5%B8%B8%E7%94%A8%E6%88%90%E5%83%8F%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.3.</span> <span class="nav-text">1.3 常用成像模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-%E6%88%90%E5%83%8F%E4%B8%AD%E7%9A%84%E8%BF%9E%E7%BB%AD%E4%B8%8E%E7%A6%BB%E6%95%A3"><span class="nav-number">2.4.</span> <span class="nav-text">1.4 成像中的连续与离散</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-%E8%BF%99%E4%B8%80%E9%83%A8%E5%88%86%E5%B8%B8%E8%80%83%E7%82%B9"><span class="nav-number">2.5.</span> <span class="nav-text">1.5 这一部分常考点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Human-Perception-of-Image-and-Color-Image"><span class="nav-number">3.</span> <span class="nav-text">2. Human Perception of Image and Color Image</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E4%BA%BA%E7%9C%BC%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84%EF%BC%88%E8%80%83%E8%AF%95%E5%B8%B8%E8%AF%86%E7%BA%A7%EF%BC%89"><span class="nav-number">3.1.</span> <span class="nav-text">2.1 人眼的基本结构（考试常识级）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-Rods-%E5%92%8C-Cones-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">3.2.</span> <span class="nav-text">2.2 Rods 和 Cones 的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BA%BA%E8%83%BD%E7%9C%8B%E8%A7%81%E9%A2%9C%E8%89%B2"><span class="nav-number">3.3.</span> <span class="nav-text">2.3 为什么人能看见颜色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-%E5%8F%AF%E8%A7%81%E5%85%89%E8%8C%83%E5%9B%B4"><span class="nav-number">3.4.</span> <span class="nav-text">2.4 可见光范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-Brightness-Contrast-Adaptation"><span class="nav-number">3.5.</span> <span class="nav-text">2.5 Brightness, Contrast, Adaptation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6-Color-Image-%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="nav-number">3.6.</span> <span class="nav-text">2.6 Color Image 的基本原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-7-%E5%8A%A0%E8%89%B2%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%87%8F%E8%89%B2%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.7.</span> <span class="nav-text">2.7 加色模型与减色模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-8-%E8%BF%99%E4%B8%80%E9%83%A8%E5%88%86%E5%B8%B8%E8%80%83%E7%82%B9"><span class="nav-number">3.8.</span> <span class="nav-text">2.8 这一部分常考点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Digital-Image-Representation"><span class="nav-number">4.</span> <span class="nav-text">3. Digital Image Representation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">4.1.</span> <span class="nav-text">3.1 数字图像是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-Pixel%EF%BC%88%E5%83%8F%E7%B4%A0%EF%BC%89"><span class="nav-number">4.2.</span> <span class="nav-text">3.2 Pixel（像素）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-Sampling%EF%BC%88%E9%87%87%E6%A0%B7%EF%BC%89"><span class="nav-number">4.3.</span> <span class="nav-text">3.3 Sampling（采样）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-Quantization%EF%BC%88%E9%87%8F%E5%8C%96%EF%BC%89"><span class="nav-number">4.4.</span> <span class="nav-text">3.4 Quantization（量化）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-Spatial-Resolution-vs-Gray-level-Resolution"><span class="nav-number">4.5.</span> <span class="nav-text">3.5 Spatial Resolution vs Gray-level Resolution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-6-Binary-Grayscale-Color-Images"><span class="nav-number">4.6.</span> <span class="nav-text">3.6 Binary, Grayscale, Color Images</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-7-%E9%82%BB%E6%8E%A5%E5%85%B3%E7%B3%BB%EF%BC%88%E5%8F%AF%E4%BD%9C%E4%B8%BA%E8%A1%A5%E5%85%85%E9%87%8D%E7%82%B9%EF%BC%89"><span class="nav-number">4.7.</span> <span class="nav-text">3.7 邻接关系（可作为补充重点）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-8-%E8%BF%99%E4%B8%80%E9%83%A8%E5%88%86%E5%B8%B8%E8%80%83%E7%82%B9"><span class="nav-number">4.8.</span> <span class="nav-text">3.8 这一部分常考点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Image-Histogram"><span class="nav-number">5.</span> <span class="nav-text">4. Image Histogram</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-%E4%BB%80%E4%B9%88%E6%98%AF%E5%9B%BE%E5%83%8F%E7%9B%B4%E6%96%B9%E5%9B%BE"><span class="nav-number">5.1.</span> <span class="nav-text">4.1 什么是图像直方图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-%E4%B8%BA%E4%BB%80%E4%B9%88%E7%9B%B4%E6%96%B9%E5%9B%BE%E9%87%8D%E8%A6%81"><span class="nav-number">5.2.</span> <span class="nav-text">4.2 为什么直方图重要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E4%B8%8D%E5%90%8C%E5%BD%A2%E7%8A%B6%E7%9A%84%E7%9B%B4%E6%96%B9%E5%9B%BE"><span class="nav-number">5.3.</span> <span class="nav-text">4.3 如何理解不同形状的直方图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-%E6%95%B0%E5%AD%A6%E8%A1%A8%E7%A4%BA%EF%BC%88%E8%80%83%E8%AF%95%E5%8F%AF%E8%83%BD%E7%AE%80%E7%AD%94%EF%BC%89"><span class="nav-number">5.4.</span> <span class="nav-text">4.4 数学表示（考试可能简答）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5-Histogram-%E4%B8%8E%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA"><span class="nav-number">5.5.</span> <span class="nav-text">4.5 Histogram 与图像增强</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-6-%E5%BD%A9%E8%89%B2%E5%9B%BE%E5%83%8F%E7%9A%84%E7%9B%B4%E6%96%B9%E5%9B%BE"><span class="nav-number">5.6.</span> <span class="nav-text">4.6 彩色图像的直方图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-7-%E8%BF%99%E4%B8%80%E9%83%A8%E5%88%86%E5%B8%B8%E8%80%83%E7%82%B9"><span class="nav-number">5.7.</span> <span class="nav-text">4.7 这一部分常考点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Image-Processing-and-Its-Application"><span class="nav-number">6.</span> <span class="nav-text">5. Image Processing and Its Application</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-%E4%BB%80%E4%B9%88%E6%98%AF%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86"><span class="nav-number">6.1.</span> <span class="nav-text">5.1 什么是图像处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9A%84%E4%B8%A4%E5%A4%A7%E7%9B%AE%E6%A0%87"><span class="nav-number">6.2.</span> <span class="nav-text">5.2 图像处理的两大目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9A%84%E5%85%B8%E5%9E%8B%E6%AD%A5%E9%AA%A4"><span class="nav-number">6.3.</span> <span class="nav-text">5.3 图像处理的典型步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-4-%E5%B8%B8%E8%A7%81%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E6%93%8D%E4%BD%9C"><span class="nav-number">6.4.</span> <span class="nav-text">5.4 常见图像处理操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-5-%E5%BA%94%E7%94%A8%E9%A2%86%E5%9F%9F"><span class="nav-number">6.5.</span> <span class="nav-text">5.5 应用领域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-6-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86-vs-%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89"><span class="nav-number">6.6.</span> <span class="nav-text">5.6 图像处理 vs 计算机视觉</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-7-%E8%BF%99%E4%B8%80%E9%83%A8%E5%88%86%E5%B8%B8%E8%80%83%E7%82%B9"><span class="nav-number">6.7.</span> <span class="nav-text">5.7 这一部分常考点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%8A%E6%95%B4%E7%AB%A0%E4%B8%B2%E8%B5%B7%E6%9D%A5%E8%AE%B0%E5%BF%86"><span class="nav-number">7.</span> <span class="nav-text">把整章串起来记忆</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E5%9B%BE%E5%83%8F%E6%80%8E%E4%B9%88%E6%9D%A5"><span class="nav-number">7.1.</span> <span class="nav-text">（1）图像怎么来</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%882%EF%BC%89%E4%BA%BA%E6%80%8E%E4%B9%88%E6%84%9F%E7%9F%A5"><span class="nav-number">7.2.</span> <span class="nav-text">（2）人怎么感知</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%883%EF%BC%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%80%8E%E4%B9%88%E5%AD%98"><span class="nav-number">7.3.</span> <span class="nav-text">（3）计算机怎么存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%884%EF%BC%89%E6%80%8E%E4%B9%88%E5%88%86%E6%9E%90%E5%9B%BE%E5%83%8F%E6%95%B4%E4%BD%93%E7%89%B9%E5%BE%81"><span class="nav-number">7.4.</span> <span class="nav-text">（4）怎么分析图像整体特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%885%EF%BC%89%E6%80%8E%E4%B9%88%E5%88%A9%E7%94%A8%E8%BF%99%E4%BA%9B%E7%9F%A5%E8%AF%86"><span class="nav-number">7.5.</span> <span class="nav-text">（5）怎么利用这些知识</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E5%A5%97%E8%80%83%E8%AF%95%E5%9E%8B%E9%80%9F%E8%AE%B0%E8%A1%A8"><span class="nav-number">8.</span> <span class="nav-text">一套考试型速记表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%A0%E6%9C%80%E5%AE%B9%E6%98%93%E4%B8%A2%E5%88%86%E7%9A%84%E5%87%A0%E4%B8%AA%E7%82%B9"><span class="nav-number">9.</span> <span class="nav-text">你最容易丢分的几个点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E9%87%87%E6%A0%B7%E5%92%8C%E9%87%8F%E5%8C%96%E4%B8%8D%E8%A6%81%E6%B7%B7"><span class="nav-number">9.1.</span> <span class="nav-text">1. 采样和量化不要混</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%BA%AE%E5%BA%A6%E5%92%8C%E5%AF%B9%E6%AF%94%E5%BA%A6%E4%B8%8D%E8%A6%81%E6%B7%B7"><span class="nav-number">9.2.</span> <span class="nav-text">2. 亮度和对比度不要混</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%92%8C%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB%E4%B8%8D%E8%A6%81%E6%B7%B7"><span class="nav-number">9.3.</span> <span class="nav-text">3. 图像处理和图像识别不要混</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E7%9B%B4%E6%96%B9%E5%9B%BE%E4%B8%8D%E5%8F%8D%E6%98%A0%E4%BD%8D%E7%BD%AE"><span class="nav-number">9.4.</span> <span class="nav-text">4. 直方图不反映位置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E8%80%81%E5%B8%88%E8%AE%A9%E4%BD%A0%E2%80%9C%E7%AE%80%E7%AD%94%E2%80%9D%E8%BF%99%E7%AB%A0%EF%BC%8C%E5%8F%AF%E4%BB%A5%E8%BF%99%E6%A0%B7%E7%AD%94"><span class="nav-number">10.</span> <span class="nav-text">如果老师让你“简答”这章，可以这样答</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%99%E4%BD%A0%E5%87%A0%E4%B8%AA%E5%A4%8D%E4%B9%A0%E9%A2%98%EF%BC%88%E8%87%AA%E6%B5%8B%EF%BC%89"><span class="nav-number">11.</span> <span class="nav-text">给你几个复习题（自测）</span></a></li></ol>
+		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%99%E4%B8%80%E7%AB%A0%E5%9C%A8%E5%AD%A6%E4%BB%80%E4%B9%88"><span class="nav-number">1.</span> <span class="nav-text">这一章在学什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Image-Formation"><span class="nav-number">2.</span> <span class="nav-text">Image Formation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E5%BD%A2%E6%88%90%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="nav-number">2.1.</span> <span class="nav-text">图像形成的本质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%90%E5%83%8F%E7%9A%84%E4%B8%89%E4%B8%AA%E5%85%B3%E9%94%AE%E5%9B%A0%E7%B4%A0"><span class="nav-number">2.2.</span> <span class="nav-text">成像的三个关键因素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E6%88%90%E5%83%8F%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.3.</span> <span class="nav-text">常用成像模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%90%E5%83%8F%E4%B8%AD%E7%9A%84%E8%BF%9E%E7%BB%AD%E4%B8%8E%E7%A6%BB%E6%95%A3"><span class="nav-number">2.4.</span> <span class="nav-text">成像中的连续与离散</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%99%E4%B8%80%E9%83%A8%E5%88%86%E5%B8%B8%E8%80%83%E7%82%B9"><span class="nav-number">2.5.</span> <span class="nav-text">这一部分常考点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Human-Perception-of-Image-and-Color-Image"><span class="nav-number">3.</span> <span class="nav-text">Human Perception of Image and Color Image</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%BA%E7%9C%BC%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84%EF%BC%88%E8%80%83%E8%AF%95%E5%B8%B8%E8%AF%86%E7%BA%A7%EF%BC%89"><span class="nav-number">3.1.</span> <span class="nav-text">人眼的基本结构（考试常识级）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rods-%E5%92%8C-Cones-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">3.2.</span> <span class="nav-text">Rods 和 Cones 的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BA%BA%E8%83%BD%E7%9C%8B%E8%A7%81%E9%A2%9C%E8%89%B2"><span class="nav-number">3.3.</span> <span class="nav-text">为什么人能看见颜色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E8%A7%81%E5%85%89%E8%8C%83%E5%9B%B4"><span class="nav-number">3.4.</span> <span class="nav-text">可见光范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Brightness-Contrast-Adaptation"><span class="nav-number">3.5.</span> <span class="nav-text">Brightness, Contrast, Adaptation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Color-Image-%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="nav-number">3.6.</span> <span class="nav-text">Color Image 的基本原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A0%E8%89%B2%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%87%8F%E8%89%B2%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.7.</span> <span class="nav-text">加色模型与减色模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%99%E4%B8%80%E9%83%A8%E5%88%86%E5%B8%B8%E8%80%83%E7%82%B9-1"><span class="nav-number">3.8.</span> <span class="nav-text">这一部分常考点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Digital-Image-Representation"><span class="nav-number">4.</span> <span class="nav-text">Digital Image Representation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">4.1.</span> <span class="nav-text">数字图像是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pixel%EF%BC%88%E5%83%8F%E7%B4%A0%EF%BC%89"><span class="nav-number">4.2.</span> <span class="nav-text">Pixel（像素）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sampling%EF%BC%88%E9%87%87%E6%A0%B7%EF%BC%89"><span class="nav-number">4.3.</span> <span class="nav-text">Sampling（采样）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Quantization%EF%BC%88%E9%87%8F%E5%8C%96%EF%BC%89"><span class="nav-number">4.4.</span> <span class="nav-text">Quantization（量化）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spatial-Resolution-vs-Gray-level-Resolution"><span class="nav-number">4.5.</span> <span class="nav-text">Spatial Resolution vs Gray-level Resolution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-6-Binary-Grayscale-Color-Images"><span class="nav-number">4.6.</span> <span class="nav-text">3.6 Binary, Grayscale, Color Images</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-7-%E9%82%BB%E6%8E%A5%E5%85%B3%E7%B3%BB%EF%BC%88%E5%8F%AF%E4%BD%9C%E4%B8%BA%E8%A1%A5%E5%85%85%E9%87%8D%E7%82%B9%EF%BC%89"><span class="nav-number">4.7.</span> <span class="nav-text">3.7 邻接关系（可作为补充重点）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-8-%E8%BF%99%E4%B8%80%E9%83%A8%E5%88%86%E5%B8%B8%E8%80%83%E7%82%B9"><span class="nav-number">4.8.</span> <span class="nav-text">3.8 这一部分常考点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Image-Histogram"><span class="nav-number">5.</span> <span class="nav-text">4. Image Histogram</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-%E4%BB%80%E4%B9%88%E6%98%AF%E5%9B%BE%E5%83%8F%E7%9B%B4%E6%96%B9%E5%9B%BE"><span class="nav-number">5.1.</span> <span class="nav-text">4.1 什么是图像直方图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-%E4%B8%BA%E4%BB%80%E4%B9%88%E7%9B%B4%E6%96%B9%E5%9B%BE%E9%87%8D%E8%A6%81"><span class="nav-number">5.2.</span> <span class="nav-text">4.2 为什么直方图重要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E4%B8%8D%E5%90%8C%E5%BD%A2%E7%8A%B6%E7%9A%84%E7%9B%B4%E6%96%B9%E5%9B%BE"><span class="nav-number">5.3.</span> <span class="nav-text">4.3 如何理解不同形状的直方图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-%E6%95%B0%E5%AD%A6%E8%A1%A8%E7%A4%BA%EF%BC%88%E8%80%83%E8%AF%95%E5%8F%AF%E8%83%BD%E7%AE%80%E7%AD%94%EF%BC%89"><span class="nav-number">5.4.</span> <span class="nav-text">4.4 数学表示（考试可能简答）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5-Histogram-%E4%B8%8E%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA"><span class="nav-number">5.5.</span> <span class="nav-text">4.5 Histogram 与图像增强</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-6-%E5%BD%A9%E8%89%B2%E5%9B%BE%E5%83%8F%E7%9A%84%E7%9B%B4%E6%96%B9%E5%9B%BE"><span class="nav-number">5.6.</span> <span class="nav-text">4.6 彩色图像的直方图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-7-%E8%BF%99%E4%B8%80%E9%83%A8%E5%88%86%E5%B8%B8%E8%80%83%E7%82%B9"><span class="nav-number">5.7.</span> <span class="nav-text">4.7 这一部分常考点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Image-Processing-and-Its-Application"><span class="nav-number">6.</span> <span class="nav-text">5. Image Processing and Its Application</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-%E4%BB%80%E4%B9%88%E6%98%AF%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86"><span class="nav-number">6.1.</span> <span class="nav-text">5.1 什么是图像处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9A%84%E4%B8%A4%E5%A4%A7%E7%9B%AE%E6%A0%87"><span class="nav-number">6.2.</span> <span class="nav-text">5.2 图像处理的两大目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9A%84%E5%85%B8%E5%9E%8B%E6%AD%A5%E9%AA%A4"><span class="nav-number">6.3.</span> <span class="nav-text">5.3 图像处理的典型步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-4-%E5%B8%B8%E8%A7%81%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E6%93%8D%E4%BD%9C"><span class="nav-number">6.4.</span> <span class="nav-text">5.4 常见图像处理操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-5-%E5%BA%94%E7%94%A8%E9%A2%86%E5%9F%9F"><span class="nav-number">6.5.</span> <span class="nav-text">5.5 应用领域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-6-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86-vs-%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89"><span class="nav-number">6.6.</span> <span class="nav-text">5.6 图像处理 vs 计算机视觉</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-7-%E8%BF%99%E4%B8%80%E9%83%A8%E5%88%86%E5%B8%B8%E8%80%83%E7%82%B9"><span class="nav-number">6.7.</span> <span class="nav-text">5.7 这一部分常考点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%8A%E6%95%B4%E7%AB%A0%E4%B8%B2%E8%B5%B7%E6%9D%A5%E8%AE%B0%E5%BF%86"><span class="nav-number">7.</span> <span class="nav-text">把整章串起来记忆</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E5%9B%BE%E5%83%8F%E6%80%8E%E4%B9%88%E6%9D%A5"><span class="nav-number">7.1.</span> <span class="nav-text">（1）图像怎么来</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%882%EF%BC%89%E4%BA%BA%E6%80%8E%E4%B9%88%E6%84%9F%E7%9F%A5"><span class="nav-number">7.2.</span> <span class="nav-text">（2）人怎么感知</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%883%EF%BC%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%80%8E%E4%B9%88%E5%AD%98"><span class="nav-number">7.3.</span> <span class="nav-text">（3）计算机怎么存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%884%EF%BC%89%E6%80%8E%E4%B9%88%E5%88%86%E6%9E%90%E5%9B%BE%E5%83%8F%E6%95%B4%E4%BD%93%E7%89%B9%E5%BE%81"><span class="nav-number">7.4.</span> <span class="nav-text">（4）怎么分析图像整体特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%885%EF%BC%89%E6%80%8E%E4%B9%88%E5%88%A9%E7%94%A8%E8%BF%99%E4%BA%9B%E7%9F%A5%E8%AF%86"><span class="nav-number">7.5.</span> <span class="nav-text">（5）怎么利用这些知识</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E5%A5%97%E8%80%83%E8%AF%95%E5%9E%8B%E9%80%9F%E8%AE%B0%E8%A1%A8"><span class="nav-number">8.</span> <span class="nav-text">一套考试型速记表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%A0%E6%9C%80%E5%AE%B9%E6%98%93%E4%B8%A2%E5%88%86%E7%9A%84%E5%87%A0%E4%B8%AA%E7%82%B9"><span class="nav-number">9.</span> <span class="nav-text">你最容易丢分的几个点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E9%87%87%E6%A0%B7%E5%92%8C%E9%87%8F%E5%8C%96%E4%B8%8D%E8%A6%81%E6%B7%B7"><span class="nav-number">9.1.</span> <span class="nav-text">1. 采样和量化不要混</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%BA%AE%E5%BA%A6%E5%92%8C%E5%AF%B9%E6%AF%94%E5%BA%A6%E4%B8%8D%E8%A6%81%E6%B7%B7"><span class="nav-number">9.2.</span> <span class="nav-text">2. 亮度和对比度不要混</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%92%8C%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB%E4%B8%8D%E8%A6%81%E6%B7%B7"><span class="nav-number">9.3.</span> <span class="nav-text">3. 图像处理和图像识别不要混</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E7%9B%B4%E6%96%B9%E5%9B%BE%E4%B8%8D%E5%8F%8D%E6%98%A0%E4%BD%8D%E7%BD%AE"><span class="nav-number">9.4.</span> <span class="nav-text">4. 直方图不反映位置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E8%80%81%E5%B8%88%E8%AE%A9%E4%BD%A0%E2%80%9C%E7%AE%80%E7%AD%94%E2%80%9D%E8%BF%99%E7%AB%A0%EF%BC%8C%E5%8F%AF%E4%BB%A5%E8%BF%99%E6%A0%B7%E7%AD%94"><span class="nav-number">10.</span> <span class="nav-text">如果老师让你“简答”这章，可以这样答</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%99%E4%BD%A0%E5%87%A0%E4%B8%AA%E5%A4%8D%E4%B9%A0%E9%A2%98%EF%BC%88%E8%87%AA%E6%B5%8B%EF%BC%89"><span class="nav-number">11.</span> <span class="nav-text">给你几个复习题（自测）</span></a></li></ol>
 
 	</div>
 </div>
