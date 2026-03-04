@@ -140,7 +140,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/redefine-og.webp">
 <meta property="article:published_time" content="2026-03-03T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-03-04T13:45:37.075Z">
+<meta property="article:modified_time" content="2026-03-04T13:53:20.871Z">
 <meta property="article:author" content="Dozy">
 <meta property="article:tag" content="EE6222">
 <meta property="article:tag" content="Human Perception">
@@ -788,8 +788,8 @@ mjx-container[display="true"] + br {
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2026-03-04 21:45:37</span>
-            <span class="mobile">2026-03-04 21:45:37</span>
+            <span class="desktop">2026-03-04 21:53:20</span>
+            <span class="mobile">2026-03-04 21:53:20</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -863,11 +863,9 @@ mjx-container[display="true"] + br {
 <li>怎么用统计方法描述图像亮暗分布</li>
 <li>怎么对图像做增强、分析和应用</li>
 </ol>
-<hr>
 <h2 id="Image-Formation"><a href="#Image-Formation" class="headerlink" title="Image Formation"></a>Image Formation</h2><h3 id="图像形成的本质"><a href="#图像形成的本质" class="headerlink" title="图像形成的本质"></a>图像形成的本质</h3><p>图像的形成，本质上是：</p>
 <p><strong>光源发出光 → 光照到物体 → 物体反射/透射光 → 传感器（眼睛/相机）接收光 → 形成图像</strong></p>
 <p>所以图像并不是“物体本身”，而是<strong>光与物体相互作用后的结果</strong>。</p>
-<hr>
 <h3 id="成像的三个关键因素"><a href="#成像的三个关键因素" class="headerlink" title="成像的三个关键因素"></a>成像的三个关键因素</h3><p>通常可以把成像分成三个组成部分：</p>
 <h4 id="（1）Illumination：照明"><a href="#（1）Illumination：照明" class="headerlink" title="（1）Illumination：照明"></a>（1）Illumination：照明</h4><p>就是光源提供的光，比如太阳光、灯光、手电筒。</p>
 <ul>
@@ -876,7 +874,6 @@ mjx-container[display="true"] + br {
 <li>光源颜色会影响物体的颜色表现</li>
 </ul>
 <p>比如白灯下的白纸和黄灯下的白纸，看起来颜色就不一样。</p>
-<hr>
 <h4 id="（2）Reflectance：反射率"><a href="#（2）Reflectance：反射率" class="headerlink" title="（2）Reflectance：反射率"></a>（2）Reflectance：反射率</h4><p>物体表面对不同波长光的反射能力不同。</p>
 <ul>
 <li>白色物体：反射大部分光</li>
@@ -884,7 +881,6 @@ mjx-container[display="true"] + br {
 <li>红色物体：更容易反射红光，吸收其他颜色</li>
 </ul>
 <p>所以我们看到的“物体颜色”，不是物体自己发光，而是它<strong>选择性反射某些光</strong>。</p>
-<hr>
 <h4 id="（3）Sensing：传感-接收"><a href="#（3）Sensing：传感-接收" class="headerlink" title="（3）Sensing：传感/接收"></a>（3）Sensing：传感/接收</h4><p>接收反射光的设备可以是：</p>
 <ul>
 <li>人眼</li>
@@ -893,7 +889,6 @@ mjx-container[display="true"] + br {
 <li>卫星遥感传感器</li>
 </ul>
 <p>传感器把接收到的连续光信号，转成可处理的电信号或数字信号。</p>
-<hr>
 <h3 id="常用成像模型"><a href="#常用成像模型" class="headerlink" title="常用成像模型"></a>常用成像模型</h3><p>数字图像处理中，经常把图像灰度表示成：</p>
 <p><strong>f(x, y) = i(x, y) · r(x, y)</strong></p>
 <p>其中：</p>
@@ -913,14 +908,12 @@ mjx-container[display="true"] + br {
 <li>白纸在弱光下也不会特别亮（照明低）</li>
 </ul>
 <p>所以图像亮度是这两者共同作用的结果。</p>
-<hr>
 <h3 id="成像中的连续与离散"><a href="#成像中的连续与离散" class="headerlink" title="成像中的连续与离散"></a>成像中的连续与离散</h3><p>现实世界中的光是<strong>连续的</strong>，但计算机不能直接处理连续量，所以要经历：</p>
 <ol>
 <li>空间采样（sampling）</li>
 <li>灰度量化（quantization）</li>
 </ol>
 <p>这会在后面的“Digital Image Representation”详细讲。</p>
-<hr>
 <h3 id="这一部分常考点"><a href="#这一部分常考点" class="headerlink" title="这一部分常考点"></a>这一部分常考点</h3><p>你要会回答这些：</p>
 <ul>
 <li>图像形成的基本过程是什么？</li>
@@ -928,9 +921,7 @@ mjx-container[display="true"] + br {
 <li><code>f(x,y)=i(x,y)r(x,y)</code> 中每项的含义是什么？</li>
 <li>为什么物体会显示不同颜色？</li>
 </ul>
-<hr>
 <h2 id="Human-Perception-of-Image-and-Color-Image"><a href="#Human-Perception-of-Image-and-Color-Image" class="headerlink" title="Human Perception of Image and Color Image"></a>Human Perception of Image and Color Image</h2><p>这一部分是“为什么人能看见图像，尤其是颜色”。</p>
-<hr>
 <h3 id="人眼的基本结构（考试常识级）"><a href="#人眼的基本结构（考试常识级）" class="headerlink" title="人眼的基本结构（考试常识级）"></a>人眼的基本结构（考试常识级）</h3><p>和图像处理关系最密切的是：</p>
 <ul>
 <li><strong>Cornea / Lens（角膜/晶状体）</strong>：聚焦光线</li>
@@ -942,7 +933,6 @@ mjx-container[display="true"] + br {
 <li><strong>Rods（视杆细胞）</strong></li>
 <li><strong>Cones（视锥细胞）</strong></li>
 </ul>
-<hr>
 <h3 id="Rods-和-Cones-的区别"><a href="#Rods-和-Cones-的区别" class="headerlink" title="Rods 和 Cones 的区别"></a>Rods 和 Cones 的区别</h3><h4 id="Rods（视杆细胞）"><a href="#Rods（视杆细胞）" class="headerlink" title="Rods（视杆细胞）"></a>Rods（视杆细胞）</h4><ul>
 <li>对弱光敏感</li>
 <li>主要负责夜间视觉</li>
@@ -950,7 +940,6 @@ mjx-container[display="true"] + br {
 <li>数量多</li>
 </ul>
 <p>所以在昏暗环境下，我们更容易看见轮廓，但颜色不明显。</p>
-<hr>
 <h4 id="Cones（视锥细胞）"><a href="#Cones（视锥细胞）" class="headerlink" title="Cones（视锥细胞）"></a>Cones（视锥细胞）</h4><ul>
 <li>对强光敏感</li>
 <li>负责彩色视觉</li>
@@ -958,7 +947,6 @@ mjx-container[display="true"] + br {
 <li>数量较少，但功能更精细</li>
 </ul>
 <p>所以白天看颜色清楚，主要靠视锥细胞。</p>
-<hr>
 <h3 id="为什么人能看见颜色"><a href="#为什么人能看见颜色" class="headerlink" title="为什么人能看见颜色"></a>为什么人能看见颜色</h3><p>因为人眼通常有三类视锥细胞，分别对不同波段更敏感，大致对应：</p>
 <ul>
 <li>红（R）</li>
@@ -966,7 +954,6 @@ mjx-container[display="true"] + br {
 <li>蓝（B）</li>
 </ul>
 <p>这就是为什么数字图像常用 <strong>RGB</strong> 表示颜色：它模仿了人眼的三色感知机制。</p>
-<hr>
 <h3 id="可见光范围"><a href="#可见光范围" class="headerlink" title="可见光范围"></a>可见光范围</h3><p>人眼能感知的电磁波叫<strong>可见光</strong>，大约波长范围是：</p>
 <p><strong>400nm ~ 700nm</strong></p>
 <ul>
@@ -979,20 +966,17 @@ mjx-container[display="true"] + br {
 <li>红外线（IR）</li>
 </ul>
 <p>人眼一般看不见，但机器可以感知。</p>
-<hr>
 <h3 id="Brightness-Contrast-Adaptation"><a href="#Brightness-Contrast-Adaptation" class="headerlink" title="Brightness, Contrast, Adaptation"></a>Brightness, Contrast, Adaptation</h3><p>这几个词特别常见。</p>
 <h4 id="Brightness（亮度）"><a href="#Brightness（亮度）" class="headerlink" title="Brightness（亮度）"></a>Brightness（亮度）</h4><p>表示图像整体有多亮。</p>
 <ul>
 <li>平均灰度高 → 图像偏亮</li>
 <li>平均灰度低 → 图像偏暗</li>
 </ul>
-<hr>
 <h4 id="Contrast（对比度）"><a href="#Contrast（对比度）" class="headerlink" title="Contrast（对比度）"></a>Contrast（对比度）</h4><p>表示亮部和暗部差异有多大。</p>
 <ul>
 <li>对比度高：黑白分明，层次明显</li>
 <li>对比度低：灰蒙蒙，看起来发雾</li>
 </ul>
-<hr>
 <h4 id="Adaptation（视觉适应）"><a href="#Adaptation（视觉适应）" class="headerlink" title="Adaptation（视觉适应）"></a>Adaptation（视觉适应）</h4><p>人眼会自动适应环境亮度变化。</p>
 <p>例如：</p>
 <ul>
@@ -1001,7 +985,6 @@ mjx-container[display="true"] + br {
 </ul>
 <p>这说明<strong>人眼感知不是线性的、固定的</strong>，而是动态调整的。</p>
 <p>这也是为什么图像处理有时要做增强：让图像更符合人眼观察习惯。</p>
-<hr>
 <h3 id="Color-Image-的基本原理"><a href="#Color-Image-的基本原理" class="headerlink" title="Color Image 的基本原理"></a>Color Image 的基本原理</h3><p>彩色图像的本质是：</p>
 <p><strong>每个像素不再只有一个亮度值，而是多个颜色通道值。</strong></p>
 <p>最常见的是 RGB 三通道：</p>
@@ -1011,7 +994,6 @@ mjx-container[display="true"] + br {
 <li>B：蓝色强度</li>
 </ul>
 <p>比如一个像素 <code>(255, 0, 0)</code> 表示纯红色。</p>
-<hr>
 <h3 id="加色模型与减色模型"><a href="#加色模型与减色模型" class="headerlink" title="加色模型与减色模型"></a>加色模型与减色模型</h3><h4 id="RGB-是加色模型（Additive-Color-Model）"><a href="#RGB-是加色模型（Additive-Color-Model）" class="headerlink" title="RGB 是加色模型（Additive Color Model）"></a>RGB 是加色模型（Additive Color Model）</h4><p>适用于显示设备，如：</p>
 <ul>
 <li>手机屏幕</li>
@@ -1023,7 +1005,6 @@ mjx-container[display="true"] + br {
 <li>R + G + B 全强 → 白色</li>
 <li>都为 0 → 黑色</li>
 </ul>
-<hr>
 <h4 id="CMY-CMYK-是减色模型（Subtractive-Color-Model）"><a href="#CMY-CMYK-是减色模型（Subtractive-Color-Model）" class="headerlink" title="CMY/CMYK 是减色模型（Subtractive Color Model）"></a>CMY/CMYK 是减色模型（Subtractive Color Model）</h4><p>适用于印刷。</p>
 <p>因为油墨是在“吸收”部分光，而不是发光。</p>
 <p>这个你只要知道：</p>
@@ -1032,7 +1013,6 @@ mjx-container[display="true"] + br {
 <li>印刷常用 CMYK</li>
 </ul>
 <p>就够了。</p>
-<hr>
 <h3 id="这一部分常考点-1"><a href="#这一部分常考点-1" class="headerlink" title="这一部分常考点"></a>这一部分常考点</h3><ul>
 <li>人眼两种主要感光细胞是什么？作用分别是什么？</li>
 <li>为什么 RGB 可以表示颜色？</li>
@@ -1040,9 +1020,7 @@ mjx-container[display="true"] + br {
 <li>可见光范围大概是多少？</li>
 <li>为什么人眼在不同亮度环境下感知不同？</li>
 </ul>
-<hr>
 <h2 id="Digital-Image-Representation"><a href="#Digital-Image-Representation" class="headerlink" title="Digital Image Representation"></a>Digital Image Representation</h2><p>这部分最重要。它讲的是：<strong>计算机如何表示图像。</strong></p>
-<hr>
 <h3 id="数字图像是什么"><a href="#数字图像是什么" class="headerlink" title="数字图像是什么"></a>数字图像是什么</h3><p>数字图像就是一个二维离散函数：</p>
 <p><strong>f(x, y)</strong></p>
 <p>其中：</p>
@@ -1052,7 +1030,6 @@ mjx-container[display="true"] + br {
 </ul>
 <p>简单说：</p>
 <p><strong>图像 = 一个由很多小格子（像素）组成的矩阵</strong></p>
-<hr>
 <h3 id="Pixel（像素）"><a href="#Pixel（像素）" class="headerlink" title="Pixel（像素）"></a>Pixel（像素）</h3><p>像素是数字图像的最小单位。</p>
 <p>每个像素记录一个数值：</p>
 <ul>
@@ -1060,7 +1037,6 @@ mjx-container[display="true"] + br {
 <li>彩色图：多个值（如 RGB 三个值）</li>
 </ul>
 <p>例如一个 4×4 图像，就可以看成一个 4 行 4 列的矩阵。</p>
-<hr>
 <h3 id="Sampling（采样）"><a href="#Sampling（采样）" class="headerlink" title="Sampling（采样）"></a>Sampling（采样）</h3><p>采样是把连续空间离散化。</p>
 <p>也就是：把真实场景切成很多小格子。</p>
 <h4 id="采样决定什么？"><a href="#采样决定什么？" class="headerlink" title="采样决定什么？"></a>采样决定什么？</h4><p><strong>采样决定空间分辨率（spatial resolution）</strong></p>
@@ -1072,7 +1048,6 @@ mjx-container[display="true"] + br {
 <ul>
 <li>1920×1080 比 640×480 细节更多</li>
 </ul>
-<hr>
 <h3 id="Quantization（量化）"><a href="#Quantization（量化）" class="headerlink" title="Quantization（量化）"></a>Quantization（量化）</h3><p>量化是把连续亮度值离散化。</p>
 <p>现实亮度是连续的，但计算机只能记录有限级别。</p>
 <p>例如灰度图常用 8-bit：</p>
@@ -1091,7 +1066,6 @@ mjx-container[display="true"] + br {
 <li>量化级数越多，过渡越平滑</li>
 <li>量化级数越少，容易出现“色带”或层次断裂</li>
 </ul>
-<hr>
 <h3 id="Spatial-Resolution-vs-Gray-level-Resolution"><a href="#Spatial-Resolution-vs-Gray-level-Resolution" class="headerlink" title="Spatial Resolution vs Gray-level Resolution"></a>Spatial Resolution vs Gray-level Resolution</h3><p>这是最容易混淆的点。</p>
 <h4 id="空间分辨率（Spatial-Resolution）"><a href="#空间分辨率（Spatial-Resolution）" class="headerlink" title="空间分辨率（Spatial Resolution）"></a>空间分辨率（Spatial Resolution）</h4><p>描述图像中<strong>有多少像素</strong>，即细节的空间精细程度。</p>
 <ul>
@@ -1108,8 +1082,7 @@ mjx-container[display="true"] + br {
 <li><strong>采样管“多少个像素”</strong></li>
 <li><strong>量化管“每个像素有多少级”</strong></li>
 </ul>
-<hr>
-<h3 id="3-6-Binary-Grayscale-Color-Images"><a href="#3-6-Binary-Grayscale-Color-Images" class="headerlink" title="3.6 Binary, Grayscale, Color Images"></a>3.6 Binary, Grayscale, Color Images</h3><h4 id="（1）二值图-Binary-Image"><a href="#（1）二值图-Binary-Image" class="headerlink" title="（1）二值图 Binary Image"></a>（1）二值图 Binary Image</h4><p>每个像素只有两种取值：</p>
+<h3 id="Binary-Grayscale-Color-Images"><a href="#Binary-Grayscale-Color-Images" class="headerlink" title="Binary, Grayscale, Color Images"></a>Binary, Grayscale, Color Images</h3><h4 id="（1）二值图-Binary-Image"><a href="#（1）二值图-Binary-Image" class="headerlink" title="（1）二值图 Binary Image"></a>（1）二值图 Binary Image</h4><p>每个像素只有两种取值：</p>
 <ul>
 <li>0（黑）</li>
 <li>1（白）</li>
@@ -1120,7 +1093,6 @@ mjx-container[display="true"] + br {
 <li>目标分割</li>
 <li>掩膜处理</li>
 </ul>
-<hr>
 <h4 id="（2）灰度图-Grayscale-Image"><a href="#（2）灰度图-Grayscale-Image" class="headerlink" title="（2）灰度图 Grayscale Image"></a>（2）灰度图 Grayscale Image</h4><p>每个像素只有一个亮度值。</p>
 <p>常见 8-bit 灰度图：0~255。</p>
 <p>适合：</p>
@@ -1129,7 +1101,6 @@ mjx-container[display="true"] + br {
 <li>纹理分析</li>
 <li>医学图像预处理</li>
 </ul>
-<hr>
 <h4 id="（3）彩色图-Color-Image"><a href="#（3）彩色图-Color-Image" class="headerlink" title="（3）彩色图 Color Image"></a>（3）彩色图 Color Image</h4><p>每个像素有多个通道值，常见 RGB。</p>
 <p>例如 8-bit RGB 图像：</p>
 <ul>
@@ -1137,15 +1108,13 @@ mjx-container[display="true"] + br {
 <li>一个像素共 24 bit</li>
 <li>可表示约 1677 万种颜色</li>
 </ul>
-<hr>
-<h3 id="3-7-邻接关系（可作为补充重点）"><a href="#3-7-邻接关系（可作为补充重点）" class="headerlink" title="3.7 邻接关系（可作为补充重点）"></a>3.7 邻接关系（可作为补充重点）</h3><p>图像处理中还常讨论像素之间的关系：</p>
+<h3 id="邻接关系（可作为补充重点）"><a href="#邻接关系（可作为补充重点）" class="headerlink" title="邻接关系（可作为补充重点）"></a>邻接关系（可作为补充重点）</h3><p>图像处理中还常讨论像素之间的关系：</p>
 <ul>
 <li>4-neighbors（上、下、左、右）</li>
 <li>8-neighbors（加上四个对角）</li>
 </ul>
 <p>这个在后面学连通性、区域分割时很重要。</p>
-<hr>
-<h3 id="3-8-这一部分常考点"><a href="#3-8-这一部分常考点" class="headerlink" title="3.8 这一部分常考点"></a>3.8 这一部分常考点</h3><ul>
+<h3 id="这一部分常考点-2"><a href="#这一部分常考点-2" class="headerlink" title="这一部分常考点"></a>这一部分常考点</h3><ul>
 <li>什么是像素？</li>
 <li>采样和量化分别在做什么？</li>
 <li>空间分辨率和灰度分辨率有什么区别？</li>
@@ -1154,10 +1123,8 @@ mjx-container[display="true"] + br {
 </ul>
 <p>最后一个很常考，因为：</p>
 <p><code>2^8 = 256</code></p>
-<hr>
-<h2 id="4-Image-Histogram"><a href="#4-Image-Histogram" class="headerlink" title="4. Image Histogram"></a>4. Image Histogram</h2><p>直方图是这一章最实用、最高频的内容之一。</p>
-<hr>
-<h3 id="4-1-什么是图像直方图"><a href="#4-1-什么是图像直方图" class="headerlink" title="4.1 什么是图像直方图"></a>4.1 什么是图像直方图</h3><p>图像直方图（Histogram）是：</p>
+<h2 id="Image-Histogram"><a href="#Image-Histogram" class="headerlink" title="Image Histogram"></a>Image Histogram</h2><p>直方图是这一章最实用、最高频的内容之一。</p>
+<h3 id="什么是图像直方图"><a href="#什么是图像直方图" class="headerlink" title="什么是图像直方图"></a>什么是图像直方图</h3><p>图像直方图（Histogram）是：</p>
 <p><strong>统计图像中每个灰度值出现次数的分布图。</strong></p>
 <p>横轴：</p>
 <ul>
@@ -1168,8 +1135,7 @@ mjx-container[display="true"] + br {
 <li>该灰度值出现的像素数量</li>
 </ul>
 <p>它不关心这些像素在什么位置，只关心“有多少”。</p>
-<hr>
-<h3 id="4-2-为什么直方图重要"><a href="#4-2-为什么直方图重要" class="headerlink" title="4.2 为什么直方图重要"></a>4.2 为什么直方图重要</h3><p>因为它可以快速反映图像整体亮度分布特征，比如：</p>
+<h3 id="为什么直方图重要"><a href="#为什么直方图重要" class="headerlink" title="为什么直方图重要"></a>为什么直方图重要</h3><p>因为它可以快速反映图像整体亮度分布特征，比如：</p>
 <ul>
 <li>图像偏暗还是偏亮</li>
 <li>对比度高还是低</li>
@@ -1177,20 +1143,15 @@ mjx-container[display="true"] + br {
 <li>是否适合做增强</li>
 </ul>
 <p>所以直方图是图像统计分析的基础工具。</p>
-<hr>
-<h3 id="4-3-如何理解不同形状的直方图"><a href="#4-3-如何理解不同形状的直方图" class="headerlink" title="4.3 如何理解不同形状的直方图"></a>4.3 如何理解不同形状的直方图</h3><h4 id="（1）直方图集中在左边"><a href="#（1）直方图集中在左边" class="headerlink" title="（1）直方图集中在左边"></a>（1）直方图集中在左边</h4><p>说明大多数像素灰度低。</p>
+<h3 id="如何理解不同形状的直方图"><a href="#如何理解不同形状的直方图" class="headerlink" title="如何理解不同形状的直方图"></a>如何理解不同形状的直方图</h3><h4 id="（1）直方图集中在左边"><a href="#（1）直方图集中在左边" class="headerlink" title="（1）直方图集中在左边"></a>（1）直方图集中在左边</h4><p>说明大多数像素灰度低。</p>
 <p>→ 图像整体偏暗</p>
-<hr>
 <h4 id="（2）直方图集中在右边"><a href="#（2）直方图集中在右边" class="headerlink" title="（2）直方图集中在右边"></a>（2）直方图集中在右边</h4><p>说明大多数像素灰度高。</p>
 <p>→ 图像整体偏亮</p>
-<hr>
 <h4 id="（3）直方图集中在中间且很窄"><a href="#（3）直方图集中在中间且很窄" class="headerlink" title="（3）直方图集中在中间且很窄"></a>（3）直方图集中在中间且很窄</h4><p>说明灰度范围小，变化不大。</p>
 <p>→ 图像对比度低，发灰</p>
-<hr>
 <h4 id="（4）直方图分布很宽"><a href="#（4）直方图分布很宽" class="headerlink" title="（4）直方图分布很宽"></a>（4）直方图分布很宽</h4><p>说明灰度覆盖范围大。</p>
 <p>→ 图像对比度高，层次丰富</p>
-<hr>
-<h3 id="4-4-数学表示（考试可能简答）"><a href="#4-4-数学表示（考试可能简答）" class="headerlink" title="4.4 数学表示（考试可能简答）"></a>4.4 数学表示（考试可能简答）</h3><p>设灰度级为 <code>r_k</code>，对应像素数为 <code>n_k</code>，总像素数为 <code>n</code>。</p>
+<h3 id="数学表示（考试可能简答）"><a href="#数学表示（考试可能简答）" class="headerlink" title="数学表示（考试可能简答）"></a>数学表示（考试可能简答）</h3><p>设灰度级为 <code>r_k</code>，对应像素数为 <code>n_k</code>，总像素数为 <code>n</code>。</p>
 <p>则：</p>
 <ul>
 <li><strong>直方图</strong>：记录每个 <code>r_k</code> 的 <code>n_k</code></li>
@@ -1200,8 +1161,7 @@ mjx-container[display="true"] + br {
 <p><code>p(r_k)</code> 表示灰度 <code>r_k</code> 出现的概率。</p>
 <p>所以归一化直方图可以理解为：</p>
 <p><strong>灰度分布的概率分布</strong></p>
-<hr>
-<h3 id="4-5-Histogram-与图像增强"><a href="#4-5-Histogram-与图像增强" class="headerlink" title="4.5 Histogram 与图像增强"></a>4.5 Histogram 与图像增强</h3><p>直方图常用于图像增强，最典型的是：</p>
+<h3 id="Histogram-与图像增强"><a href="#Histogram-与图像增强" class="headerlink" title="Histogram 与图像增强"></a>Histogram 与图像增强</h3><p>直方图常用于图像增强，最典型的是：</p>
 <h4 id="（1）Contrast-Stretching（对比度拉伸）"><a href="#（1）Contrast-Stretching（对比度拉伸）" class="headerlink" title="（1）Contrast Stretching（对比度拉伸）"></a>（1）Contrast Stretching（对比度拉伸）</h4><p>把原本集中在一个窄范围内的灰度，拉伸到更宽范围。</p>
 <p>效果：</p>
 <ul>
@@ -1209,7 +1169,6 @@ mjx-container[display="true"] + br {
 <li>亮的更亮一些</li>
 <li>对比度提升</li>
 </ul>
-<hr>
 <h4 id="（2）Histogram-Equalization（直方图均衡化）"><a href="#（2）Histogram-Equalization（直方图均衡化）" class="headerlink" title="（2）Histogram Equalization（直方图均衡化）"></a>（2）Histogram Equalization（直方图均衡化）</h4><p>目标是让灰度分布更均匀，增强整体对比度。</p>
 <p>适合：</p>
 <ul>
@@ -1222,25 +1181,21 @@ mjx-container[display="true"] + br {
 <li>它不一定让图像“更自然”</li>
 <li>它是增强对比度，不是万能美化</li>
 </ul>
-<hr>
-<h3 id="4-6-彩色图像的直方图"><a href="#4-6-彩色图像的直方图" class="headerlink" title="4.6 彩色图像的直方图"></a>4.6 彩色图像的直方图</h3><p>彩色图像可以：</p>
+<h3 id="彩色图像的直方图"><a href="#彩色图像的直方图" class="headerlink" title="彩色图像的直方图"></a>彩色图像的直方图</h3><p>彩色图像可以：</p>
 <ul>
 <li>分别统计 R、G、B 三个通道的直方图</li>
 <li>或先转成灰度图再统计</li>
 </ul>
 <p>如果直接对 RGB 分别处理，有时会引起颜色失真，所以实际中常要更谨慎。</p>
-<hr>
-<h3 id="4-7-这一部分常考点"><a href="#4-7-这一部分常考点" class="headerlink" title="4.7 这一部分常考点"></a>4.7 这一部分常考点</h3><ul>
+<h3 id="这一部分常考点-3"><a href="#这一部分常考点-3" class="headerlink" title="这一部分常考点"></a>这一部分常考点</h3><ul>
 <li>什么是图像直方图？</li>
 <li>直方图能反映哪些图像特征？</li>
 <li>偏暗/偏亮图像的直方图有什么特点？</li>
 <li>什么是归一化直方图？</li>
 <li>直方图均衡化的作用是什么？</li>
 </ul>
-<hr>
-<h2 id="5-Image-Processing-and-Its-Application"><a href="#5-Image-Processing-and-Its-Application" class="headerlink" title="5. Image Processing and Its Application"></a>5. Image Processing and Its Application</h2><p>这一部分是总览：图像处理到底是什么，能干什么。</p>
-<hr>
-<h3 id="5-1-什么是图像处理"><a href="#5-1-什么是图像处理" class="headerlink" title="5.1 什么是图像处理"></a>5.1 什么是图像处理</h3><p>图像处理（Image Processing）就是：</p>
+<h2 id="Image-Processing-and-Its-Application"><a href="#Image-Processing-and-Its-Application" class="headerlink" title="Image Processing and Its Application"></a>Image Processing and Its Application</h2><p>这一部分是总览：图像处理到底是什么，能干什么。</p>
+<h3 id="什么是图像处理"><a href="#什么是图像处理" class="headerlink" title="什么是图像处理"></a>什么是图像处理</h3><p>图像处理（Image Processing）就是：</p>
 <p><strong>对图像进行操作，使其更适合人观察，或更适合机器分析。</strong></p>
 <p>它的输入通常是图像，输出可以是：</p>
 <ul>
@@ -1249,8 +1204,7 @@ mjx-container[display="true"] + br {
 <li>识别结果</li>
 <li>决策信息</li>
 </ul>
-<hr>
-<h3 id="5-2-图像处理的两大目标"><a href="#5-2-图像处理的两大目标" class="headerlink" title="5.2 图像处理的两大目标"></a>5.2 图像处理的两大目标</h3><h4 id="（1）Improving-pictorial-information-for-human-interpretation"><a href="#（1）Improving-pictorial-information-for-human-interpretation" class="headerlink" title="（1）Improving pictorial information for human interpretation"></a>（1）Improving pictorial information for human interpretation</h4><p>为了让人更容易看懂。</p>
+<h3 id="图像处理的两大目标"><a href="#图像处理的两大目标" class="headerlink" title="图像处理的两大目标"></a>图像处理的两大目标</h3><h4 id="（1）Improving-pictorial-information-for-human-interpretation"><a href="#（1）Improving-pictorial-information-for-human-interpretation" class="headerlink" title="（1）Improving pictorial information for human interpretation"></a>（1）Improving pictorial information for human interpretation</h4><p>为了让人更容易看懂。</p>
 <p>例如：</p>
 <ul>
 <li>调亮太暗的照片</li>
@@ -1259,7 +1213,6 @@ mjx-container[display="true"] + br {
 <li>提高对比度</li>
 </ul>
 <p>这类偏“增强”。</p>
-<hr>
 <h4 id="（2）Processing-for-autonomous-machine-perception"><a href="#（2）Processing-for-autonomous-machine-perception" class="headerlink" title="（2）Processing for autonomous machine perception"></a>（2）Processing for autonomous machine perception</h4><p>为了让机器更容易理解。</p>
 <p>例如：</p>
 <ul>
@@ -1269,8 +1222,7 @@ mjx-container[display="true"] + br {
 <li>医学图像诊断辅助</li>
 </ul>
 <p>这类偏“分析与识别”。</p>
-<hr>
-<h3 id="5-3-图像处理的典型步骤"><a href="#5-3-图像处理的典型步骤" class="headerlink" title="5.3 图像处理的典型步骤"></a>5.3 图像处理的典型步骤</h3><p>虽然不同任务不同，但通常流程类似：</p>
+<h3 id="图像处理的典型步骤"><a href="#图像处理的典型步骤" class="headerlink" title="图像处理的典型步骤"></a>图像处理的典型步骤</h3><p>虽然不同任务不同，但通常流程类似：</p>
 <ol>
 <li><strong>Image acquisition</strong>：图像采集</li>
 <li><strong>Preprocessing</strong>：预处理（去噪、增强）</li>
@@ -1281,15 +1233,13 @@ mjx-container[display="true"] + br {
 </ol>
 <p>你可以把它想成：</p>
 <p><strong>先把图像拍下来 → 调整清楚 → 找出重要区域 → 提取特征 → 判断是什么</strong></p>
-<hr>
-<h3 id="5-4-常见图像处理操作"><a href="#5-4-常见图像处理操作" class="headerlink" title="5.4 常见图像处理操作"></a>5.4 常见图像处理操作</h3><h4 id="（1）Enhancement（增强）"><a href="#（1）Enhancement（增强）" class="headerlink" title="（1）Enhancement（增强）"></a>（1）Enhancement（增强）</h4><p>让图像更清晰、更易观察。</p>
+<h3 id="常见图像处理操作"><a href="#常见图像处理操作" class="headerlink" title="常见图像处理操作"></a>常见图像处理操作</h3><h4 id="（1）Enhancement（增强）"><a href="#（1）Enhancement（增强）" class="headerlink" title="（1）Enhancement（增强）"></a>（1）Enhancement（增强）</h4><p>让图像更清晰、更易观察。</p>
 <ul>
 <li>调亮度</li>
 <li>调对比度</li>
 <li>锐化</li>
 <li>直方图均衡化</li>
 </ul>
-<hr>
 <h4 id="（2）Restoration（复原）"><a href="#（2）Restoration（复原）" class="headerlink" title="（2）Restoration（复原）"></a>（2）Restoration（复原）</h4><p>针对已知退化模型去恢复图像。</p>
 <ul>
 <li>去模糊</li>
@@ -1297,14 +1247,12 @@ mjx-container[display="true"] + br {
 <li>去噪</li>
 </ul>
 <p>它比增强更强调“根据模型恢复真实图像”。</p>
-<hr>
 <h4 id="（3）Compression（压缩）"><a href="#（3）Compression（压缩）" class="headerlink" title="（3）Compression（压缩）"></a>（3）Compression（压缩）</h4><p>减少图像存储空间与传输成本。</p>
 <ul>
 <li>JPEG</li>
 <li>PNG（无损压缩）</li>
 <li>医学或工业图像中的专用压缩</li>
 </ul>
-<hr>
 <h4 id="（4）Segmentation（分割）"><a href="#（4）Segmentation（分割）" class="headerlink" title="（4）Segmentation（分割）"></a>（4）Segmentation（分割）</h4><p>把图像切分成有意义区域。</p>
 <p>比如：</p>
 <ul>
@@ -1312,7 +1260,6 @@ mjx-container[display="true"] + br {
 <li>从道路图像中分出车道线</li>
 <li>从背景中分离人脸</li>
 </ul>
-<hr>
 <h4 id="（5）Recognition（识别）"><a href="#（5）Recognition（识别）" class="headerlink" title="（5）Recognition（识别）"></a>（5）Recognition（识别）</h4><p>识别图像中的对象。</p>
 <ul>
 <li>OCR 文字识别</li>
@@ -1320,48 +1267,41 @@ mjx-container[display="true"] + br {
 <li>指纹识别</li>
 <li>自动驾驶目标识别</li>
 </ul>
-<hr>
-<h3 id="5-5-应用领域"><a href="#5-5-应用领域" class="headerlink" title="5.5 应用领域"></a>5.5 应用领域</h3><p>这一章常会要求你举例说明应用。</p>
+<h3 id="应用领域"><a href="#应用领域" class="headerlink" title="应用领域"></a>应用领域</h3><p>这一章常会要求你举例说明应用。</p>
 <h4 id="医学影像"><a href="#医学影像" class="headerlink" title="医学影像"></a>医学影像</h4><ul>
 <li>X-ray</li>
 <li>CT</li>
 <li>MRI</li>
 <li>超声图像增强与辅助诊断</li>
 </ul>
-<hr>
 <h4 id="遥感与卫星图像"><a href="#遥感与卫星图像" class="headerlink" title="遥感与卫星图像"></a>遥感与卫星图像</h4><ul>
 <li>土地分类</li>
 <li>气象监测</li>
 <li>农业监测</li>
 <li>灾害评估</li>
 </ul>
-<hr>
 <h4 id="工业检测"><a href="#工业检测" class="headerlink" title="工业检测"></a>工业检测</h4><ul>
 <li>产品表面缺陷检测</li>
 <li>尺寸测量</li>
 <li>自动质检</li>
 </ul>
-<hr>
 <h4 id="安防监控"><a href="#安防监控" class="headerlink" title="安防监控"></a>安防监控</h4><ul>
 <li>人脸检测</li>
 <li>行为分析</li>
 <li>车牌识别</li>
 </ul>
-<hr>
 <h4 id="文档与文字处理"><a href="#文档与文字处理" class="headerlink" title="文档与文字处理"></a>文档与文字处理</h4><ul>
 <li>扫描件增强</li>
 <li>OCR 识别</li>
 <li>手写字符识别</li>
 </ul>
-<hr>
 <h4 id="消费电子"><a href="#消费电子" class="headerlink" title="消费电子"></a>消费电子</h4><ul>
 <li>手机相机美化</li>
 <li>夜景模式</li>
 <li>人像模式</li>
 <li>图像降噪与超分辨率</li>
 </ul>
-<hr>
-<h3 id="5-6-图像处理-vs-计算机视觉"><a href="#5-6-图像处理-vs-计算机视觉" class="headerlink" title="5.6 图像处理 vs 计算机视觉"></a>5.6 图像处理 vs 计算机视觉</h3><p>很多老师会顺带讲这个区别。</p>
+<h3 id="图像处理-vs-计算机视觉"><a href="#图像处理-vs-计算机视觉" class="headerlink" title="图像处理 vs 计算机视觉"></a>图像处理 vs 计算机视觉</h3><p>很多老师会顺带讲这个区别。</p>
 <ul>
 <li><strong>Image Processing</strong>：更关注“处理图像本身”</li>
 <li><strong>Computer Vision</strong>：更关注“理解图像内容”</li>
@@ -1373,22 +1313,19 @@ mjx-container[display="true"] + br {
 </ul>
 <p>你可以理解成：</p>
 <p><strong>图像处理常是视觉系统的前置步骤。</strong></p>
-<hr>
-<h3 id="5-7-这一部分常考点"><a href="#5-7-这一部分常考点" class="headerlink" title="5.7 这一部分常考点"></a>5.7 这一部分常考点</h3><ul>
+<h3 id="这一部分常考点-4"><a href="#这一部分常考点-4" class="headerlink" title="这一部分常考点"></a>这一部分常考点</h3><ul>
 <li>图像处理的定义是什么？</li>
 <li>图像处理的两大目标是什么？</li>
 <li>图像增强、复原、分割、识别分别是什么？</li>
 <li>举出几个图像处理的实际应用场景</li>
 <li>图像处理和计算机视觉有什么区别？</li>
 </ul>
-<hr>
 <h2 id="把整章串起来记忆"><a href="#把整章串起来记忆" class="headerlink" title="把整章串起来记忆"></a>把整章串起来记忆</h2><p>你可以用这条线来背：</p>
 <h3 id="（1）图像怎么来"><a href="#（1）图像怎么来" class="headerlink" title="（1）图像怎么来"></a>（1）图像怎么来</h3><p>光照到物体，物体反射，传感器接收，形成图像。<br>图像亮度常建模为：<code>f(x,y)=i(x,y)r(x,y)</code>。</p>
 <h3 id="（2）人怎么感知"><a href="#（2）人怎么感知" class="headerlink" title="（2）人怎么感知"></a>（2）人怎么感知</h3><p>人眼通过视杆和视锥感知亮度和颜色。<br>颜色感知与三色机制有关，所以 RGB 很重要。</p>
 <h3 id="（3）计算机怎么存"><a href="#（3）计算机怎么存" class="headerlink" title="（3）计算机怎么存"></a>（3）计算机怎么存</h3><p>图像是像素矩阵。<br>通过采样把空间离散化，通过量化把灰度离散化。</p>
 <h3 id="（4）怎么分析图像整体特征"><a href="#（4）怎么分析图像整体特征" class="headerlink" title="（4）怎么分析图像整体特征"></a>（4）怎么分析图像整体特征</h3><p>用直方图统计灰度分布，判断亮暗与对比度。</p>
 <h3 id="（5）怎么利用这些知识"><a href="#（5）怎么利用这些知识" class="headerlink" title="（5）怎么利用这些知识"></a>（5）怎么利用这些知识</h3><p>进行增强、复原、压缩、分割、识别，并应用到医学、工业、安防等领域。</p>
-<hr>
 <h2 id="一套考试型速记表"><a href="#一套考试型速记表" class="headerlink" title="一套考试型速记表"></a>一套考试型速记表</h2><table>
 <thead>
 <tr>
@@ -1402,7 +1339,7 @@ mjx-container[display="true"] + br {
 </tr>
 <tr>
 <td>成像模型</td>
-<td><code>f(x,y)=i(x,y)r(x,y)</code></td>
+<td><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="21.569ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 9533.6 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D453" d="M118 -162Q120 -162 124 -164T135 -167T147 -168Q160 -168 171 -155T187 -126Q197 -99 221 27T267 267T289 382V385H242Q195 385 192 387Q188 390 188 397L195 425Q197 430 203 430T250 431Q298 431 298 432Q298 434 307 482T319 540Q356 705 465 705Q502 703 526 683T550 630Q550 594 529 578T487 561Q443 561 443 603Q443 622 454 636T478 657L487 662Q471 668 457 668Q445 668 434 658T419 630Q412 601 403 552T387 469T380 433Q380 431 435 431Q480 431 487 430T498 424Q499 420 496 407T491 391Q489 386 482 386T428 385H372L349 263Q301 15 282 -47Q255 -132 212 -173Q175 -205 139 -205Q107 -205 81 -186T55 -132Q55 -95 76 -78T118 -61Q162 -61 162 -103Q162 -122 151 -136T127 -157L118 -162Z"></path></g><g data-mml-node="mo" transform="translate(550,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(939,0)"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mo" transform="translate(1511,0)"><path data-c="2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path></g><g data-mml-node="mi" transform="translate(1955.7,0)"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(2445.7,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g><g data-mml-node="mo" transform="translate(3112.4,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mi" transform="translate(4168.2,0)"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(4513.2,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(4902.2,0)"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mo" transform="translate(5474.2,0)"><path data-c="2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path></g><g data-mml-node="mi" transform="translate(5918.9,0)"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(6408.9,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g><g data-mml-node="mi" transform="translate(6797.9,0)"><path data-c="1D45F" d="M21 287Q22 290 23 295T28 317T38 348T53 381T73 411T99 433T132 442Q161 442 183 430T214 408T225 388Q227 382 228 382T236 389Q284 441 347 441H350Q398 441 422 400Q430 381 430 363Q430 333 417 315T391 292T366 288Q346 288 334 299T322 328Q322 376 378 392Q356 405 342 405Q286 405 239 331Q229 315 224 298T190 165Q156 25 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 114 189T154 366Q154 405 128 405Q107 405 92 377T68 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(7248.9,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(7637.9,0)"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mo" transform="translate(8209.9,0)"><path data-c="2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path></g><g data-mml-node="mi" transform="translate(8654.6,0)"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(9144.6,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container></td>
 </tr>
 <tr>
 <td>Human Perception</td>
@@ -1445,23 +1382,20 @@ mjx-container[display="true"] + br {
 <td>增强、分割、识别、医学、安防等</td>
 </tr>
 </tbody></table>
-<hr>
-<h2 id="你最容易丢分的几个点"><a href="#你最容易丢分的几个点" class="headerlink" title="你最容易丢分的几个点"></a>你最容易丢分的几个点</h2><h3 id="1-采样和量化不要混"><a href="#1-采样和量化不要混" class="headerlink" title="1. 采样和量化不要混"></a>1. 采样和量化不要混</h3><ul>
+<h2 id="你最容易丢分的几个点"><a href="#你最容易丢分的几个点" class="headerlink" title="你最容易丢分的几个点"></a>你最容易丢分的几个点</h2><h3 id="采样和量化不要混"><a href="#采样和量化不要混" class="headerlink" title="采样和量化不要混"></a>采样和量化不要混</h3><ul>
 <li>采样：决定“像素数量”</li>
 <li>量化：决定“灰度级数量”</li>
 </ul>
-<h3 id="2-亮度和对比度不要混"><a href="#2-亮度和对比度不要混" class="headerlink" title="2. 亮度和对比度不要混"></a>2. 亮度和对比度不要混</h3><ul>
+<h3 id="亮度和对比度不要混"><a href="#亮度和对比度不要混" class="headerlink" title="亮度和对比度不要混"></a>亮度和对比度不要混</h3><ul>
 <li>亮度：整体明暗</li>
 <li>对比度：亮暗差异程度</li>
 </ul>
-<h3 id="3-图像处理和图像识别不要混"><a href="#3-图像处理和图像识别不要混" class="headerlink" title="3. 图像处理和图像识别不要混"></a>3. 图像处理和图像识别不要混</h3><ul>
+<h3 id="图像处理和图像识别不要混"><a href="#图像处理和图像识别不要混" class="headerlink" title="图像处理和图像识别不要混"></a>图像处理和图像识别不要混</h3><ul>
 <li>处理：改善图像或提取信息</li>
 <li>识别：判断图像里是什么</li>
 </ul>
-<h3 id="4-直方图不反映位置"><a href="#4-直方图不反映位置" class="headerlink" title="4. 直方图不反映位置"></a>4. 直方图不反映位置</h3><p>直方图只统计数量，不告诉你像素在图像中的哪儿。</p>
-<hr>
+<h3 id="直方图不反映位置"><a href="#直方图不反映位置" class="headerlink" title="直方图不反映位置"></a>直方图不反映位置</h3><p>直方图只统计数量，不告诉你像素在图像中的哪儿。</p>
 <h2 id="如果老师让你“简答”这章，可以这样答"><a href="#如果老师让你“简答”这章，可以这样答" class="headerlink" title="如果老师让你“简答”这章，可以这样答"></a>如果老师让你“简答”这章，可以这样答</h2><p>这章主要介绍数字图像处理的基础概念。首先，图像形成依赖于光源照明、物体反射和传感器接收，图像亮度常表示为照明分量与反射分量的乘积。其次，人眼通过视杆细胞和视锥细胞感知图像，其中视锥细胞使人能够分辨颜色，因此彩色图像通常采用 RGB 模型表示。然后，数字图像可看作由像素组成的二维离散函数，其形成依赖采样和量化，分别决定空间分辨率和灰度分辨率。图像直方图用于描述灰度分布，可反映图像的亮度和对比度，并常用于图像增强。最后，图像处理的目标包括改善图像视觉效果和为机器识别提供输入，广泛应用于医学、工业检测、安防监控和遥感等领域。</p>
-<hr>
 <h2 id="给你几个复习题（自测）"><a href="#给你几个复习题（自测）" class="headerlink" title="给你几个复习题（自测）"></a>给你几个复习题（自测）</h2><p>你可以先自己答，再对照我讲的内容。</p>
 <ol>
 <li>为什么说图像亮度由照明和反射共同决定？</li>
@@ -1489,7 +1423,7 @@ mjx-container[display="true"] + br {
         
             <li>
                 <strong>Updated at
-                    :</strong> 2026-03-04 21:45:37
+                    :</strong> 2026-03-04 21:53:20
             </li>
         
         <li>
@@ -1534,11 +1468,23 @@ mjx-container[display="true"] + br {
 		
 		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
 			
-			
-			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-				<a class="next" rel="next" href="/2026/03/04/2026-03-04-EE6222-2-%E7%BA%BF%E6%80%A7%E7%A7%BB%E4%BD%8D%E4%B8%8D%E5%8F%98%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%8F%98%E6%8D%A2/">
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/2026/03/04/2026-03-04-EE6222-2-%E7%BA%BF%E6%80%A7%E7%A7%BB%E4%BD%8D%E4%B8%8D%E5%8F%98%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%8F%98%E6%8D%A2/">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
 					<span class="title flex justify-center items-center">
 						<span class="post-nav-title-item truncate max-w-48">EE6222 2 线性移位不变系统与变换</span>
+						<span class="post-nav-item">Prev posts</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/2026/03/04/2026-03-04-EE6222-4-%E5%BD%A2%E6%80%81%E5%AD%A6/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item truncate max-w-48">EE6222 4 形态学</span>
 						<span class="post-nav-item">Next posts</span>
 					</span>
 					<span class="right arrow-icon flex justify-center items-center">
@@ -1560,7 +1506,7 @@ mjx-container[display="true"] + br {
 	<div class="post-toc">
 		<div class="toc-title">On this page</div>
 		<div class="page-title">EE6222 1 图像基础与人眼感知</div>
-		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%99%E4%B8%80%E7%AB%A0%E5%9C%A8%E5%AD%A6%E4%BB%80%E4%B9%88"><span class="nav-number">1.</span> <span class="nav-text">这一章在学什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Image-Formation"><span class="nav-number">2.</span> <span class="nav-text">Image Formation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E5%BD%A2%E6%88%90%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="nav-number">2.1.</span> <span class="nav-text">图像形成的本质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%90%E5%83%8F%E7%9A%84%E4%B8%89%E4%B8%AA%E5%85%B3%E9%94%AE%E5%9B%A0%E7%B4%A0"><span class="nav-number">2.2.</span> <span class="nav-text">成像的三个关键因素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E6%88%90%E5%83%8F%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.3.</span> <span class="nav-text">常用成像模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%90%E5%83%8F%E4%B8%AD%E7%9A%84%E8%BF%9E%E7%BB%AD%E4%B8%8E%E7%A6%BB%E6%95%A3"><span class="nav-number">2.4.</span> <span class="nav-text">成像中的连续与离散</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%99%E4%B8%80%E9%83%A8%E5%88%86%E5%B8%B8%E8%80%83%E7%82%B9"><span class="nav-number">2.5.</span> <span class="nav-text">这一部分常考点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Human-Perception-of-Image-and-Color-Image"><span class="nav-number">3.</span> <span class="nav-text">Human Perception of Image and Color Image</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%BA%E7%9C%BC%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84%EF%BC%88%E8%80%83%E8%AF%95%E5%B8%B8%E8%AF%86%E7%BA%A7%EF%BC%89"><span class="nav-number">3.1.</span> <span class="nav-text">人眼的基本结构（考试常识级）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rods-%E5%92%8C-Cones-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">3.2.</span> <span class="nav-text">Rods 和 Cones 的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BA%BA%E8%83%BD%E7%9C%8B%E8%A7%81%E9%A2%9C%E8%89%B2"><span class="nav-number">3.3.</span> <span class="nav-text">为什么人能看见颜色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E8%A7%81%E5%85%89%E8%8C%83%E5%9B%B4"><span class="nav-number">3.4.</span> <span class="nav-text">可见光范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Brightness-Contrast-Adaptation"><span class="nav-number">3.5.</span> <span class="nav-text">Brightness, Contrast, Adaptation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Color-Image-%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="nav-number">3.6.</span> <span class="nav-text">Color Image 的基本原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A0%E8%89%B2%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%87%8F%E8%89%B2%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.7.</span> <span class="nav-text">加色模型与减色模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%99%E4%B8%80%E9%83%A8%E5%88%86%E5%B8%B8%E8%80%83%E7%82%B9-1"><span class="nav-number">3.8.</span> <span class="nav-text">这一部分常考点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Digital-Image-Representation"><span class="nav-number">4.</span> <span class="nav-text">Digital Image Representation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">4.1.</span> <span class="nav-text">数字图像是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pixel%EF%BC%88%E5%83%8F%E7%B4%A0%EF%BC%89"><span class="nav-number">4.2.</span> <span class="nav-text">Pixel（像素）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sampling%EF%BC%88%E9%87%87%E6%A0%B7%EF%BC%89"><span class="nav-number">4.3.</span> <span class="nav-text">Sampling（采样）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Quantization%EF%BC%88%E9%87%8F%E5%8C%96%EF%BC%89"><span class="nav-number">4.4.</span> <span class="nav-text">Quantization（量化）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spatial-Resolution-vs-Gray-level-Resolution"><span class="nav-number">4.5.</span> <span class="nav-text">Spatial Resolution vs Gray-level Resolution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-6-Binary-Grayscale-Color-Images"><span class="nav-number">4.6.</span> <span class="nav-text">3.6 Binary, Grayscale, Color Images</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-7-%E9%82%BB%E6%8E%A5%E5%85%B3%E7%B3%BB%EF%BC%88%E5%8F%AF%E4%BD%9C%E4%B8%BA%E8%A1%A5%E5%85%85%E9%87%8D%E7%82%B9%EF%BC%89"><span class="nav-number">4.7.</span> <span class="nav-text">3.7 邻接关系（可作为补充重点）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-8-%E8%BF%99%E4%B8%80%E9%83%A8%E5%88%86%E5%B8%B8%E8%80%83%E7%82%B9"><span class="nav-number">4.8.</span> <span class="nav-text">3.8 这一部分常考点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Image-Histogram"><span class="nav-number">5.</span> <span class="nav-text">4. Image Histogram</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-%E4%BB%80%E4%B9%88%E6%98%AF%E5%9B%BE%E5%83%8F%E7%9B%B4%E6%96%B9%E5%9B%BE"><span class="nav-number">5.1.</span> <span class="nav-text">4.1 什么是图像直方图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-%E4%B8%BA%E4%BB%80%E4%B9%88%E7%9B%B4%E6%96%B9%E5%9B%BE%E9%87%8D%E8%A6%81"><span class="nav-number">5.2.</span> <span class="nav-text">4.2 为什么直方图重要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E4%B8%8D%E5%90%8C%E5%BD%A2%E7%8A%B6%E7%9A%84%E7%9B%B4%E6%96%B9%E5%9B%BE"><span class="nav-number">5.3.</span> <span class="nav-text">4.3 如何理解不同形状的直方图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-%E6%95%B0%E5%AD%A6%E8%A1%A8%E7%A4%BA%EF%BC%88%E8%80%83%E8%AF%95%E5%8F%AF%E8%83%BD%E7%AE%80%E7%AD%94%EF%BC%89"><span class="nav-number">5.4.</span> <span class="nav-text">4.4 数学表示（考试可能简答）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5-Histogram-%E4%B8%8E%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA"><span class="nav-number">5.5.</span> <span class="nav-text">4.5 Histogram 与图像增强</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-6-%E5%BD%A9%E8%89%B2%E5%9B%BE%E5%83%8F%E7%9A%84%E7%9B%B4%E6%96%B9%E5%9B%BE"><span class="nav-number">5.6.</span> <span class="nav-text">4.6 彩色图像的直方图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-7-%E8%BF%99%E4%B8%80%E9%83%A8%E5%88%86%E5%B8%B8%E8%80%83%E7%82%B9"><span class="nav-number">5.7.</span> <span class="nav-text">4.7 这一部分常考点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Image-Processing-and-Its-Application"><span class="nav-number">6.</span> <span class="nav-text">5. Image Processing and Its Application</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-%E4%BB%80%E4%B9%88%E6%98%AF%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86"><span class="nav-number">6.1.</span> <span class="nav-text">5.1 什么是图像处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9A%84%E4%B8%A4%E5%A4%A7%E7%9B%AE%E6%A0%87"><span class="nav-number">6.2.</span> <span class="nav-text">5.2 图像处理的两大目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9A%84%E5%85%B8%E5%9E%8B%E6%AD%A5%E9%AA%A4"><span class="nav-number">6.3.</span> <span class="nav-text">5.3 图像处理的典型步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-4-%E5%B8%B8%E8%A7%81%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E6%93%8D%E4%BD%9C"><span class="nav-number">6.4.</span> <span class="nav-text">5.4 常见图像处理操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-5-%E5%BA%94%E7%94%A8%E9%A2%86%E5%9F%9F"><span class="nav-number">6.5.</span> <span class="nav-text">5.5 应用领域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-6-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86-vs-%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89"><span class="nav-number">6.6.</span> <span class="nav-text">5.6 图像处理 vs 计算机视觉</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-7-%E8%BF%99%E4%B8%80%E9%83%A8%E5%88%86%E5%B8%B8%E8%80%83%E7%82%B9"><span class="nav-number">6.7.</span> <span class="nav-text">5.7 这一部分常考点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%8A%E6%95%B4%E7%AB%A0%E4%B8%B2%E8%B5%B7%E6%9D%A5%E8%AE%B0%E5%BF%86"><span class="nav-number">7.</span> <span class="nav-text">把整章串起来记忆</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E5%9B%BE%E5%83%8F%E6%80%8E%E4%B9%88%E6%9D%A5"><span class="nav-number">7.1.</span> <span class="nav-text">（1）图像怎么来</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%882%EF%BC%89%E4%BA%BA%E6%80%8E%E4%B9%88%E6%84%9F%E7%9F%A5"><span class="nav-number">7.2.</span> <span class="nav-text">（2）人怎么感知</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%883%EF%BC%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%80%8E%E4%B9%88%E5%AD%98"><span class="nav-number">7.3.</span> <span class="nav-text">（3）计算机怎么存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%884%EF%BC%89%E6%80%8E%E4%B9%88%E5%88%86%E6%9E%90%E5%9B%BE%E5%83%8F%E6%95%B4%E4%BD%93%E7%89%B9%E5%BE%81"><span class="nav-number">7.4.</span> <span class="nav-text">（4）怎么分析图像整体特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%885%EF%BC%89%E6%80%8E%E4%B9%88%E5%88%A9%E7%94%A8%E8%BF%99%E4%BA%9B%E7%9F%A5%E8%AF%86"><span class="nav-number">7.5.</span> <span class="nav-text">（5）怎么利用这些知识</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E5%A5%97%E8%80%83%E8%AF%95%E5%9E%8B%E9%80%9F%E8%AE%B0%E8%A1%A8"><span class="nav-number">8.</span> <span class="nav-text">一套考试型速记表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%A0%E6%9C%80%E5%AE%B9%E6%98%93%E4%B8%A2%E5%88%86%E7%9A%84%E5%87%A0%E4%B8%AA%E7%82%B9"><span class="nav-number">9.</span> <span class="nav-text">你最容易丢分的几个点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E9%87%87%E6%A0%B7%E5%92%8C%E9%87%8F%E5%8C%96%E4%B8%8D%E8%A6%81%E6%B7%B7"><span class="nav-number">9.1.</span> <span class="nav-text">1. 采样和量化不要混</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%BA%AE%E5%BA%A6%E5%92%8C%E5%AF%B9%E6%AF%94%E5%BA%A6%E4%B8%8D%E8%A6%81%E6%B7%B7"><span class="nav-number">9.2.</span> <span class="nav-text">2. 亮度和对比度不要混</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%92%8C%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB%E4%B8%8D%E8%A6%81%E6%B7%B7"><span class="nav-number">9.3.</span> <span class="nav-text">3. 图像处理和图像识别不要混</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E7%9B%B4%E6%96%B9%E5%9B%BE%E4%B8%8D%E5%8F%8D%E6%98%A0%E4%BD%8D%E7%BD%AE"><span class="nav-number">9.4.</span> <span class="nav-text">4. 直方图不反映位置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E8%80%81%E5%B8%88%E8%AE%A9%E4%BD%A0%E2%80%9C%E7%AE%80%E7%AD%94%E2%80%9D%E8%BF%99%E7%AB%A0%EF%BC%8C%E5%8F%AF%E4%BB%A5%E8%BF%99%E6%A0%B7%E7%AD%94"><span class="nav-number">10.</span> <span class="nav-text">如果老师让你“简答”这章，可以这样答</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%99%E4%BD%A0%E5%87%A0%E4%B8%AA%E5%A4%8D%E4%B9%A0%E9%A2%98%EF%BC%88%E8%87%AA%E6%B5%8B%EF%BC%89"><span class="nav-number">11.</span> <span class="nav-text">给你几个复习题（自测）</span></a></li></ol>
+		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%99%E4%B8%80%E7%AB%A0%E5%9C%A8%E5%AD%A6%E4%BB%80%E4%B9%88"><span class="nav-number">1.</span> <span class="nav-text">这一章在学什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Image-Formation"><span class="nav-number">2.</span> <span class="nav-text">Image Formation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E5%BD%A2%E6%88%90%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="nav-number">2.1.</span> <span class="nav-text">图像形成的本质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%90%E5%83%8F%E7%9A%84%E4%B8%89%E4%B8%AA%E5%85%B3%E9%94%AE%E5%9B%A0%E7%B4%A0"><span class="nav-number">2.2.</span> <span class="nav-text">成像的三个关键因素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E6%88%90%E5%83%8F%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.3.</span> <span class="nav-text">常用成像模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%90%E5%83%8F%E4%B8%AD%E7%9A%84%E8%BF%9E%E7%BB%AD%E4%B8%8E%E7%A6%BB%E6%95%A3"><span class="nav-number">2.4.</span> <span class="nav-text">成像中的连续与离散</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%99%E4%B8%80%E9%83%A8%E5%88%86%E5%B8%B8%E8%80%83%E7%82%B9"><span class="nav-number">2.5.</span> <span class="nav-text">这一部分常考点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Human-Perception-of-Image-and-Color-Image"><span class="nav-number">3.</span> <span class="nav-text">Human Perception of Image and Color Image</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%BA%E7%9C%BC%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84%EF%BC%88%E8%80%83%E8%AF%95%E5%B8%B8%E8%AF%86%E7%BA%A7%EF%BC%89"><span class="nav-number">3.1.</span> <span class="nav-text">人眼的基本结构（考试常识级）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rods-%E5%92%8C-Cones-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">3.2.</span> <span class="nav-text">Rods 和 Cones 的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BA%BA%E8%83%BD%E7%9C%8B%E8%A7%81%E9%A2%9C%E8%89%B2"><span class="nav-number">3.3.</span> <span class="nav-text">为什么人能看见颜色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E8%A7%81%E5%85%89%E8%8C%83%E5%9B%B4"><span class="nav-number">3.4.</span> <span class="nav-text">可见光范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Brightness-Contrast-Adaptation"><span class="nav-number">3.5.</span> <span class="nav-text">Brightness, Contrast, Adaptation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Color-Image-%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="nav-number">3.6.</span> <span class="nav-text">Color Image 的基本原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A0%E8%89%B2%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%87%8F%E8%89%B2%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.7.</span> <span class="nav-text">加色模型与减色模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%99%E4%B8%80%E9%83%A8%E5%88%86%E5%B8%B8%E8%80%83%E7%82%B9-1"><span class="nav-number">3.8.</span> <span class="nav-text">这一部分常考点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Digital-Image-Representation"><span class="nav-number">4.</span> <span class="nav-text">Digital Image Representation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">4.1.</span> <span class="nav-text">数字图像是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pixel%EF%BC%88%E5%83%8F%E7%B4%A0%EF%BC%89"><span class="nav-number">4.2.</span> <span class="nav-text">Pixel（像素）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sampling%EF%BC%88%E9%87%87%E6%A0%B7%EF%BC%89"><span class="nav-number">4.3.</span> <span class="nav-text">Sampling（采样）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Quantization%EF%BC%88%E9%87%8F%E5%8C%96%EF%BC%89"><span class="nav-number">4.4.</span> <span class="nav-text">Quantization（量化）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spatial-Resolution-vs-Gray-level-Resolution"><span class="nav-number">4.5.</span> <span class="nav-text">Spatial Resolution vs Gray-level Resolution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Binary-Grayscale-Color-Images"><span class="nav-number">4.6.</span> <span class="nav-text">Binary, Grayscale, Color Images</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%82%BB%E6%8E%A5%E5%85%B3%E7%B3%BB%EF%BC%88%E5%8F%AF%E4%BD%9C%E4%B8%BA%E8%A1%A5%E5%85%85%E9%87%8D%E7%82%B9%EF%BC%89"><span class="nav-number">4.7.</span> <span class="nav-text">邻接关系（可作为补充重点）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%99%E4%B8%80%E9%83%A8%E5%88%86%E5%B8%B8%E8%80%83%E7%82%B9-2"><span class="nav-number">4.8.</span> <span class="nav-text">这一部分常考点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Image-Histogram"><span class="nav-number">5.</span> <span class="nav-text">Image Histogram</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%9B%BE%E5%83%8F%E7%9B%B4%E6%96%B9%E5%9B%BE"><span class="nav-number">5.1.</span> <span class="nav-text">什么是图像直方图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E7%9B%B4%E6%96%B9%E5%9B%BE%E9%87%8D%E8%A6%81"><span class="nav-number">5.2.</span> <span class="nav-text">为什么直方图重要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E4%B8%8D%E5%90%8C%E5%BD%A2%E7%8A%B6%E7%9A%84%E7%9B%B4%E6%96%B9%E5%9B%BE"><span class="nav-number">5.3.</span> <span class="nav-text">如何理解不同形状的直方图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%AD%A6%E8%A1%A8%E7%A4%BA%EF%BC%88%E8%80%83%E8%AF%95%E5%8F%AF%E8%83%BD%E7%AE%80%E7%AD%94%EF%BC%89"><span class="nav-number">5.4.</span> <span class="nav-text">数学表示（考试可能简答）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Histogram-%E4%B8%8E%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA"><span class="nav-number">5.5.</span> <span class="nav-text">Histogram 与图像增强</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BD%A9%E8%89%B2%E5%9B%BE%E5%83%8F%E7%9A%84%E7%9B%B4%E6%96%B9%E5%9B%BE"><span class="nav-number">5.6.</span> <span class="nav-text">彩色图像的直方图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%99%E4%B8%80%E9%83%A8%E5%88%86%E5%B8%B8%E8%80%83%E7%82%B9-3"><span class="nav-number">5.7.</span> <span class="nav-text">这一部分常考点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Image-Processing-and-Its-Application"><span class="nav-number">6.</span> <span class="nav-text">Image Processing and Its Application</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86"><span class="nav-number">6.1.</span> <span class="nav-text">什么是图像处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9A%84%E4%B8%A4%E5%A4%A7%E7%9B%AE%E6%A0%87"><span class="nav-number">6.2.</span> <span class="nav-text">图像处理的两大目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9A%84%E5%85%B8%E5%9E%8B%E6%AD%A5%E9%AA%A4"><span class="nav-number">6.3.</span> <span class="nav-text">图像处理的典型步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E6%93%8D%E4%BD%9C"><span class="nav-number">6.4.</span> <span class="nav-text">常见图像处理操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E9%A2%86%E5%9F%9F"><span class="nav-number">6.5.</span> <span class="nav-text">应用领域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86-vs-%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89"><span class="nav-number">6.6.</span> <span class="nav-text">图像处理 vs 计算机视觉</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%99%E4%B8%80%E9%83%A8%E5%88%86%E5%B8%B8%E8%80%83%E7%82%B9-4"><span class="nav-number">6.7.</span> <span class="nav-text">这一部分常考点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%8A%E6%95%B4%E7%AB%A0%E4%B8%B2%E8%B5%B7%E6%9D%A5%E8%AE%B0%E5%BF%86"><span class="nav-number">7.</span> <span class="nav-text">把整章串起来记忆</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E5%9B%BE%E5%83%8F%E6%80%8E%E4%B9%88%E6%9D%A5"><span class="nav-number">7.1.</span> <span class="nav-text">（1）图像怎么来</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%882%EF%BC%89%E4%BA%BA%E6%80%8E%E4%B9%88%E6%84%9F%E7%9F%A5"><span class="nav-number">7.2.</span> <span class="nav-text">（2）人怎么感知</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%883%EF%BC%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%80%8E%E4%B9%88%E5%AD%98"><span class="nav-number">7.3.</span> <span class="nav-text">（3）计算机怎么存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%884%EF%BC%89%E6%80%8E%E4%B9%88%E5%88%86%E6%9E%90%E5%9B%BE%E5%83%8F%E6%95%B4%E4%BD%93%E7%89%B9%E5%BE%81"><span class="nav-number">7.4.</span> <span class="nav-text">（4）怎么分析图像整体特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%885%EF%BC%89%E6%80%8E%E4%B9%88%E5%88%A9%E7%94%A8%E8%BF%99%E4%BA%9B%E7%9F%A5%E8%AF%86"><span class="nav-number">7.5.</span> <span class="nav-text">（5）怎么利用这些知识</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E5%A5%97%E8%80%83%E8%AF%95%E5%9E%8B%E9%80%9F%E8%AE%B0%E8%A1%A8"><span class="nav-number">8.</span> <span class="nav-text">一套考试型速记表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%A0%E6%9C%80%E5%AE%B9%E6%98%93%E4%B8%A2%E5%88%86%E7%9A%84%E5%87%A0%E4%B8%AA%E7%82%B9"><span class="nav-number">9.</span> <span class="nav-text">你最容易丢分的几个点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%87%E6%A0%B7%E5%92%8C%E9%87%8F%E5%8C%96%E4%B8%8D%E8%A6%81%E6%B7%B7"><span class="nav-number">9.1.</span> <span class="nav-text">采样和量化不要混</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%AE%E5%BA%A6%E5%92%8C%E5%AF%B9%E6%AF%94%E5%BA%A6%E4%B8%8D%E8%A6%81%E6%B7%B7"><span class="nav-number">9.2.</span> <span class="nav-text">亮度和对比度不要混</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%92%8C%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB%E4%B8%8D%E8%A6%81%E6%B7%B7"><span class="nav-number">9.3.</span> <span class="nav-text">图像处理和图像识别不要混</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B4%E6%96%B9%E5%9B%BE%E4%B8%8D%E5%8F%8D%E6%98%A0%E4%BD%8D%E7%BD%AE"><span class="nav-number">9.4.</span> <span class="nav-text">直方图不反映位置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E8%80%81%E5%B8%88%E8%AE%A9%E4%BD%A0%E2%80%9C%E7%AE%80%E7%AD%94%E2%80%9D%E8%BF%99%E7%AB%A0%EF%BC%8C%E5%8F%AF%E4%BB%A5%E8%BF%99%E6%A0%B7%E7%AD%94"><span class="nav-number">10.</span> <span class="nav-text">如果老师让你“简答”这章，可以这样答</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%99%E4%BD%A0%E5%87%A0%E4%B8%AA%E5%A4%8D%E4%B9%A0%E9%A2%98%EF%BC%88%E8%87%AA%E6%B5%8B%EF%BC%89"><span class="nav-number">11.</span> <span class="nav-text">给你几个复习题（自测）</span></a></li></ol>
 
 	</div>
 </div>
