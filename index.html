@@ -847,7 +847,7 @@ mjx-container[display="true"] + br {
 
         <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">38</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">40</div>
         <div class="label text-third-text-color text-sm">Tags</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
@@ -855,7 +855,7 @@ mjx-container[display="true"] + br {
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">26</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">27</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -943,89 +943,6 @@ Description: A lightweight, browser-based AI IDE with Monaco editor, local file 
     </div>
 
     <a href="/2025/10/25/2025-10-25-github-projects/">Read more<span class="seo-reader-text">Collection of Github Projects</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/2026/03/04/2026-03-04-EE6222-2-%E7%BA%BF%E6%80%A7%E7%A7%BB%E4%BD%8D%E4%B8%8D%E5%8F%98%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%8F%98%E6%8D%A2/">
-                            EE6222 2 线性移位不变系统与变换
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            
-                            LSI Systems &amp; Transforms（线性移位不变系统与变换）本章你要掌握的主线这一章其实就围绕一条“输入 → 系统 → 输出”的链路：
-
-图像（2D 信号）如何分解：把复杂图像写成很多“简单基”的叠加（例如冲激、正弦/复指数）。
-LSI（线性 + 移位不变）系统：系统完全由它对“单位冲激”的响应决定。
-2D 卷积：LSI 系统的空间域计算工具。
-2D 傅里叶变换：把卷积...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Wed Mar 04 2026 00:00:00 GMT+0800">
-                
-                    2026-03-04
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/Theory/">Theory</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/EE6222/">EE6222</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/Linear-Systems/">Linear Systems</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/Transform/">Transform</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2026/03/04/2026-03-04-EE6222-2-%E7%BA%BF%E6%80%A7%E7%A7%BB%E4%BD%8D%E4%B8%8D%E5%8F%98%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%8F%98%E6%8D%A2/">Read more<span class="seo-reader-text">EE6222 2 线性移位不变系统与变换</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
                 </div>
@@ -1130,6 +1047,95 @@ Image...
                 
                 <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
                     <h3 class="home-article-title">
+                        <a href="/2026/03/04/2026-03-04-EE6222-3-%E7%82%B9%E5%A4%84%E7%90%86%E4%B8%8E%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/">
+                            EE6222 3 点处理与图像增强
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            什么是图像增强（Image Enhancement）图像增强的目标是：
+让图像变得更适合人观察，或者更适合后续处理。
+它不一定恢复“真实图像”，而是：
+
+提高对比度
+突出细节
+抑制噪声
+强化边缘
+改善视觉效果
+
+所以要注意：
+图像增强不等于图像复原（Restoration）。
+
+增强：更关注“看起来更清楚”“更容易分析”
+复原：更关注“恢复原始真实图像”
+
+图像增强的主要分类按这章提纲，通常...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Wed Mar 04 2026 00:00:00 GMT+0800">
+                
+                    2026-03-04
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/Theory/">Theory</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/EE6222/">EE6222</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/Image-Enhancement/">Image Enhancement</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2026/03/04/2026-03-04-EE6222-3-%E7%82%B9%E5%A4%84%E7%90%86%E4%B8%8E%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/">Read more<span class="seo-reader-text">EE6222 3 点处理与图像增强</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
                         <a href="/2026/03/04/2026-03-04-EE6222-4-%E5%BD%A2%E6%80%81%E5%AD%A6/">
                             EE6222 4 形态学
                         </a>
@@ -1212,31 +1218,20 @@ Image...
                 
                 <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
                     <h3 class="home-article-title">
-                        <a href="/2026/03/04/2026-03-04-EE6222-3-%E7%82%B9%E5%A4%84%E7%90%86%E4%B8%8E%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/">
-                            EE6222 3 点处理与图像增强
+                        <a href="/2026/03/04/2026-03-04-EE6222-2-%E7%BA%BF%E6%80%A7%E7%A7%BB%E4%BD%8D%E4%B8%8D%E5%8F%98%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%8F%98%E6%8D%A2/">
+                            EE6222 2 线性移位不变系统与变换
                         </a>
                     </h3>
 
                     <div class="home-article-content markdown-body">
                         
                             
-                            什么是图像增强（Image Enhancement）图像增强的目标是：
-让图像变得更适合人观察，或者更适合后续处理。
-它不一定恢复“真实图像”，而是：
+                            LSI Systems &amp; Transforms（线性移位不变系统与变换）本章你要掌握的主线这一章其实就围绕一条“输入 → 系统 → 输出”的链路：
 
-提高对比度
-突出细节
-抑制噪声
-强化边缘
-改善视觉效果
-
-所以要注意：
-图像增强不等于图像复原（Restoration）。
-
-增强：更关注“看起来更清楚”“更容易分析”
-复原：更关注“恢复原始真实图像”
-
-图像增强的主要分类按这章提纲，通常...
+图像（2D 信号）如何分解：把复杂图像写成很多“简单基”的叠加（例如冲激、正弦/复指数）。
+LSI（线性 + 移位不变）系统：系统完全由它对“单位冲激”的响应决定。
+2D 卷积：LSI 系统的空间域计算工具。
+2D 傅里叶变换：把卷积...
                         
                     </div>
 
@@ -1278,7 +1273,12 @@ Image...
                     
                         <li>
                             | 
-                            <a href="/tags/Image-Enhancement/">Image Enhancement</a>&nbsp;
+                            <a href="/tags/Linear-Systems/">Linear Systems</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/Transform/">Transform</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -1286,7 +1286,90 @@ Image...
         
     </div>
 
-    <a href="/2026/03/04/2026-03-04-EE6222-3-%E7%82%B9%E5%A4%84%E7%90%86%E4%B8%8E%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/">Read more<span class="seo-reader-text">EE6222 3 点处理与图像增强</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2026/03/04/2026-03-04-EE6222-2-%E7%BA%BF%E6%80%A7%E7%A7%BB%E4%BD%8D%E4%B8%8D%E5%8F%98%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%8F%98%E6%8D%A2/">Read more<span class="seo-reader-text">EE6222 2 线性移位不变系统与变换</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2026/03/04/2026-03-04-EE6222-5-%E8%A7%86%E8%A7%89%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB/">
+                            EE6222 5 视觉目标识别
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            当然。你这章标题 “Intuitive Understanding of Visual Object Recognition: from Matching to Classification to Machine Learning”，核心是在讲：
+计算机到底是怎么“看懂”一张图里有什么物体的。
+它通常会按一个很自然的发展路线来理解：
+
+Matching（匹配）：像不像以前见过的模板？
+Cla...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Wed Mar 04 2026 00:00:00 GMT+0800">
+                
+                    2026-03-04
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/Theory/">Theory</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/EE6222/">EE6222</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/Visual-Object-Recognition/">Visual Object Recognition</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/Machine-Learning/">Machine Learning</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2026/03/04/2026-03-04-EE6222-5-%E8%A7%86%E8%A7%89%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB/">Read more<span class="seo-reader-text">EE6222 5 视觉目标识别</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
                 </div>
@@ -1616,79 +1699,6 @@ PicGo
                 </div>
             </li>
         
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/2025/11/25/2025-11-25-power-electronics-fundamentals/">
-                            《电力电子技术基础》 学习笔记
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            
-                            前言个人自制学习资料，无商业用途。参考资料《电力电子技术》（王勇，高教出版社，2020）。
-绪论什么是电力电子
-1974年Newell定义：电力电子是由电力学、电子学及控制学组成的交叉学科
-美国电力电子学会定义：电力电子是有效使用电力半导体器件、应用电路和设计理论以及分析开发工具，实现对电能的高效变换和控制的技术。
-按照电能输入输出的变换形式，可以分为：
-AC-DC：rectifier，整流...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Tue Nov 25 2025 00:00:00 GMT+0800">
-                
-                    2025-11-25
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/Theory/">Theory</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/Power-Electronics/">Power Electronics</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2025/11/25/2025-11-25-power-electronics-fundamentals/">Read more<span class="seo-reader-text">《电力电子技术基础》 学习笔记</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
     </ul>
 
     <div class="home-paginator px-7 py-5">
@@ -1716,7 +1726,7 @@ AC-DC：rectifier，整流...
 </div>
                 <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">38</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">40</div>
         <div class="label text-third-text-color text-sm">Tags</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
@@ -1724,7 +1734,7 @@ AC-DC：rectifier，整流...
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">26</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">27</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -1805,7 +1815,7 @@ AC-DC：rectifier，整流...
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        26 posts in total
+                        27 posts in total
                     </span>
                     
                 </p>
