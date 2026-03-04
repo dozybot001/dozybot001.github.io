@@ -140,7 +140,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/redefine-og.webp">
 <meta property="article:published_time" content="2026-03-03T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-03-04T12:33:53.253Z">
+<meta property="article:modified_time" content="2026-03-04T12:39:39.659Z">
 <meta property="article:author" content="Dozy">
 <meta property="article:tag" content="EE6222">
 <meta property="article:tag" content="Morphology">
@@ -675,8 +675,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2026-03-04 20:33:53</span>
-            <span class="mobile">2026-03-04 20:33:53</span>
+            <span class="desktop">2026-03-04 20:39:39</span>
+            <span class="mobile">2026-03-04 20:39:39</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -767,27 +767,27 @@
 </ul>
 <hr>
 <h3 id="集合基本操作"><a href="#集合基本操作" class="headerlink" title="集合基本操作"></a>集合基本操作</h3><h4 id="并集（Union）"><a href="#并集（Union）" class="headerlink" title="并集（Union）"></a>并集（Union）</h4><p>表示两个目标合在一起：</p>
-<p>[<br>A \cup B<br>]</p>
+<p>$$A \cup B$$</p>
 <p>含义：属于 A 或属于 B 的点都保留。</p>
 <hr>
 <h4 id="交集（Intersection）"><a href="#交集（Intersection）" class="headerlink" title="交集（Intersection）"></a>交集（Intersection）</h4><p>表示两者共同部分：</p>
-<p>[<br>A \cap B<br>]</p>
+<p>$$A \cap B$$</p>
 <p>含义：同时属于 A 和 B 的点才保留。</p>
 <hr>
 <h4 id="补集（Complement）"><a href="#补集（Complement）" class="headerlink" title="补集（Complement）"></a>补集（Complement）</h4><p>表示集合外的部分：</p>
-<p>[<br>A^c<br>]</p>
+<p>$$A^c$$</p>
 <p>如果 A 是前景，那 (A^c) 就是背景。</p>
 <hr>
 <h4 id="差集（Difference）"><a href="#差集（Difference）" class="headerlink" title="差集（Difference）"></a>差集（Difference）</h4><p>表示属于 A 但不属于 B 的部分：</p>
-<p>[<br>A - B<br>]</p>
+<p>$$A - B$$</p>
 <hr>
 <h3 id="平移（Translation）"><a href="#平移（Translation）" class="headerlink" title="平移（Translation）"></a>平移（Translation）</h3><p>结构元素要在图像上移动，所以要用到平移。</p>
 <p>如果结构元素 B 平移向量 z，记作：</p>
-<p>[<br>(B)_z<br>]</p>
+<p>$$(B)_z$$</p>
 <p>意思就是：把 B 移到位置 z。</p>
 <hr>
 <h3 id="反射（Reflection）"><a href="#反射（Reflection）" class="headerlink" title="反射（Reflection）"></a>反射（Reflection）</h3><p>有时要把结构元素关于原点翻转，记作：</p>
-<p>[<br>\hat{B}<br>]</p>
+<p>$$\hat{B}$$</p>
 <p>这在膨胀的严格定义里常出现。</p>
 <hr>
 <h3 id="逻辑运算对应关系"><a href="#逻辑运算对应关系" class="headerlink" title="逻辑运算对应关系"></a>逻辑运算对应关系</h3><p>二值图像里，集合运算和逻辑运算是一一对应的：</p>
@@ -807,7 +807,7 @@
 <li>线段形（用于检测方向性结构）</li>
 </ul>
 <p>例如一个 3×3 方形结构元素：</p>
-<p>[<br>B&#x3D;<br>\begin{bmatrix}<br>1 &amp; 1 &amp; 1 <br>1 &amp; 1 &amp; 1 <br>1 &amp; 1 &amp; 1<br>\end{bmatrix}<br>]</p>
+<p>$$B&#x3D;<br>\begin{bmatrix}<br>1 &amp; 1 &amp; 1 \<br>1 &amp; 1 &amp; 1 \<br>1 &amp; 1 &amp; 1<br>\end{bmatrix}$$</p>
 <p>它有一个<strong>原点（origin）</strong>，通常是中心点。</p>
 <hr>
 <h3 id="结构元素的作用"><a href="#结构元素的作用" class="headerlink" title="结构元素的作用"></a>结构元素的作用</h3><p>结构元素决定了你“如何看待形状”：</p>
@@ -822,10 +822,10 @@
 <h2 id="腐蚀（Erosion）"><a href="#腐蚀（Erosion）" class="headerlink" title="腐蚀（Erosion）"></a>腐蚀（Erosion）</h2><hr>
 <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>腐蚀是形态学最基本操作之一。</p>
 <p>记作：</p>
-<p>[<br>A \ominus B<br>]</p>
+<p>$$A \ominus B$$</p>
 <p>意思：用结构元素 B 去“压”图像 A，只有当结构元素<strong>完全落在 A 内部</strong>时，当前位置才保留。</p>
 <p>更形式化地说：</p>
-<p>[<br>A \ominus B &#x3D; { z \mid B_z \subseteq A }<br>]</p>
+<p>$$A \ominus B &#x3D; { z \mid B_z \subseteq A }$$</p>
 <p>即：把 B 平移到 z 后，如果整个 B 都包含在 A 中，那么 z 属于结果。</p>
 <hr>
 <h3 id="直观理解"><a href="#直观理解" class="headerlink" title="直观理解"></a>直观理解</h3><p>你可以把腐蚀理解成：</p>
@@ -855,11 +855,11 @@
 <hr>
 <h2 id="膨胀（Dilation）"><a href="#膨胀（Dilation）" class="headerlink" title="膨胀（Dilation）"></a>膨胀（Dilation）</h2><hr>
 <h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p>膨胀记作：</p>
-<p>[<br>A \oplus B<br>]</p>
+<p>$$A \oplus B$$</p>
 <p>它的效果与腐蚀相反：让前景扩张。</p>
 <p>直观定义是：只要结构元素和 A <strong>有任何重叠</strong>，当前位置就加入结果。</p>
 <p>常见定义形式：</p>
-<p>[<br>A \oplus B &#x3D; { z \mid (\hat{B})_z \cap A \neq \emptyset }<br>]</p>
+<p>$$A \oplus B &#x3D; { z \mid (\hat{B})_z \cap A \neq \emptyset }$$</p>
 <p>意思是：当反射后的结构元素平移到 z，与 A 有交集，则 z 属于结果。</p>
 <hr>
 <h3 id="直观理解-1"><a href="#直观理解-1" class="headerlink" title="直观理解"></a>直观理解</h3><p>膨胀相当于：</p>
@@ -899,8 +899,8 @@
 </ul>
 <hr>
 <h3 id="对偶性（Duality）"><a href="#对偶性（Duality）" class="headerlink" title="对偶性（Duality）"></a>对偶性（Duality）</h3><p>腐蚀和膨胀在补集意义下互为对偶：</p>
-<p>[<br>(A \ominus B)^c &#x3D; A^c \oplus \hat{B}<br>]</p>
-<p>[<br>(A \oplus B)^c &#x3D; A^c \ominus \hat{B}<br>]</p>
+<p>$$(A \ominus B)^c &#x3D; A^c \oplus \hat{B}$$</p>
+<p>$$(A \oplus B)^c &#x3D; A^c \ominus \hat{B}$$</p>
 <p>考试里如果问“对偶性”，你写：</p>
 <p><strong>膨胀和腐蚀在集合补集与结构元素反射下互为对偶。</strong></p>
 <p>就很够用了。</p>
@@ -908,7 +908,7 @@
 <h2 id="开运算（Opening）"><a href="#开运算（Opening）" class="headerlink" title="开运算（Opening）"></a>开运算（Opening）</h2><p>这是你刚才问过的重点之一。</p>
 <hr>
 <h3 id="定义-2"><a href="#定义-2" class="headerlink" title="定义"></a>定义</h3><p>开运算 &#x3D; <strong>先腐蚀，再膨胀</strong></p>
-<p>[<br>A \circ B &#x3D; (A \ominus B) \oplus B<br>]</p>
+<p>$$A \circ B &#x3D; (A \ominus B) \oplus B$$</p>
 <hr>
 <h3 id="直观理解-2"><a href="#直观理解-2" class="headerlink" title="直观理解"></a>直观理解</h3><p>先腐蚀：</p>
 <ul>
@@ -941,7 +941,7 @@
 <hr>
 <h2 id="闭运算（Closing）"><a href="#闭运算（Closing）" class="headerlink" title="闭运算（Closing）"></a>闭运算（Closing）</h2><hr>
 <h3 id="定义-3"><a href="#定义-3" class="headerlink" title="定义"></a>定义</h3><p>闭运算 &#x3D; <strong>先膨胀，再腐蚀</strong></p>
-<p>[<br>A \bullet B &#x3D; (A \oplus B) \ominus B<br>]</p>
+<p>$$A \bullet B &#x3D; (A \oplus B) \ominus B$$</p>
 <hr>
 <h3 id="直观理解-3"><a href="#直观理解-3" class="headerlink" title="直观理解"></a>直观理解</h3><p>先膨胀：</p>
 <ul>
@@ -994,22 +994,22 @@
 <h3 id="平移不变性"><a href="#平移不变性" class="headerlink" title="平移不变性"></a>平移不变性</h3><p>如果图像平移后再做形态学操作，和先做操作再平移，本质效果一致。<br>说明它和位置无关，只和局部形状有关。</p>
 <hr>
 <h3 id="单调性（Increasing）"><a href="#单调性（Increasing）" class="headerlink" title="单调性（Increasing）"></a>单调性（Increasing）</h3><p>若：</p>
-<p>[<br>A \subseteq C<br>]</p>
+<p>$$A \subseteq C$$</p>
 <p>则：</p>
-<p>[<br>A \oplus B \subseteq C \oplus B<br>]</p>
-<p>[<br>A \ominus B \subseteq C \ominus B<br>]</p>
+<p>$$A \oplus B \subseteq C \oplus B$$</p>
+<p>$$A \ominus B \subseteq C \ominus B$$</p>
 <p>也就是说：较大的集合经过同样处理，结果也不会比小集合更小。</p>
 <hr>
 <h3 id="幂等性（Idempotent）"><a href="#幂等性（Idempotent）" class="headerlink" title="幂等性（Idempotent）"></a>幂等性（Idempotent）</h3><p>这个在开闭运算里非常重要。</p>
-<h4 id="开运算幂等："><a href="#开运算幂等：" class="headerlink" title="开运算幂等："></a>开运算幂等：</h4><p>[<br>(A \circ B) \circ B &#x3D; A \circ B<br>]</p>
-<h4 id="闭运算幂等："><a href="#闭运算幂等：" class="headerlink" title="闭运算幂等："></a>闭运算幂等：</h4><p>[<br>(A \bullet B) \bullet B &#x3D; A \bullet B<br>]</p>
+<h4 id="开运算幂等："><a href="#开运算幂等：" class="headerlink" title="开运算幂等："></a>开运算幂等：</h4><p>$$(A \circ B) \circ B &#x3D; A \circ B$$</p>
+<h4 id="闭运算幂等："><a href="#闭运算幂等：" class="headerlink" title="闭运算幂等："></a>闭运算幂等：</h4><p>$$(A \bullet B) \bullet B &#x3D; A \bullet B$$</p>
 <p>意思是：<br><strong>同样的开运算做第二次，结果不再变化。</strong><br><strong>同样的闭运算做第二次，结果也不再变化。</strong></p>
 <p>这非常常考。</p>
 <hr>
 <h3 id="抗扩张-抗收缩"><a href="#抗扩张-抗收缩" class="headerlink" title="抗扩张&#x2F;抗收缩"></a>抗扩张&#x2F;抗收缩</h3><ul>
-<li><p>开运算结果不会比原集合大：<br>[<br>A \circ B \subseteq A<br>]</p>
+<li><p>开运算结果不会比原集合大：<br>$$A \circ B \subseteq A$$</p>
 </li>
-<li><p>闭运算结果不会比原集合小：<br>[<br>A \subseteq A \bullet B<br>]</p>
+<li><p>闭运算结果不会比原集合小：<br>$$A \subseteq A \bullet B$$</p>
 </li>
 </ul>
 <p>这也是非常经典的性质。</p>
@@ -1043,7 +1043,7 @@
 <h2 id="常见形态学算法"><a href="#常见形态学算法" class="headerlink" title="常见形态学算法"></a>常见形态学算法</h2><p>提纲里有 “Morphological Algorithm and Applications”，这部分通常会包括下面这些。</p>
 <hr>
 <h3 id="边界提取（Boundary-Extraction）"><a href="#边界提取（Boundary-Extraction）" class="headerlink" title="边界提取（Boundary Extraction）"></a>边界提取（Boundary Extraction）</h3><p>一个经典方法：</p>
-<p>[<br>\beta(A) &#x3D; A - (A \ominus B)<br>]</p>
+<p>$$\beta(A) &#x3D; A - (A \ominus B)$$</p>
 <p>意思：</p>
 <ul>
 <li>原图减去腐蚀后的图</li>
@@ -1052,7 +1052,7 @@
 <p>直观上，腐蚀把边界往里缩了一圈，相减后就只剩那一圈边缘。</p>
 <hr>
 <h3 id="形态学梯度（Morphological-Gradient）"><a href="#形态学梯度（Morphological-Gradient）" class="headerlink" title="形态学梯度（Morphological Gradient）"></a>形态学梯度（Morphological Gradient）</h3><p>定义：</p>
-<p>[<br>G &#x3D; (A \oplus B) - (A \ominus B)<br>]</p>
+<p>$$G &#x3D; (A \oplus B) - (A \ominus B)$$</p>
 <p>作用：</p>
 <ul>
 <li>突出目标边界</li>
@@ -1065,7 +1065,7 @@
 <li>两者之差就是边缘带</li>
 </ul>
 <hr>
-<h3 id="顶帽变换（Top-hat-Transform）"><a href="#顶帽变换（Top-hat-Transform）" class="headerlink" title="顶帽变换（Top-hat Transform）"></a>顶帽变换（Top-hat Transform）</h3><h4 id="白顶帽（White-Top-hat）"><a href="#白顶帽（White-Top-hat）" class="headerlink" title="白顶帽（White Top-hat）"></a>白顶帽（White Top-hat）</h4><p>[<br>T_w &#x3D; A - (A \circ B)<br>]</p>
+<h3 id="顶帽变换（Top-hat-Transform）"><a href="#顶帽变换（Top-hat-Transform）" class="headerlink" title="顶帽变换（Top-hat Transform）"></a>顶帽变换（Top-hat Transform）</h3><h4 id="白顶帽（White-Top-hat）"><a href="#白顶帽（White-Top-hat）" class="headerlink" title="白顶帽（White Top-hat）"></a>白顶帽（White Top-hat）</h4><p>$$T_w &#x3D; A - (A \circ B)$$</p>
 <p>作用：</p>
 <ul>
 <li>提取比结构元素小的亮目标</li>
@@ -1078,7 +1078,7 @@
 <li>光照不均下的小目标提取</li>
 </ul>
 <hr>
-<h4 id="黑顶帽（Black-Top-hat）"><a href="#黑顶帽（Black-Top-hat）" class="headerlink" title="黑顶帽（Black Top-hat）"></a>黑顶帽（Black Top-hat）</h4><p>[<br>T_b &#x3D; (A \bullet B) - A<br>]</p>
+<h4 id="黑顶帽（Black-Top-hat）"><a href="#黑顶帽（Black-Top-hat）" class="headerlink" title="黑顶帽（Black Top-hat）"></a>黑顶帽（Black Top-hat）</h4><p>$$T_b &#x3D; (A \bullet B) - A$$</p>
 <p>作用：</p>
 <ul>
 <li>提取比结构元素小的暗目标</li>
@@ -1324,7 +1324,7 @@
         
             <li>
                 <strong>Updated at
-                    :</strong> 2026-03-04 20:33:53
+                    :</strong> 2026-03-04 20:39:39
             </li>
         
         <li>
